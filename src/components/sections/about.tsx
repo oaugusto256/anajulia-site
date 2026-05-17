@@ -15,8 +15,8 @@ export function About() {
     <SectionContainer id="sobre" className="bg-stone">
       <div className="flex flex-col gap-12 md:flex-row md:items-start md:gap-16">
         {/* Text — 60% */}
-        <FadeIn>
-          <div className="flex flex-col gap-6 md:flex-[1.5]">
+        <FadeIn className="md:flex-[1.5]">
+          <div className="flex flex-col gap-6">
           <p className="text-xs font-medium uppercase tracking-[0.15em] text-oliva">
             {aboutCopy.label}
           </p>
@@ -69,8 +69,8 @@ export function About() {
         </FadeIn>
 
         {/* Photo — 40% */}
-        <FadeIn delay={150}>
-          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl md:flex-[1]">
+        <FadeIn delay={150} className="md:flex-[1]">
+          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
           <Image
             src="/fotos/IMG_8114.jpg"
             alt="Ana Julia Vognach em seu consultório"

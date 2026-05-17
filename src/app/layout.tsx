@@ -51,7 +51,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="bg-offwhite font-body antialiased">
+      <body suppressHydrationWarning className="bg-offwhite font-body antialiased">
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <Script

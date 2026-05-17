@@ -18,8 +18,8 @@ export function Services() {
     <SectionContainer id="servicos" className="bg-stone">
       <div className="flex flex-col gap-12 md:flex-row md:gap-16">
         {/* Accordion — 60% */}
-        <FadeIn>
-          <div className="flex flex-col gap-8 md:flex-[1.5]">
+        <FadeIn className="md:flex-[1.5]">
+          <div className="flex flex-col gap-8">
           <div>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-oliva">
               {servicesCopy.label}
@@ -52,8 +52,8 @@ export function Services() {
         </FadeIn>
 
         {/* Photo — 40% | appears above on mobile (order-first), right on desktop */}
-        <FadeIn delay={150}>
-          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl md:flex-[1] md:self-start md:sticky md:top-24 order-first md:order-last">
+        <FadeIn delay={150} className="order-first md:order-last md:flex-[1] md:self-start md:sticky md:top-24">
+          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
           <Image
             src="/fotos/IMG_8194.jpg"
             alt="Consultório de Ana Julia Vognach"

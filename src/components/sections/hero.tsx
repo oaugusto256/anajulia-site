@@ -9,8 +9,8 @@ export function Hero() {
     <SectionContainer className="bg-offwhite">
       <div className="flex flex-col gap-12 md:flex-row md:items-center md:gap-16">
         {/* Text — 60% */}
-        <FadeIn>
-          <div className="flex flex-col gap-6 md:flex-[1.5]">
+        <FadeIn className="md:flex-[1.5]">
+          <div className="flex flex-col gap-6">
           <p className="text-xs font-medium uppercase tracking-[0.15em] text-oliva">
             {heroCopy.label}
           </p>
@@ -43,8 +43,8 @@ export function Hero() {
         </FadeIn>
 
         {/* Photo — 40% */}
-        <FadeIn delay={150}>
-          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-auto md:flex-[1] md:self-stretch">
+        <FadeIn delay={150} className="md:flex-[1] md:self-stretch">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-auto md:h-full">
           <Image
             src="/fotos/IMG_8209.jpg"
             alt="Ana Julia Vognach, psicóloga clínica"
