@@ -26,7 +26,7 @@ export function Services() {
               {servicesCopy.title}
             </h2>
           </div>
-          <Accordion className="w-full">
+          <Accordion multiple={false} className="w-full">
             {servicesCopy.items.map((item, index) => (
               <AccordionItem
                 key={item.title}

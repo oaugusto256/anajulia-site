@@ -18,10 +18,11 @@ export function FAQ() {
         <h2 className="font-heading mb-10 text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.1] text-preto">
           {faqCopy.title}
         </h2>
-        <Accordion className="mb-10 w-full">
+        <Accordion multiple={false} className="mb-10 w-full">
           {faqCopy.items.map((item, index) => (
             <AccordionItem
               key={item.question}
+              value={`faq-${index}`}
               className="border-linhas"
             >
               <AccordionTrigger
