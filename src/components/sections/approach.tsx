@@ -1,13 +1,11 @@
 import { approachCopy } from "@/content/site-copy"
 import { SectionContainer } from "@/components/ui/section-container"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
-import { FadeIn } from "@/components/ui/fade-in"
 
 export function Approach() {
   return (
     <SectionContainer className="bg-offwhite">
-      <FadeIn>
-        <div className="mx-auto max-w-2xl">
+      <div className="mx-auto max-w-2xl">
         <p className="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-oliva">
           {approachCopy.label}
         </p>
@@ -20,8 +18,7 @@ export function Approach() {
           </p>
         ))}
         <WhatsAppButton messageKey="schedule" label={approachCopy.cta} />
-        </div>
-      </FadeIn>
+      </div>
     </SectionContainer>
   )
 }

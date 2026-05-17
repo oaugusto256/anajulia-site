@@ -11,15 +11,13 @@ import { servicesCopy } from "@/content/site-copy"
 import { SectionContainer } from "@/components/ui/section-container"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
 import { trackServicesExpand } from "@/lib/analytics"
-import { FadeIn } from "@/components/ui/fade-in"
 
 export function Services() {
   return (
     <SectionContainer id="servicos" className="bg-stone">
       <div className="flex flex-col gap-12 md:flex-row md:gap-16">
         {/* Accordion — 60% */}
-        <FadeIn className="md:flex-[1.5]">
-          <div className="flex flex-col gap-8">
+        <div className="flex flex-col gap-8 md:flex-[1.5]">
           <div>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-oliva">
               {servicesCopy.label}
@@ -48,21 +46,20 @@ export function Services() {
             ))}
           </Accordion>
           <WhatsAppButton messageKey="schedule" label={servicesCopy.cta} />
-          </div>
-        </FadeIn>
+        </div>
 
         {/* Photo — 40% | appears above on mobile (order-first), right on desktop */}
-        <FadeIn delay={150} className="order-first md:order-last md:flex-[1] md:self-start md:sticky md:top-24">
+        <div className="order-first md:order-last md:flex-[1] md:self-start md:sticky md:top-24">
           <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
-          <Image
-            src="/fotos/IMG_8194.jpg"
-            alt="Consultório de Ana Julia Vognach"
-            fill
-            className="object-cover"
-            sizes="(max-width: 768px) 100vw, 40vw"
-          />
+            <Image
+              src="/fotos/IMG_8194.jpg"
+              alt="Consultório de Ana Julia Vognach"
+              fill
+              className="object-cover"
+              sizes="(max-width: 768px) 100vw, 40vw"
+            />
           </div>
-        </FadeIn>
+        </div>
       </div>
     </SectionContainer>
   )
