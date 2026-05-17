@@ -45,9 +45,9 @@ export function Testimonials() {
         </div>
 
         <div className="grid gap-6 md:grid-cols-3">
-          {testimonialsCopy.items.map((item) => (
+          {testimonialsCopy.items.map((item, index) => (
             <div
-              key={item.author}
+              key={index}
               className="flex flex-col gap-4 rounded-xl bg-stone p-6"
             >
               <span className="text-sm text-[#FBBC05]">★★★★★</span>
