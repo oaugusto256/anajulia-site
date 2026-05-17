@@ -44,7 +44,7 @@ export function Hero() {
 
         {/* Photo — 40% */}
         <FadeIn delay={150}>
-          <div className="relative w-full overflow-hidden rounded-2xl md:flex-[1] md:self-stretch">
+          <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-auto md:flex-[1] md:self-stretch">
           <Image
             src="/fotos/IMG_8209.jpg"
             alt="Ana Julia Vognach, psicóloga clínica"
