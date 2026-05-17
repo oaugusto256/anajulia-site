@@ -1,66 +1,99 @@
 "use client"
 
-import Image from "next/image"
+import { useState } from "react"
 import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion"
-import { servicesCopy } from "@/content/site-copy"
-import { SectionContainer } from "@/components/ui/section-container"
-import { WhatsAppButton } from "@/components/ui/whatsapp-button"
-import { trackServicesExpand } from "@/lib/analytics"
+  Monitor, User, Briefcase, BatteryLow, Baby, Sunset, ClipboardList,
+} from "lucide-react"
+import type { LucideIcon } from "lucide-react"
+import { services } from "@/content/site-content"
+import { AccordionItem } from "@/components/ui/accordion-item"
+
+const iconMap: Record<string, LucideIcon> = {
+  monitor: Monitor,
+  person: User,
+  briefcase: Briefcase,
+  "person-fatigue": BatteryLow,
+  "person-with-child": Baby,
+  horizon: Sunset,
+  clipboard: ClipboardList,
+}
 
 export function Services() {
+  const [openId, setOpenId] = useState<string | null>(null)
+
+  function handleToggle(id: string) {
+    setOpenId((prev) => (prev === id ? null : id))
+  }
+
   return (
-    <SectionContainer id="servicos" className="bg-stone">
-      <div className="flex flex-col gap-12 md:flex-row md:gap-16">
-        {/* Accordion — 60% */}
-        <div className="flex flex-col gap-8 md:flex-[1.5]">
+    <section
+      id="servicos"
+      style={{
+        background: "var(--color-off-white-2)",
+        borderTop: "1px solid var(--color-linhas)",
+        padding: "clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px)",
+      }}
+    >
+      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
+        {/* Header: 2-col desktop */}
+        <div
+          className="services-header"
+          style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24, marginBottom: "clamp(40px, 5vw, 64px)" }}
+        >
           <div>
-            <p className="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-oliva">
-              {servicesCopy.label}
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: 12, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--color-oliva)", marginBottom: 12 }}>
+              {services.eyebrow}
             </p>
-            <h2 className="font-heading text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.1] text-preto">
-              {servicesCopy.title}
+            <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.9rem, 3.5vw, 3rem)", fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.025em", color: "var(--color-preto)", margin: 0 }}>
+              {services.title}
             </h2>
           </div>
-          <Accordion multiple={false} className="w-full">
-            {servicesCopy.items.map((item, index) => (
-              <AccordionItem
-                key={item.title}
-                value={`item-${index}`}
-                className="border-linhas"
-              >
-                <AccordionTrigger
-                  className="text-left text-base font-medium text-preto hover:text-oliva hover:no-underline"
-                  onClick={() => trackServicesExpand(item.title)}
-                >
-                  {item.title}
-                </AccordionTrigger>
-                <AccordionContent className="text-sm leading-[1.7] text-cinza">
-                  {item.content}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
-          <WhatsAppButton messageKey="schedule" label={servicesCopy.cta} />
+          <p style={{ fontFamily: "var(--font-inter)", fontSize: 16, lineHeight: 1.65, color: "var(--color-cinza)", maxWidth: "48ch", margin: 0 }}>
+            {services.intro}
+          </p>
         </div>
 
-        {/* Photo — 40% | appears above on mobile (order-first), right on desktop */}
-        <div className="order-first md:order-last md:flex-[1] md:self-start md:sticky md:top-24">
-          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl">
-            <Image
-              src="/fotos/IMG_8194.jpg"
-              alt="Consultório de Ana Julia Vognach"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 40vw"
-            />
-          </div>
+        {/* Accordion list */}
+        <div>
+          {services.items.map((item) => {
+            const Icon = iconMap[item.icon] ?? Monitor
+            return (
+              <AccordionItem
+                key={item.id}
+                id={item.id}
+                isOpen={openId === item.id}
+                onToggle={() => handleToggle(item.id)}
+                analyticsEvent="services_expand"
+                trigger={
+                  <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
+                    <Icon
+                      size={28}
+                      strokeWidth={1.5}
+                      style={{ color: "var(--color-oliva)", flexShrink: 0 }}
+                    />
+                    <span style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.15rem, 1.7vw, 1.5rem)", color: "var(--color-preto)", fontWeight: 500 }}>
+                      {item.title}
+                    </span>
+                  </div>
+                }
+              >
+                <p style={{ fontFamily: "var(--font-inter)", fontSize: 15, lineHeight: 1.65, color: "var(--color-cinza)", paddingBottom: 24, paddingLeft: 48, maxWidth: "68ch", margin: 0 }}>
+                  {item.body}
+                </p>
+              </AccordionItem>
+            )
+          })}
         </div>
       </div>
-    </SectionContainer>
+
+      <style>{`
+        @media (min-width: 900px) {
+          .services-header {
+            grid-template-columns: 1fr 1fr !important;
+            align-items: end;
+          }
+        }
+      `}</style>
+    </section>
   )
 }
