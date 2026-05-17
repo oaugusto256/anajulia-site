@@ -1,0 +1,101 @@
+<h2>Como apresentar os depoimentos?</h2>
+<p class="subtitle">O conteúdo define nota 5.0 e ícone do Google — a questão é o tratamento visual da seção</p>
+
+<div class="cards">
+
+  <div class="card" data-choice="a" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e5e5e5;background:#FDFBF7;height:200px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;padding:20px;">
+        <!-- Google badge centered -->
+        <div style="display:flex;align-items:center;gap:8px;">
+          <!-- Google G icon approximation -->
+          <div style="width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#4285F4,#34A853,#FBBC05,#EA4335);display:flex;align-items:center;justify-content:center;">
+            <span style="font-size:12px;font-weight:700;color:white;font-family:sans-serif;">G</span>
+          </div>
+          <span style="font-size:9px;color:#555;font-family:sans-serif;">Google Avaliações</span>
+        </div>
+        <div style="font-size:32px;font-weight:700;color:#111;font-family:Georgia,serif;line-height:1;">5,0</div>
+        <div style="display:flex;gap:3px;">
+          <span style="color:#FBBC05;font-size:16px;">★</span>
+          <span style="color:#FBBC05;font-size:16px;">★</span>
+          <span style="color:#FBBC05;font-size:16px;">★</span>
+          <span style="color:#FBBC05;font-size:16px;">★</span>
+          <span style="color:#FBBC05;font-size:16px;">★</span>
+        </div>
+        <div style="font-size:8px;color:#aaa;font-family:sans-serif;">baseado em avaliações verificadas</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A — Só o badge de nota</h3>
+      <p>Seção minimalista: nota 5,0 em destaque + estrelas + ícone Google. Honesto, limpo, sem inventar depoimentos. Fácil de manter.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e5e5e5;background:#FDFBF7;height:200px;padding:14px 16px;display:flex;flex-direction:column;gap:10px;">
+        <!-- Title -->
+        <div style="font-size:11px;font-weight:700;color:#111;font-family:Georgia,serif;">O que dizem sobre o meu acompanhamento</div>
+        <!-- Cards row -->
+        <div style="display:flex;gap:8px;flex:1;">
+          <!-- Card 1 -->
+          <div style="flex:1;background:#F3F0EB;border-radius:6px;padding:10px;display:flex;flex-direction:column;gap:6px;">
+            <div style="display:flex;gap:1px;">
+              <span style="color:#FBBC05;font-size:9px;">★★★★★</span>
+            </div>
+            <div style="font-size:7.5px;color:#555;line-height:1.6;font-family:sans-serif;font-style:italic;">"A Ana Julia me ajudou a enxergar caminhos que eu não via..."</div>
+            <div style="font-size:7px;color:#aaa;font-family:sans-serif;margin-top:auto;">— Paciente verificada</div>
+          </div>
+          <!-- Card 2 -->
+          <div style="flex:1;background:#F3F0EB;border-radius:6px;padding:10px;display:flex;flex-direction:column;gap:6px;">
+            <div style="display:flex;gap:1px;">
+              <span style="color:#FBBC05;font-size:9px;">★★★★★</span>
+            </div>
+            <div style="font-size:7.5px;color:#555;line-height:1.6;font-family:sans-serif;font-style:italic;">"Espaço de escuta genuína e acolhedora..."</div>
+            <div style="font-size:7px;color:#aaa;font-family:sans-serif;margin-top:auto;">— Paciente verificada</div>
+          </div>
+        </div>
+        <!-- Google footer -->
+        <div style="display:flex;align-items:center;gap:6px;">
+          <div style="width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#4285F4,#34A853,#FBBC05,#EA4335);display:flex;align-items:center;justify-content:center;">
+            <span style="font-size:7px;font-weight:700;color:white;font-family:sans-serif;">G</span>
+          </div>
+          <span style="font-size:7px;color:#aaa;font-family:sans-serif;">5,0 · Google Avaliações verificadas</span>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B — Cards de depoimentos reais</h3>
+      <p>Exibe 2–3 trechos de avaliações reais do Google, com estrelas e identificação. Mais persuasivo, mas exige coletar os textos reais das avaliações.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="border-radius:8px;overflow:hidden;border:1px solid #e5e5e5;background:#FDFBF7;height:200px;padding:14px 20px;display:flex;flex-direction:column;justify-content:center;gap:12px;">
+        <!-- Quote em destaque -->
+        <div style="font-size:20px;color:#4A5D4E;font-family:Georgia,serif;line-height:1;">"</div>
+        <div style="font-size:9px;color:#111;font-family:Georgia,serif;font-style:italic;line-height:1.7;">"A experiência com a Ana Julia foi transformadora. Um espaço de escuta genuína e acolhedora, onde me senti completamente segura para falar."</div>
+        <div style="display:flex;align-items:center;justify-content:space-between;">
+          <div>
+            <div style="font-size:7.5px;color:#555;font-family:sans-serif;">— Paciente verificada</div>
+            <div style="display:flex;gap:2px;margin-top:3px;">
+              <span style="color:#FBBC05;font-size:9px;">★★★★★</span>
+            </div>
+          </div>
+          <div style="display:flex;align-items:center;gap:4px;">
+            <div style="width:14px;height:14px;border-radius:50%;background:linear-gradient(135deg,#4285F4,#34A853,#FBBC05,#EA4335);display:flex;align-items:center;justify-content:center;">
+              <span style="font-size:7px;font-weight:700;color:white;font-family:sans-serif;">G</span>
+            </div>
+            <span style="font-size:7px;color:#aaa;font-family:sans-serif;">5,0</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C — Uma citação em destaque editorial</h3>
+      <p>Um único depoimento em formato de citação grande, com impacto editorial. Mais sofisticado, funciona bem quando você tem uma avaliação especialmente forte.</p>
+    </div>
+  </div>
+
+</div>
