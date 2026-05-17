@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Inter, Playfair_Display } from "next/font/google"
+import { Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google"
 import Script from "next/script"
 import "./globals.css"
 import { Nav } from "@/components/sections/nav"
@@ -15,6 +15,14 @@ const inter = Inter({
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
+  display: "swap",
+})
+
+const cormorant = Cormorant_Garamond({
+  subsets: ["latin"],
+  weight: ["300", "400"],
+  style: ["normal", "italic"],
+  variable: "--font-cormorant",
   display: "swap",
 })
 
@@ -50,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} ${cormorant.variable}`}>
       <body suppressHydrationWarning className="bg-offwhite font-body antialiased">
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
