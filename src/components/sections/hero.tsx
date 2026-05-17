@@ -2,13 +2,15 @@ import Image from "next/image"
 import { heroCopy } from "@/content/site-copy"
 import { SectionContainer } from "@/components/ui/section-container"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
+import { FadeIn } from "@/components/ui/fade-in"
 
 export function Hero() {
   return (
     <SectionContainer className="bg-offwhite">
       <div className="flex flex-col gap-12 md:flex-row md:items-center md:gap-16">
         {/* Text — 60% */}
-        <div className="flex flex-col gap-6 md:flex-[1.5]">
+        <FadeIn>
+          <div className="flex flex-col gap-6 md:flex-[1.5]">
           <p className="text-xs font-medium uppercase tracking-[0.15em] text-oliva">
             {heroCopy.label}
           </p>
@@ -37,10 +39,12 @@ export function Hero() {
           <div className="mt-2">
             <WhatsAppButton messageKey="schedule" label={heroCopy.cta} />
           </div>
-        </div>
+          </div>
+        </FadeIn>
 
         {/* Photo — 40% */}
-        <div className="relative w-full overflow-hidden rounded-2xl md:flex-[1] md:self-stretch">
+        <FadeIn delay={150}>
+          <div className="relative w-full overflow-hidden rounded-2xl md:flex-[1] md:self-stretch">
           <Image
             src="/fotos/IMG_8209.jpg"
             alt="Ana Julia Vognach, psicóloga clínica"
@@ -49,7 +53,8 @@ export function Hero() {
             priority
             sizes="(max-width: 768px) 100vw, 40vw"
           />
-        </div>
+          </div>
+        </FadeIn>
       </div>
     </SectionContainer>
   )

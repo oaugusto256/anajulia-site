@@ -6,6 +6,7 @@ import { ChevronDown } from "lucide-react"
 import { aboutCopy } from "@/content/site-copy"
 import { SectionContainer } from "@/components/ui/section-container"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
+import { FadeIn } from "@/components/ui/fade-in"
 
 export function About() {
   const [expanded, setExpanded] = useState(false)
@@ -14,7 +15,8 @@ export function About() {
     <SectionContainer id="sobre" className="bg-stone">
       <div className="flex flex-col gap-12 md:flex-row md:items-start md:gap-16">
         {/* Text — 60% */}
-        <div className="flex flex-col gap-6 md:flex-[1.5]">
+        <FadeIn>
+          <div className="flex flex-col gap-6 md:flex-[1.5]">
           <p className="text-xs font-medium uppercase tracking-[0.15em] text-oliva">
             {aboutCopy.label}
           </p>
@@ -63,10 +65,12 @@ export function About() {
               />
             </div>
           )}
-        </div>
+          </div>
+        </FadeIn>
 
         {/* Photo — 40% */}
-        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl md:flex-[1]">
+        <FadeIn delay={150}>
+          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl md:flex-[1]">
           <Image
             src="/fotos/IMG_8114.jpg"
             alt="Ana Julia Vognach em seu consultório"
@@ -74,7 +78,8 @@ export function About() {
             className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 40vw"
           />
-        </div>
+          </div>
+        </FadeIn>
       </div>
     </SectionContainer>
   )

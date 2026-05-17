@@ -11,13 +11,15 @@ import { servicesCopy } from "@/content/site-copy"
 import { SectionContainer } from "@/components/ui/section-container"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
 import { trackServicesExpand } from "@/lib/analytics"
+import { FadeIn } from "@/components/ui/fade-in"
 
 export function Services() {
   return (
     <SectionContainer id="servicos" className="bg-stone">
       <div className="flex flex-col gap-12 md:flex-row md:gap-16">
         {/* Accordion — 60% */}
-        <div className="flex flex-col gap-8 md:flex-[1.5]">
+        <FadeIn>
+          <div className="flex flex-col gap-8 md:flex-[1.5]">
           <div>
             <p className="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-oliva">
               {servicesCopy.label}
@@ -46,10 +48,12 @@ export function Services() {
             ))}
           </Accordion>
           <WhatsAppButton messageKey="schedule" label={servicesCopy.cta} />
-        </div>
+          </div>
+        </FadeIn>
 
         {/* Photo — 40% | appears above on mobile (order-first), right on desktop */}
-        <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl md:flex-[1] md:self-start md:sticky md:top-24 order-first md:order-last">
+        <FadeIn delay={150}>
+          <div className="relative aspect-[3/4] w-full overflow-hidden rounded-2xl md:flex-[1] md:self-start md:sticky md:top-24 order-first md:order-last">
           <Image
             src="/fotos/IMG_8194.jpg"
             alt="Consultório de Ana Julia Vognach"
@@ -57,7 +61,8 @@ export function Services() {
             className="object-cover"
             sizes="(max-width: 768px) 100vw, 40vw"
           />
-        </div>
+          </div>
+        </FadeIn>
       </div>
     </SectionContainer>
   )

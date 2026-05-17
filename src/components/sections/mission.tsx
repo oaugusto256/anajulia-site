@@ -1,11 +1,13 @@
 import { missionCopy } from "@/content/site-copy"
 import { SectionContainer } from "@/components/ui/section-container"
 import { WhatsAppButton } from "@/components/ui/whatsapp-button"
+import { FadeIn } from "@/components/ui/fade-in"
 
 export function Mission() {
   return (
     <SectionContainer className="bg-oliva-escuro">
-      <div className="mx-auto max-w-2xl text-center">
+      <FadeIn>
+        <div className="mx-auto max-w-2xl text-center">
         <p className="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-offwhite/60">
           {missionCopy.label}
         </p>
@@ -20,7 +22,8 @@ export function Mission() {
           label={missionCopy.cta}
           variant="inverse"
         />
-      </div>
+        </div>
+      </FadeIn>
     </SectionContainer>
   )
 }

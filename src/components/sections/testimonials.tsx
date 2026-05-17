@@ -1,5 +1,6 @@
 import { testimonialsCopy } from "@/content/site-copy"
 import { SectionContainer } from "@/components/ui/section-container"
+import { FadeIn } from "@/components/ui/fade-in"
 
 function GoogleIcon() {
   return (
@@ -27,7 +28,8 @@ function GoogleIcon() {
 export function Testimonials() {
   return (
     <SectionContainer className="bg-offwhite">
-      <div className="flex flex-col gap-10">
+      <FadeIn>
+        <div className="flex flex-col gap-10">
         <div className="flex flex-col items-center gap-3 text-center">
           <h2 className="font-heading text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.1] text-preto">
             {testimonialsCopy.title}
@@ -56,7 +58,8 @@ export function Testimonials() {
             </div>
           ))}
         </div>
-      </div>
+        </div>
+      </FadeIn>
     </SectionContainer>
   )
 }
