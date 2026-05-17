@@ -40,7 +40,7 @@ export function Hero() {
         </div>
 
         {/* Photo — 40% */}
-        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-auto md:flex-[1] md:h-full md:self-stretch">
+        <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl md:aspect-auto md:flex-[1] md:self-stretch">
           <Image
             src="/fotos/IMG_8209.jpg"
             alt="Ana Julia Vognach, psicóloga clínica"
