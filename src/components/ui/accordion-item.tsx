@@ -37,6 +37,7 @@ export function AccordionItem({
         aria-controls={`accordion-body-${id}`}
         aria-expanded={isOpen}
         onClick={handleToggle}
+        className="accordion-trigger"
         style={{
           display: "grid",
           gridTemplateColumns: "1fr 28px",
@@ -88,6 +89,12 @@ export function AccordionItem({
           {children}
         </div>
       </div>
+
+      <style>{`
+        .accordion-trigger:hover {
+          background: rgba(74, 93, 78, 0.05);
+        }
+      `}</style>
     </div>
   )
 }

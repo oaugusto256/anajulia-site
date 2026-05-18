@@ -41,6 +41,7 @@ export function Approach() {
           href={approach.cta.href}
           target="_blank"
           rel="noopener noreferrer"
+          className="approach-cta"
           style={{
             display: "inline-flex",
             alignItems: "center",
@@ -57,6 +58,12 @@ export function Approach() {
         >
           {approach.cta.label} →
         </a>
+
+        <style>{`
+          .approach-cta:hover {
+            background: var(--color-oliva) !important;
+          }
+        `}</style>
       </div>
     </section>
   )

@@ -76,6 +76,7 @@ export function FAQ() {
             href={faq.cta.href}
             target="_blank"
             rel="noopener noreferrer"
+            className="faq-ghost-cta"
             style={{
               display: "inline-block",
               fontFamily: "var(--font-inter)",
@@ -90,6 +91,13 @@ export function FAQ() {
             {faq.cta.label}
           </a>
         </div>
+
+        <style>{`
+          .faq-ghost-cta:hover {
+            background: var(--color-preto);
+            color: var(--color-offwhite);
+          }
+        `}</style>
       </div>
     </section>
   )
