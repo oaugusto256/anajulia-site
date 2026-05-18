@@ -1,18 +1,18 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import { nav, brand } from "@/content/site-content"
-import { NavDrawer } from "@/components/ui/nav-drawer"
+import { useState, useEffect } from "react";
+import { nav, brand } from "@/content/site-content";
+import { NavDrawer } from "@/components/ui/nav-drawer";
 
 export function Nav() {
-  const [drawerOpen, setDrawerOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 8)
-    window.addEventListener("scroll", handleScroll, { passive: true })
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    const handleScroll = () => setScrolled(window.scrollY > 8);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
@@ -61,16 +61,28 @@ export function Nav() {
               {brand.symbol}
             </div>
             <div>
-              <div style={{ fontFamily: "var(--font-playfair)", fontSize: 17, color: "var(--color-preto)", lineHeight: 1.2 }}>
-                {brand.name}
-              </div>
               <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                <span style={{ fontFamily: "var(--font-cormorant)", fontStyle: "italic", fontSize: 14, color: "var(--color-oliva)", lineHeight: 1 }}>
+                <span
+                  style={{
+                    fontFamily: "var(--font-cormorant)",
+                    fontStyle: "italic",
+                    fontSize: 14,
+                    color: "var(--color-oliva)",
+                    lineHeight: 1,
+                  }}
+                >
                   {brand.kicker}
                 </span>
-                <span style={{ fontFamily: "var(--font-inter)", fontSize: 11, textTransform: "uppercase", letterSpacing: "0.1em", color: "var(--color-cinza)", lineHeight: 1 }}>
-                  {brand.sub}
-                </span>
+              </div>
+              <div
+                style={{
+                  fontFamily: "var(--font-playfair)",
+                  fontSize: 17,
+                  color: "var(--color-preto)",
+                  lineHeight: 1.2,
+                }}
+              >
+                {brand.name}
               </div>
             </div>
           </div>
@@ -137,7 +149,14 @@ export function Nav() {
               color: "var(--color-preto)",
             }}
           >
-            <svg width="18" height="14" viewBox="0 0 18 14" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <svg
+              width="18"
+              height="14"
+              viewBox="0 0 18 14"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="1.5"
+            >
               <line x1="0" y1="1" x2="18" y2="1" />
               <line x1="0" y1="7" x2="18" y2="7" />
               <line x1="0" y1="13" x2="18" y2="13" />
@@ -177,5 +196,5 @@ export function Nav() {
         .nav-desktop-cta:hover { background: var(--color-oliva) !important; }
       `}</style>
     </>
-  )
+  );
 }

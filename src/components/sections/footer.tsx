@@ -92,9 +92,23 @@ export function Footer() {
           display: "flex", justifyContent: "space-between", alignItems: "center",
           flexWrap: "wrap", gap: 8,
         }}>
-          <span style={{ fontFamily: "var(--font-inter)", fontSize: 12.5, color: "rgba(253,251,247,0.55)" }}>
-            {footer.legal.copyright.replace("{YEAR}", String(year))}
-          </span>
+          <div style={{ display: "flex", alignItems: "center", flexWrap: "wrap", gap: "8px 20px" }}>
+            <span style={{ fontFamily: "var(--font-inter)", fontSize: 12.5, color: "rgba(253,251,247,0.55)" }}>
+              {footer.legal.copyright.replace("{YEAR}", String(year))}
+            </span>
+            <span style={{ fontFamily: "var(--font-inter)", fontSize: 12.5, color: "rgba(253,251,247,0.35)" }}>·</span>
+            <span style={{ fontFamily: "var(--font-inter)", fontSize: 12.5, color: "rgba(253,251,247,0.55)" }}>
+              Desenvolvido por{" "}
+              <a
+                href="https://github.com/oaugusto256"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "rgba(253,251,247,0.7)", textDecoration: "underline", textUnderlineOffset: 3 }}
+              >
+                Otavio Augusto
+              </a>
+            </span>
+          </div>
           <span style={{ fontFamily: "var(--font-inter)", fontSize: 12.5, color: "rgba(253,251,247,0.55)" }}>
             {footer.legal.registry}
           </span>

@@ -1,4 +1,4 @@
-import { reviews } from "@/content/site-content"
+import { reviews } from "@/content/site-content";
 
 export function Testimonials() {
   return (
@@ -36,7 +36,6 @@ export function Testimonials() {
             gap: 12,
           }}
         >
-          <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--color-cinza)", flexShrink: 0 }} />
           {reviews.eyebrow}
         </p>
 
@@ -109,5 +108,5 @@ export function Testimonials() {
         </div>
       </div>
     </section>
-  )
+  );
 }

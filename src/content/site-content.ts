@@ -125,15 +125,14 @@ export const nav = {
     { label: "Trajetória", href: "#sobre" },
     { label: "Abordagem", href: "#abordagem" },
     { label: "Serviços", href: "#servicos" },
-    { label: "FAQ", href: "#faq" },
+    { label: "Dúvidas", href: "#faq" },
     { label: "Contato", href: "#contato" },
   ],
   cta: {
     label: "Agendar conversa",
     href: "https://wa.me/5551982831876?text=Ol%C3%A1%2C%20Ana%20Julia.%20Vi%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20conversa%20inicial.",
     variant: "primary",
-    whatsappMessage:
-      "Olá, Ana Julia. Vi seu site e gostaria de agendar uma conversa inicial.",
+    whatsappMessage: "Olá, Ana Julia. Vi seu site e gostaria de agendar uma conversa inicial.",
   } satisfies CTA,
   layout: {
     desktopColumns: 3, // brand | links | cta
@@ -160,16 +159,14 @@ export const hero = {
     italic: "saúde mental.", // Playfair italic, cor oliva, mesmo tamanho do título
   },
   /** Texto plano para SEO/SSR: */
-  titlePlain:
-    "Escuta profunda, suporte técnico e emocional para a sua saúde mental.",
+  titlePlain: "Escuta profunda, suporte técnico e emocional para a sua saúde mental.",
   subtitle:
     "Para quem busca segurança e sentido diante das exigências da vida moderna, do trabalho e da parentalidade.",
   cta: {
     label: "Agendar conversa inicial",
     href: "https://wa.me/5551982831876?text=Ol%C3%A1%2C%20Ana%20Julia.%20Vi%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20conversa%20inicial.",
     variant: "primary",
-    whatsappMessage:
-      "Olá, Ana Julia. Vi seu site e gostaria de agendar uma conversa inicial.",
+    whatsappMessage: "Olá, Ana Julia. Vi seu site e gostaria de agendar uma conversa inicial.",
   } satisfies CTA,
   photo: {
     src: "fotos/IMG_8209.jpg",
@@ -256,10 +253,8 @@ export const support = {
 export const about = {
   eyebrow: "Quem é Ana Julia",
   title: "Psicóloga, especialista em saúde mental e mãe.",
-  lead:
-    "Unindo a densidade da Residência Hospitalar a mais de 5 anos de experiência na gestão de saúde mental corporativa, ajudo adultos a (re)conquistarem segurança emocional para viver com mais consciência e leveza.",
-  body:
-    "Minha prática é pautada no acolhimento genuíno e na escuta ativa, integrando o rigor técnico a orientações práticas para a vida real. Como mãe e profissional, compreendo as pressões que a carreira e a parentalidade impõem, oferecendo o suporte necessário para que você atravesse seus desafios com clareza.",
+  lead: "Unindo a densidade da Residência Hospitalar a mais de 5 anos de experiência na gestão de saúde mental corporativa, ajudo adultos a (re)conquistarem segurança emocional para viver com mais consciência e leveza.",
+  body: "Minha prática é pautada no acolhimento genuíno e na escuta ativa, integrando o rigor técnico a orientações práticas para a vida real. Como mãe e profissional, compreendo as pressões que a carreira e a parentalidade impõem, oferecendo o suporte necessário para que você atravesse seus desafios com clareza.",
   expandToggle: {
     closedLabel: "Conheça mais sobre a minha trajetória",
     openLabel: "Recolher trajetória",
@@ -331,8 +326,7 @@ export const approach = {
     label: "Agendar uma conversa comigo",
     href: "https://wa.me/5551982831876?text=Ol%C3%A1%2C%20Ana%20Julia.%20Vi%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20conversa%20inicial.",
     variant: "primary",
-    whatsappMessage:
-      "Olá, Ana Julia. Vi seu site e gostaria de agendar uma conversa inicial.",
+    whatsappMessage: "Olá, Ana Julia. Vi seu site e gostaria de agendar uma conversa inicial.",
   } satisfies CTA,
   layout: {
     desktopColumns: 1, // bloco único centralizado, max-width 780px
@@ -362,50 +356,43 @@ export const services = {
       id: "atendimento-online",
       icon: "monitor", // desktop / computador
       title: "Atendimento Psicológico Online",
-      body:
-        "Psicoterapia individual para adultos realizada de forma remota, com o mesmo rigor ético e profundidade do presencial, oferecendo flexibilidade e segurança para o cuidado com a saúde mental onde quer que você esteja.",
+      body: "Psicoterapia individual para adultos realizada de forma remota, com o mesmo rigor ético e profundidade do presencial, oferecendo flexibilidade e segurança para o cuidado com a saúde mental onde quer que você esteja.",
     },
     {
       id: "psicoterapia-adultos",
       icon: "person", // silhueta de pessoa única
       title: "Psicoterapia para Adultos",
-      body:
-        "Atendimento clínico individual com foco em suporte emocional, autoconhecimento e no manejo de questões fundamentais da vida, como ansiedade, estresse e conflitos pessoais. Um espaço seguro para desenvolver segurança emocional e clareza diante de decisões importantes.",
+      body: "Atendimento clínico individual com foco em suporte emocional, autoconhecimento e no manejo de questões fundamentais da vida, como ansiedade, estresse e conflitos pessoais. Um espaço seguro para desenvolver segurança emocional e clareza diante de decisões importantes.",
     },
     {
       id: "clinica-do-trabalho",
       icon: "briefcase", // pasta com alça
       title: "Clínica do Trabalho e Saúde Mental",
-      body:
-        "Atendimento especializado nos impactos do trabalho na saúde mental. Foco no acolhimento de sofrimentos relacionados a exigências, pressões e conflitos no ambiente de trabalho, visando a prevenção do adoecimento e o fortalecimento do bem-estar emocional do profissional.",
+      body: "Atendimento especializado nos impactos do trabalho na saúde mental. Foco no acolhimento de sofrimentos relacionados a exigências, pressões e conflitos no ambiente de trabalho, visando a prevenção do adoecimento e o fortalecimento do bem-estar emocional do profissional.",
     },
     {
       id: "burnout",
       icon: "person-fatigue", // pessoa com sinais de exaustão acima da cabeça
       title: "Acompanhamento em Burnout",
-      body:
-        "Intervenção clínica especializada para o esgotamento profissional (Burnout). Trabalho direcionado à recuperação da energia vital, manejo do estresse crônico e construção de novas formas de se posicionar diante das demandas profissionais, respeitando os limites da saúde psíquica.",
+      body: "Intervenção clínica especializada para o esgotamento profissional (Burnout). Trabalho direcionado à recuperação da energia vital, manejo do estresse crônico e construção de novas formas de se posicionar diante das demandas profissionais, respeitando os limites da saúde psíquica.",
     },
     {
       id: "psicoterapia-maes",
       icon: "person-with-child", // adulto segurando criança no colo
       title: "Psicoterapia para Mães",
-      body:
-        "Espaço dedicado às mulheres na travessia da maternidade, desde a gestação até o retorno ao trabalho pós-licença. Foco nos desafios da nova identidade, na ambivalência dos sentimentos e na busca por equilíbrio entre os múltiplos papéis (mãe, mulher e profissional).",
+      body: "Espaço dedicado às mulheres na travessia da maternidade, desde a gestação até o retorno ao trabalho pós-licença. Foco nos desafios da nova identidade, na ambivalência dos sentimentos e na busca por equilíbrio entre os múltiplos papéis (mãe, mulher e profissional).",
     },
     {
       id: "luto-transicoes",
       icon: "horizon", // ondas/horizonte com pequena luz
       title: "Luto e Transições de Vida",
-      body:
-        "Suporte especializado para pessoas em processos de perda, luto ou grandes mudanças de vida. Através de uma escuta aprofundada vinda da experiência hospitalar, auxilio na elaboração da dor e na ressignificação da trajetória pessoal diante de crises e rupturas.",
+      body: "Suporte especializado para pessoas em processos de perda, luto ou grandes mudanças de vida. Através de uma escuta aprofundada vinda da experiência hospitalar, auxilio na elaboração da dor e na ressignificação da trajetória pessoal diante de crises e rupturas.",
     },
     {
       id: "saude-mental-empresas",
       icon: "clipboard", // prancheta corporativa
       title: "Saúde Mental no Trabalho — Empresas e Instituições",
-      body:
-        "Palestras, Workshops e Consultoria em Saúde Mental. O foco é humanizar as relações de trabalho e prevenir o adoecimento psíquico dos indivíduos e organizações.",
+      body: "Palestras, Workshops e Consultoria em Saúde Mental. O foco é humanizar as relações de trabalho e prevenir o adoecimento psíquico dos indivíduos e organizações.",
     },
   ],
   layout: {
@@ -616,8 +603,7 @@ export const floatingWhatsapp = {
   /** Apenas ícone — texto foi REMOVIDO a pedido */
   href: "https://wa.me/5551982831876?text=Ol%C3%A1%2C%20Ana%20Julia.%20Vi%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20conversa%20inicial.",
   ariaLabel: "Agendar conversa pelo WhatsApp",
-  whatsappMessage:
-    "Olá, Ana Julia. Vi seu site e gostaria de agendar uma conversa inicial.",
+  whatsappMessage: "Olá, Ana Julia. Vi seu site e gostaria de agendar uma conversa inicial.",
   layout: {
     desktopColumns: 1,
     mobileColumns: 1,
@@ -635,8 +621,7 @@ export const floatingWhatsapp = {
 // ────────────────────────────────────────────────────────────────
 
 export const whatsappMessages = {
-  schedule:
-    "Olá, Ana Julia. Vi seu site e gostaria de agendar uma conversa inicial.",
+  schedule: "Olá, Ana Julia. Vi seu site e gostaria de agendar uma conversa inicial.",
   questions:
     "Olá, Ana Julia. Vi seu site e gostaria de tirar uma dúvida sobre como funciona o seu acompanhamento antes de agendar.",
 };

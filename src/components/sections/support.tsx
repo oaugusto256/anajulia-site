@@ -1,4 +1,4 @@
-import { support } from "@/content/site-content"
+import { support } from "@/content/site-content";
 
 export function Support() {
   return (
@@ -22,35 +22,32 @@ export function Support() {
       >
         {/* Pull-quote */}
         <div>
+          <span
+            aria-hidden="true"
+            style={{
+              fontFamily: "var(--font-cormorant)",
+              fontStyle: "italic",
+              fontSize: "8rem",
+              color: "var(--color-oliva)",
+              lineHeight: 0.6,
+            }}
+          >
+            &ldquo;
+          </span>
           <p
             style={{
               fontFamily: "var(--font-cormorant)",
               fontStyle: "italic",
               fontWeight: 300,
               fontSize: "clamp(1.6rem, 3vw, 2.4rem)",
-              lineHeight: 1.25,
+              lineHeight: 1.15,
               color: "var(--color-preto)",
               maxWidth: "22ch",
               margin: 0,
               position: "relative",
-              paddingTop: "2.5rem",
+              paddingTop: "0.5rem",
             }}
           >
-            <span
-              aria-hidden="true"
-              style={{
-                position: "absolute",
-                top: 0,
-                left: 0,
-                fontFamily: "var(--font-cormorant)",
-                fontStyle: "italic",
-                fontSize: "3.2em",
-                color: "var(--color-oliva)",
-                lineHeight: 0.6,
-              }}
-            >
-              "
-            </span>
             {support.pullQuote}
           </p>
         </div>
@@ -98,7 +95,9 @@ export function Support() {
                   }}
                 />
                 <span>
-                  <strong style={{ color: "var(--color-preto)", fontWeight: 600 }}>{bullet.strong}</strong>
+                  <strong style={{ color: "var(--color-preto)", fontWeight: 600 }}>
+                    {bullet.strong}
+                  </strong>
                   {bullet.rest}
                 </span>
               </li>
@@ -116,5 +115,5 @@ export function Support() {
         }
       `}</style>
     </section>
-  )
+  );
 }

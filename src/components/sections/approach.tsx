@@ -1,4 +1,4 @@
-import { approach } from "@/content/site-content"
+import { approach } from "@/content/site-content";
 
 export function Approach() {
   return (
@@ -21,18 +21,52 @@ export function Approach() {
           gap: 24,
         }}
       >
-        <p style={{ fontFamily: "var(--font-inter)", fontSize: 12, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--color-oliva)", margin: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 12 }}>
-          <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--color-oliva)", flexShrink: 0 }} />
+        <p
+          style={{
+            fontFamily: "var(--font-inter)",
+            fontSize: 12,
+            fontWeight: 500,
+            textTransform: "uppercase",
+            letterSpacing: "0.18em",
+            color: "var(--color-oliva)",
+            margin: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 12,
+          }}
+        >
           {approach.eyebrow}
         </p>
 
-        <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.9rem, 3.5vw, 3rem)", fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.025em", color: "var(--color-preto)", margin: 0, textWrap: "balance" as const, maxWidth: "20ch" }}>
+        <h2
+          style={{
+            fontFamily: "var(--font-playfair)",
+            fontSize: "clamp(1.9rem, 3.5vw, 3rem)",
+            fontWeight: 500,
+            lineHeight: 1.1,
+            letterSpacing: "-0.025em",
+            color: "var(--color-preto)",
+            margin: 0,
+            textWrap: "balance" as const,
+            maxWidth: "20ch",
+          }}
+        >
           {approach.title}
         </h2>
 
         <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: "60ch" }}>
           {approach.body.map((para, i) => (
-            <p key={i} style={{ fontFamily: "var(--font-inter)", fontSize: 16, lineHeight: 1.65, color: "var(--color-cinza)", margin: 0 }}>
+            <p
+              key={i}
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontSize: 16,
+                lineHeight: 1.65,
+                color: "var(--color-cinza)",
+                margin: 0,
+              }}
+            >
               {para}
             </p>
           ))}
@@ -67,5 +101,5 @@ export function Approach() {
         `}</style>
       </div>
     </section>
-  )
+  );
 }
