@@ -1,11 +1,11 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { about } from "@/content/site-content"
+import { useState } from "react";
+import Image from "next/image";
+import { about } from "@/content/site-content";
 
 export function About() {
-  const [expanded, setExpanded] = useState(false)
+  const [expanded, setExpanded] = useState(false);
 
   return (
     <section
@@ -48,7 +48,6 @@ export function About() {
               }}
             />
           </div>
-
         </div>
 
         {/* Text */}
@@ -67,7 +66,15 @@ export function About() {
               gap: 12,
             }}
           >
-            <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--color-oliva)", flexShrink: 0 }} />
+            <span
+              style={{
+                display: "inline-block",
+                width: 28,
+                height: 1,
+                background: "var(--color-oliva)",
+                flexShrink: 0,
+              }}
+            />
             {about.eyebrow}
           </p>
 
@@ -90,8 +97,8 @@ export function About() {
             style={{
               fontFamily: "var(--font-cormorant)",
               fontStyle: "italic",
-              fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
-              lineHeight: 1.55,
+              fontSize: "clamp(1.2rem, 1.4vw, 1.2rem)",
+              lineHeight: 1.25,
               color: "var(--color-preto)",
               margin: 0,
             }}
@@ -174,10 +181,7 @@ export function About() {
               </p>
 
               {about.trajectory.sections.map((section, i) => (
-                <div
-                  key={i}
-                  style={{ display: "flex", flexDirection: "column", gap: 16 }}
-                >
+                <div key={i} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                   <h4
                     style={{
                       fontFamily: "var(--font-playfair)",
@@ -243,5 +247,5 @@ export function About() {
         }
       `}</style>
     </section>
-  )
+  );
 }

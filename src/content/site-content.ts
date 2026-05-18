@@ -252,7 +252,7 @@ export const support = {
 
 export const about = {
   eyebrow: "Quem é Ana Julia",
-  title: "Psicóloga, especialista em saúde mental e mãe.",
+  title: "Psicóloga, especialista em saúde mental, mãe...",
   lead: "Unindo a densidade da Residência Hospitalar a mais de 5 anos de experiência na gestão de saúde mental corporativa, ajudo adultos a (re)conquistarem segurança emocional para viver com mais consciência e leveza.",
   body: "Minha prática é pautada no acolhimento genuíno e na escuta ativa, integrando o rigor técnico a orientações práticas para a vida real. Como mãe e profissional, compreendo as pressões que a carreira e a parentalidade impõem, oferecendo o suporte necessário para que você atravesse seus desafios com clareza.",
   expandToggle: {

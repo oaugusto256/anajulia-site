@@ -46,7 +46,7 @@ export function Mission() {
             fontSize: "clamp(1.4rem, 2.6vw, 2rem)",
             lineHeight: 1.35,
             color: "rgba(253,251,247,0.95)",
-            maxWidth: "36ch",
+            maxWidth: "65ch",
             margin: "0 auto",
             textAlign: "center",
           }}

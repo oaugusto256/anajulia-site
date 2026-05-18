@@ -185,7 +185,7 @@ export function Footer() {
             >
               Desenvolvido por{" "}
               <a
-                href="https://github.com/oaugusto256"
+                href="https://oaugusto256.github.io"
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{

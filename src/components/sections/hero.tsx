@@ -1,5 +1,5 @@
-import Image from "next/image"
-import { hero } from "@/content/site-content"
+import Image from "next/image";
+import { hero } from "@/content/site-content";
 
 export function Hero() {
   return (
@@ -22,7 +22,15 @@ export function Hero() {
       >
         {/* Photo — shown first on mobile via CSS order */}
         <div className="hero-photo-wrap" style={{ position: "relative", maxWidth: 560 }}>
-          <div style={{ borderRadius: 6, overflow: "hidden", aspectRatio: "4/5", position: "relative", background: "var(--color-oliva-soft)" }}>
+          <div
+            style={{
+              borderRadius: 6,
+              overflow: "hidden",
+              aspectRatio: "4/5",
+              position: "relative",
+              background: "var(--color-oliva-soft)",
+            }}
+          >
             <Image
               src="/fotos/IMG_8209.jpg"
               alt={hero.photo.alt}
@@ -55,17 +63,42 @@ export function Hero() {
               zIndex: 2,
             }}
           >
-            <span style={{ fontFamily: "var(--font-inter)", fontSize: 9, textTransform: "uppercase", letterSpacing: "0.15em", color: "var(--color-cinza)" }}>
+            <span
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontSize: 9,
+                textTransform: "uppercase",
+                letterSpacing: "0.15em",
+                color: "var(--color-cinza)",
+              }}
+            >
               Desde
             </span>
-            <span style={{ fontFamily: "var(--font-playfair)", fontSize: 22, color: "var(--color-oliva)", lineHeight: 1 }}>
+            <span
+              style={{
+                fontFamily: "var(--font-playfair)",
+                fontSize: 22,
+                color: "var(--color-oliva)",
+                lineHeight: 1,
+              }}
+            >
               2018
             </span>
-            <span style={{ fontFamily: "var(--font-playfair)", fontSize: 11, color: "var(--color-oliva)", lineHeight: 1.3, maxWidth: 80, textAlign: "center" }}>
-              {hero.stamp.line1}<br />{hero.stamp.line2}
+            <span
+              style={{
+                fontFamily: "var(--font-playfair)",
+                fontSize: 11,
+                color: "var(--color-oliva)",
+                lineHeight: 1.3,
+                maxWidth: 80,
+                textAlign: "center",
+              }}
+            >
+              {hero.stamp.line1}
+              <br />
+              {hero.stamp.line2}
             </span>
           </div>
-
         </div>
 
         {/* Text column */}
@@ -84,7 +117,15 @@ export function Hero() {
               margin: 0,
             }}
           >
-            <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--color-oliva)", flexShrink: 0 }} />
+            <span
+              style={{
+                display: "inline-block",
+                width: 28,
+                height: 1,
+                background: "var(--color-oliva)",
+                flexShrink: 0,
+              }}
+            />
             {hero.eyebrow}
           </p>
 
@@ -140,28 +181,6 @@ export function Hero() {
             >
               {hero.cta.label} →
             </a>
-            <span
-              style={{
-                fontFamily: "var(--font-inter)",
-                fontSize: 13,
-                color: "var(--color-cinza)",
-                display: "flex",
-                alignItems: "center",
-                gap: 6,
-              }}
-            >
-              <span
-                style={{
-                  display: "inline-block",
-                  width: 6,
-                  height: 6,
-                  borderRadius: "50%",
-                  background: "var(--color-oliva)",
-                  flexShrink: 0,
-                }}
-              />
-              Atendimento online · de onde você estiver
-            </span>
           </div>
 
           {/* Metrics */}
@@ -176,9 +195,9 @@ export function Hero() {
             }}
           >
             {hero.metrics.map((m) => {
-              const hasSup = m.value.endsWith("+") || m.value.endsWith("%")
-              const base = hasSup ? m.value.slice(0, -1) : m.value
-              const sup = hasSup ? m.value.slice(-1) : null
+              const hasSup = m.value.endsWith("+") || m.value.endsWith("%");
+              const base = hasSup ? m.value.slice(0, -1) : m.value;
+              const sup = hasSup ? m.value.slice(-1) : null;
               return (
                 <div key={m.label}>
                   <div
@@ -191,7 +210,9 @@ export function Hero() {
                     }}
                   >
                     {base}
-                    {sup && <sup style={{ color: "var(--color-oliva)", fontSize: "0.55em" }}>{sup}</sup>}
+                    {sup && (
+                      <sup style={{ color: "var(--color-oliva)", fontSize: "0.55em" }}>{sup}</sup>
+                    )}
                   </div>
                   <div
                     style={{
@@ -204,7 +225,7 @@ export function Hero() {
                     {m.label}
                   </div>
                 </div>
-              )
+              );
             })}
           </div>
         </div>
@@ -245,5 +266,5 @@ export function Hero() {
         }
       `}</style>
     </section>
-  )
+  );
 }
