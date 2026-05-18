@@ -27,6 +27,7 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://psicoanajulia.com.br"),
   title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis",
   description:
     "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
@@ -39,17 +40,66 @@ export const metadata: Metadata = {
     "psicologia sistêmica",
     "supervisão clínica para psicólogos",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis",
     description:
       "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho.",
+    url: "https://psicoanajulia.com.br",
     locale: "pt_BR",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis",
+    description:
+      "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: { rel: "manifest", url: "/site.webmanifest" },
   },
   robots: {
     index: true,
     follow: true,
   },
+}
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Psychologist",
+  name: "Ana Julia Vognach",
+  inLanguage: "pt-BR",
+  description:
+    "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
+  url: "https://psicoanajulia.com.br",
+  telephone: "+5551982831876",
+  priceRange: "$$",
+  hasCredential: "CRP/SC 12/30269",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Florianópolis",
+    addressRegion: "SC",
+    addressCountry: "BR",
+  },
+  areaServed: ["Florianópolis", "Sul da Ilha", "Campeche"],
+  knowsAbout: [
+    "burnout",
+    "maternidade",
+    "luto",
+    "saúde mental no trabalho",
+    "psicoterapia para adultos",
+    "psicologia sistêmica",
+  ],
+  sameAs: ["https://maps.app.goo.gl/yx6VRRiSPBZc5SBH7?g_st=iw"],
 }
 
 export default function RootLayout({
@@ -60,6 +110,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} ${cormorant.variable}`}>
       <body suppressHydrationWarning className="bg-offwhite font-body antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <Script
