@@ -182,7 +182,7 @@ export const hero = {
   metrics: [
     { value: "5+", label: "anos em saúde mental corporativa" },
     { value: "CRP 12/30269", label: "registro ativo no Conselho" },
-    { value: "100%", label: "online · de onde você estiver" },
+    { value: "Online", label: "e presencial em Florianópolis" },
   ],
   layout: {
     desktopColumns: 2, // texto à esquerda · foto à direita
@@ -348,7 +348,7 @@ export const approach = {
 
 export const services = {
   eyebrow: "Serviços",
-  title: "Sete frentes de cuidado.",
+  title: "Oito frentes de cuidado.",
   intro:
     "Atendimento clínico individual, online, com o mesmo rigor ético e profundidade do presencial. Cada serviço pode ser combinado de forma personalizada, no seu tempo, dentro da nossa relação terapêutica.",
   items: [
@@ -380,13 +380,19 @@ export const services = {
       id: "psicoterapia-maes",
       icon: "person-with-child", // adulto segurando criança no colo
       title: "Psicoterapia para Mães",
-      body: "Espaço dedicado às mulheres na travessia da maternidade, desde a gestação até o retorno ao trabalho pós-licença. Foco nos desafios da nova identidade, na ambivalência dos sentimentos e na busca por equilíbrio entre os múltiplos papéis (mãe, mulher e profissional).",
+      body: "Espaço dedicado às mulheres na travessia da maternidade, desde a gestação até o retorno ao trabalho pós-licença. Foco nos desafios da nova identidade, na ambivalência dos sentimentos e na busca por equilíbrio entre os múltiplos papéis (mãe, mulher, companheira, profissional...).",
     },
     {
       id: "luto-transicoes",
       icon: "horizon", // ondas/horizonte com pequena luz
       title: "Luto e Transições de Vida",
       body: "Suporte especializado para pessoas em processos de perda, luto ou grandes mudanças de vida. Através de uma escuta aprofundada vinda da experiência hospitalar, auxilio na elaboração da dor e na ressignificação da trajetória pessoal diante de crises e rupturas.",
+    },
+    {
+      id: "acolhimento-orientacoes",
+      icon: "compass",
+      title: "Acolhimento e Orientações Práticas",
+      body: "Um formato de atendimento focado e objetivo para momentos de tomada de decisão e crises pontuais. Ideal para quem busca clareza imediata para resolver impasses específicos na carreira, na rotina familiar ou nas relações, sem a necessidade inicial de um processo terapêutico de longo prazo.",
     },
     {
       id: "saude-mental-empresas",
@@ -404,7 +410,7 @@ export const services = {
     notes: [
       "Accordion com apenas 1 item aberto por vez",
       "Cada item: ícone outline oliva (28px) + título serif + chevron (+)",
-      "Numeração 01–07 foi REMOVIDA da lista",
+      "Numeração 01–08 foi REMOVIDA da lista",
       "Não há CTA ao final da seção",
       "Animação suave via grid-template-rows 0fr → 1fr",
     ],
@@ -569,7 +575,7 @@ export const footer = {
     {
       title: "Atendimento",
       links: [
-        { label: "100% online", href: null },
+        { label: "Online e presencial", href: null },
         { label: "Adultos · Brasil", href: null },
         { label: "Segunda a sexta", href: null },
         { label: "Resposta em até 24h", href: null },

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Monitor, User, Briefcase, BatteryLow, Baby, Sunset, ClipboardList } from "lucide-react";
+import { Monitor, User, Briefcase, BatteryLow, Baby, Sunset, ClipboardList, Compass } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { services } from "@/content/site-content";
 import { AccordionItem } from "@/components/ui/accordion-item";
@@ -14,6 +14,7 @@ const iconMap: Record<string, LucideIcon> = {
   "person-with-child": Baby,
   horizon: Sunset,
   clipboard: ClipboardList,
+  compass: Compass,
 };
 
 export function Services() {
