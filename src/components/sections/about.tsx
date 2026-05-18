@@ -62,8 +62,12 @@ export function About() {
               letterSpacing: "0.18em",
               color: "var(--color-oliva)",
               margin: 0,
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
             }}
           >
+            <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--color-oliva)", flexShrink: 0 }} />
             {about.eyebrow}
           </p>
 

@@ -41,7 +41,8 @@ export function Services() {
           style={{ display: "grid", gridTemplateColumns: "1fr", gap: 24, marginBottom: "clamp(40px, 5vw, 64px)" }}
         >
           <div>
-            <p style={{ fontFamily: "var(--font-inter)", fontSize: 12, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--color-oliva)", marginBottom: 12 }}>
+            <p style={{ fontFamily: "var(--font-inter)", fontSize: 12, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--color-oliva)", marginBottom: 12, display: "flex", alignItems: "center", gap: 12 }}>
+              <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--color-oliva)", flexShrink: 0 }} />
               {services.eyebrow}
             </p>
             <h2 style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.9rem, 3.5vw, 3rem)", fontWeight: 500, lineHeight: 1.1, letterSpacing: "-0.025em", color: "var(--color-preto)", margin: 0 }}>

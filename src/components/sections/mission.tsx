@@ -18,9 +18,13 @@ export function Mission() {
           letterSpacing: "0.18em",
           color: "rgba(253,251,247,0.8)",
           marginBottom: 32,
-          textAlign: "left",
-          alignSelf: "flex-start",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 12,
+          alignSelf: "center",
         }}>
+          <span style={{ display: "inline-block", width: 28, height: 1, background: "rgba(253,251,247,0.5)", flexShrink: 0 }} />
           {mission.eyebrow}
         </p>
 

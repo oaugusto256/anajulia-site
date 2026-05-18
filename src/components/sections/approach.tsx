@@ -21,7 +21,8 @@ export function Approach() {
           gap: 24,
         }}
       >
-        <p style={{ fontFamily: "var(--font-inter)", fontSize: 12, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--color-oliva)", margin: 0 }}>
+        <p style={{ fontFamily: "var(--font-inter)", fontSize: 12, fontWeight: 500, textTransform: "uppercase", letterSpacing: "0.18em", color: "var(--color-oliva)", margin: 0, display: "flex", alignItems: "center", justifyContent: "center", gap: 12 }}>
+          <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--color-oliva)", flexShrink: 0 }} />
           {approach.eyebrow}
         </p>
 

@@ -30,8 +30,13 @@ export function Testimonials() {
             letterSpacing: "0.12em",
             color: "var(--color-cinza)",
             margin: 0,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 12,
           }}
         >
+          <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--color-cinza)", flexShrink: 0 }} />
           {reviews.eyebrow}
         </p>
 

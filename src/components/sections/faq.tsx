@@ -29,7 +29,11 @@ export function FAQ() {
           letterSpacing: "0.18em",
           color: "var(--color-oliva)",
           marginBottom: 40,
+          display: "flex",
+          alignItems: "center",
+          gap: 12,
         }}>
+          <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--color-oliva)", flexShrink: 0 }} />
           {faq.eyebrow}
         </p>
 
@@ -94,8 +98,8 @@ export function FAQ() {
 
         <style>{`
           .faq-ghost-cta:hover {
-            background: var(--color-preto);
-            color: var(--color-offwhite);
+            background: var(--color-preto) !important;
+            color: var(--color-offwhite) !important;
           }
         `}</style>
       </div>
