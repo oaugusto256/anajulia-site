@@ -7,7 +7,7 @@ export async function Testimonials() {
   const reviewCards = placeData?.reviews ?? [];
   const placeId = process.env.GOOGLE_PLACE_ID ?? "";
   const mapsUrl = placeId
-    ? `https://www.google.com/maps/place/?q=place_id:${placeId}`
+    ? `https://www.google.com/maps/search/?api=1&query=Ana+Julia+Vognach+Psicóloga&query_place_id=${placeId}`
     : "https://www.google.com/maps";
 
   return (

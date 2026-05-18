@@ -5,9 +5,13 @@ export function Hero() {
   return (
     <section
       id="hero"
+      className="hero-section"
       style={{
         background: "var(--color-offwhite)",
-        padding: "clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px)",
+        paddingTop: "clamp(12px, 8vw, 100px)",
+        paddingBottom: "clamp(60px, 8vw, 100px)",
+        paddingLeft: "clamp(20px, 5vw, 60px)",
+        paddingRight: "clamp(20px, 5vw, 60px)",
       }}
     >
       <div
@@ -246,6 +250,9 @@ export function Hero() {
           }
           .hero-photo-wrap {
             max-width: 560px !important;
+          }
+          .hero-section {
+            padding-top: 32px !important;
           }
         }
         .hero-cta:hover { background: var(--color-oliva) !important; }

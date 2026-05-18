@@ -170,7 +170,8 @@ export function About() {
             >
               <p
                 style={{
-                  fontFamily: "var(--font-inter)",
+                  fontFamily: "var(--font-playfair)",
+                  fontStyle: "italic",
                   fontSize: 15,
                   lineHeight: 1.65,
                   color: "var(--color-cinza)",

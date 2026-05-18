@@ -51,7 +51,31 @@ export function Mission() {
             textAlign: "center",
           }}
         >
-          "{mission.quote}"
+          <span
+            aria-hidden="true"
+            style={{
+              fontFamily: "var(--font-playfair)",
+              fontStyle: "normal",
+              fontSize: "4rem",
+              color: "rgba(253,251,247,0.95)",
+              lineHeight: 0.5,
+            }}
+          >
+            &ldquo;
+          </span>
+          {mission.quote}
+          <span
+            aria-hidden="true"
+            style={{
+              fontFamily: "var(--font-playfair)",
+              fontStyle: "normal",
+              fontSize: "4rem",
+              color: "rgba(253,251,247,0.95)",
+              lineHeight: 0.5,
+            }}
+          >
+            &rdquo;
+          </span>
         </blockquote>
       </div>
     </section>
