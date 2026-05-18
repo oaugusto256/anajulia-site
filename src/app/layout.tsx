@@ -1,22 +1,23 @@
-import type { Metadata } from "next"
-import { Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google"
-import Script from "next/script"
-import "./globals.css"
-import { Nav } from "@/components/sections/nav"
-import { WhatsAppFloat } from "@/components/ui/whatsapp-float"
-import { ScrollTracker } from "@/components/ui/scroll-tracker"
+import type { Metadata } from "next";
+import { Analytics } from "@vercel/analytics/next";
+import { Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google";
+import Script from "next/script";
+import "./globals.css";
+import { Nav } from "@/components/sections/nav";
+import { WhatsAppFloat } from "@/components/ui/whatsapp-float";
+import { ScrollTracker } from "@/components/ui/scroll-tracker";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
-})
+});
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   display: "swap",
-})
+});
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -24,7 +25,7 @@ const cormorant = Cormorant_Garamond({
   style: ["normal", "italic"],
   variable: "--font-cormorant",
   display: "swap",
-})
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://psicoanajulia.com.br"),
@@ -71,7 +72,7 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-}
+};
 
 const jsonLd = {
   "@context": "https://schema.org",
@@ -100,13 +101,9 @@ const jsonLd = {
     "psicologia sistêmica",
   ],
   sameAs: ["https://maps.app.goo.gl/yx6VRRiSPBZc5SBH7?g_st=iw"],
-}
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} ${cormorant.variable}`}>
       <body suppressHydrationWarning className="bg-offwhite font-body antialiased">
@@ -134,7 +131,8 @@ export default function RootLayout({
         <Nav />
         {children}
         <WhatsAppFloat />
+        <Analytics />
       </body>
     </html>
-  )
+  );
 }
