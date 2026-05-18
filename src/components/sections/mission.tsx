@@ -1,26 +1,59 @@
-import { missionCopy } from "@/content/site-copy"
-import { SectionContainer } from "@/components/ui/section-container"
-import { WhatsAppButton } from "@/components/ui/whatsapp-button"
+import { mission } from "@/content/site-content";
 
 export function Mission() {
   return (
-    <SectionContainer className="bg-oliva-escuro">
-      <div className="mx-auto max-w-2xl text-center">
-        <p className="mb-4 text-xs font-medium uppercase tracking-[0.15em] text-offwhite/60">
-          {missionCopy.label}
+    <section
+      id="missao"
+      style={{
+        background: "var(--color-oliva)",
+        padding: "clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px)",
+      }}
+    >
+      <div
+        style={{
+          maxWidth: 1200,
+          margin: "0 auto",
+          textAlign: "center",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <p
+          style={{
+            fontFamily: "var(--font-inter)",
+            fontSize: 12,
+            fontWeight: 500,
+            textTransform: "uppercase",
+            letterSpacing: "0.18em",
+            color: "rgba(253,251,247,0.8)",
+            marginBottom: 32,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            gap: 12,
+            alignSelf: "center",
+          }}
+        >
+          {mission.eyebrow}
         </p>
-        <h2 className="font-heading mb-8 text-[clamp(2rem,4vw,3rem)] font-semibold leading-[1.1] text-offwhite">
-          {missionCopy.title}
-        </h2>
-        <p className="mb-10 text-base leading-[1.9] text-offwhite/80">
-          {missionCopy.content}
-        </p>
-        <WhatsAppButton
-          messageKey="schedule"
-          label={missionCopy.cta}
-          variant="inverse"
-        />
+
+        <blockquote
+          style={{
+            fontFamily: "var(--font-cormorant)",
+            fontStyle: "italic",
+            fontWeight: 300,
+            fontSize: "clamp(1.4rem, 2.6vw, 2rem)",
+            lineHeight: 1.35,
+            color: "rgba(253,251,247,0.95)",
+            maxWidth: "65ch",
+            margin: "0 auto",
+            textAlign: "center",
+          }}
+        >
+          "{mission.quote}"
+        </blockquote>
       </div>
-    </SectionContainer>
-  )
+    </section>
+  );
 }

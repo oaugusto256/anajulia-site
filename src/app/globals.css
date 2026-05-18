@@ -55,9 +55,15 @@
   --color-oliva-escuro: #3D4D40;
   --color-cinza: #555555;
   --color-linhas: #E5E5E5;
+  --color-gold: #C9B037;
 
   --font-heading: var(--font-playfair);
   --font-body: var(--font-inter);
+  --color-off-white-2: #F6F2EA;
+  --color-oliva-2: #5C7060;
+  --color-oliva-light: #7B8F7F;
+  --color-oliva-soft: #E8E9E1;
+  --font-cormorant: var(--font-cormorant);
 }
 
 :root {
