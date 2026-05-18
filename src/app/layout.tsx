@@ -73,6 +73,35 @@ export const metadata: Metadata = {
   },
 }
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Psychologist",
+  name: "Ana Julia Vognach",
+  inLanguage: "pt-BR",
+  description:
+    "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
+  url: "https://psicoanajulia.com.br",
+  telephone: "+5551982831876",
+  priceRange: "$$",
+  hasCredential: "CRP/SC 12/30269",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Florianópolis",
+    addressRegion: "SC",
+    addressCountry: "BR",
+  },
+  areaServed: ["Florianópolis", "Sul da Ilha", "Campeche"],
+  knowsAbout: [
+    "burnout",
+    "maternidade",
+    "luto",
+    "saúde mental no trabalho",
+    "psicoterapia para adultos",
+    "psicologia sistêmica",
+  ],
+  sameAs: ["https://maps.app.goo.gl/yx6VRRiSPBZc5SBH7?g_st=iw"],
+}
+
 export default function RootLayout({
   children,
 }: {
@@ -81,6 +110,10 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} ${cormorant.variable}`}>
       <body suppressHydrationWarning className="bg-offwhite font-body antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <Script
