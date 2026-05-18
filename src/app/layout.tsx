@@ -27,6 +27,7 @@ const cormorant = Cormorant_Garamond({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://psicoanajulia.com.br"),
   title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis",
   description:
     "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
@@ -39,12 +40,32 @@ export const metadata: Metadata = {
     "psicologia sistêmica",
     "supervisão clínica para psicólogos",
   ],
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis",
     description:
       "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho.",
+    url: "https://psicoanajulia.com.br",
     locale: "pt_BR",
     type: "website",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis",
+    description:
+      "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: "/apple-touch-icon.png",
+    other: { rel: "manifest", url: "/site.webmanifest" },
   },
   robots: {
     index: true,
