@@ -50,28 +50,46 @@ export async function Testimonials() {
         </p>
 
         {/* Stars + rating number + Google attribution */}
-        <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 8 }}>
+        {/* <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            justifyItems: "center",
+            gap: 8,
+          }}
+        >
+          <GoogleColorIcon />
+          <span
+            style={{
+              color: "var(--color-preto)",
+              fontFamily: "var(--font-playfair)",
+              fontSize: 18,
+              verticalAlign: "middle",
+            }}
+          >
+            {placeData ? placeData.rating.toFixed(1).replace(".", ",") : reviews.rating}
+          </span>
           <div
             aria-label={`${Math.round(placeData?.rating ?? reviews.stars)} estrelas`}
-            style={{ display: "flex", gap: 4, color: "var(--color-gold)", fontSize: 22 }}
+            style={{ display: "flex", gap: 4, color: "var(--color-gold)", fontSize: 16 }}
           >
             {Array.from({ length: Math.round(placeData?.rating ?? reviews.stars) }).map((_, i) => (
-              <span key={i} aria-hidden="true">★</span>
+              <span key={i} aria-hidden="true">
+                ★
+              </span>
             ))}
           </div>
-          <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-            <span style={{ fontFamily: "var(--font-playfair)", fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 500, color: "var(--color-preto)", lineHeight: 1 }}>
-              {placeData ? placeData.rating.toFixed(1).replace(".", ",") : reviews.rating}
-            </span>
-            <span style={{ width: 1, height: 18, background: "var(--color-linhas)", display: "inline-block" }} />
-            <span style={{ display: "inline-flex", alignItems: "center", gap: 5 }}>
-              <GoogleColorIcon />
-              <span style={{ fontFamily: "var(--font-inter)", fontSize: 12.5, color: "var(--color-cinza)" }}>
-                no Google
-              </span>
-            </span>
-          </div>
-        </div>
+          <span
+            style={{
+              fontFamily: "var(--font-inter)",
+              fontSize: 12.5,
+              color: "var(--color-cinza)",
+            }}
+          >
+            Google Avaliações
+          </span>
+        </div> */}
 
         {/* Carousel with Google link at bottom, or static badge fallback */}
         {reviewCards.length > 0 ? (

@@ -220,7 +220,7 @@ export function TestimonialsCarousel({
         <span
           style={{ fontFamily: "var(--font-inter)", fontSize: 12.5, color: "var(--color-cinza)" }}
         >
-          Ver avaliações no Google
+          Ver todas avaliações
         </span>
       </a>
     </div>

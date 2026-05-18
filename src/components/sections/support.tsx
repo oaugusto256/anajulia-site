@@ -25,9 +25,9 @@ export function Support() {
           <span
             aria-hidden="true"
             style={{
-              fontFamily: "var(--font-cormorant)",
-              fontStyle: "italic",
-              fontSize: "8rem",
+              fontFamily: "var(--font-playfair)",
+              fontStyle: "normal",
+              fontSize: "6rem",
               color: "var(--color-oliva)",
               lineHeight: 0.6,
             }}
