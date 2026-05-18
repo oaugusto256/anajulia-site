@@ -49,42 +49,6 @@ export function About() {
             />
           </div>
 
-          {/* Caption overlay */}
-          <div
-            style={{
-              position: "absolute",
-              bottom: 16,
-              left: 16,
-              background: "rgba(253,251,247,0.92)",
-              backdropFilter: "blur(6px)",
-              borderRadius: 999,
-              padding: "6px 14px",
-              display: "flex",
-              alignItems: "center",
-              gap: 8,
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "var(--font-playfair)",
-                fontSize: 15,
-                color: "var(--color-oliva)",
-              }}
-            >
-              Ψ
-            </span>
-            <span
-              style={{
-                fontFamily: "var(--font-inter)",
-                fontSize: 11.5,
-                textTransform: "uppercase",
-                letterSpacing: "0.14em",
-                color: "var(--color-preto)",
-              }}
-            >
-              CRP 12/30269
-            </span>
-          </div>
         </div>
 
         {/* Text */}

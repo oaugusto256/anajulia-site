@@ -66,26 +66,6 @@ export function Hero() {
             </span>
           </div>
 
-          {/* Ribbon */}
-          <div
-            style={{
-              position: "absolute",
-              top: 20,
-              right: -10,
-              background: "var(--color-preto)",
-              color: "var(--color-offwhite)",
-              borderRadius: 999,
-              padding: "5px 14px",
-              fontFamily: "var(--font-inter)",
-              fontSize: 11,
-              textTransform: "uppercase",
-              letterSpacing: "0.18em",
-              zIndex: 2,
-              whiteSpace: "nowrap",
-            }}
-          >
-            CRP 12/30269
-          </div>
         </div>
 
         {/* Text column */}
@@ -143,6 +123,7 @@ export function Hero() {
               href={hero.cta.href}
               target="_blank"
               rel="noopener noreferrer"
+              className="hero-cta"
               style={{
                 display: "inline-flex",
                 alignItems: "center",
@@ -246,6 +227,7 @@ export function Hero() {
             max-width: 560px !important;
           }
         }
+        .hero-cta:hover { background: var(--color-oliva) !important; }
         @media (max-width: 979px) {
           .hero-stamp {
             width: 80px !important;
