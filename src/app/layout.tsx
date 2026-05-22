@@ -29,9 +29,9 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://psicoanajulia.com.br"),
-  title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis",
+  title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis e Online",
   description:
-    "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
+    "Psicoterapia para adultos em Florianópolis e online para todo Brasil e exterior. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
   keywords: [
     "psicóloga florianópolis",
     "psicóloga campeche",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis",
+    title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis e Online",
     description:
-      "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho.",
+      "Psicoterapia para adultos em Florianópolis e online para todo Brasil e exterior. Especialista em burnout, maternidade, luto e saúde mental no trabalho.",
     url: "https://psicoanajulia.com.br",
     locale: "pt_BR",
     type: "website",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis",
+    title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis e Online",
     description:
-      "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
+      "Psicoterapia para adultos em Florianópolis e online para todo Brasil e exterior. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
   },
   icons: {
     icon: [
@@ -80,7 +80,7 @@ const jsonLd = {
   name: "Ana Julia Vognach",
   inLanguage: "pt-BR",
   description:
-    "Psicoterapia para adultos em Florianópolis e online. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
+    "Psicoterapia para adultos em Florianópolis e online para todo Brasil e exterior. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
   url: "https://psicoanajulia.com.br",
   telephone: "+5551982831876",
   priceRange: "$$",
