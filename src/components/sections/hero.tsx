@@ -107,61 +107,72 @@ export function Hero() {
 
         {/* Text column */}
         <div className="hero-text" style={{ display: "flex", flexDirection: "column", gap: 24 }}>
-          <p
-            style={{
-              fontFamily: "var(--font-inter)",
-              fontSize: 12,
-              fontWeight: 500,
-              textTransform: "uppercase",
-              letterSpacing: "0.18em",
-              color: "var(--color-oliva)",
-              display: "flex",
-              alignItems: "center",
-              gap: 12,
-              margin: 0,
-            }}
-          >
-            <span
+          <div style={{ display: "flex", flexDirection: "column", gap: 4 }}>
+            <p
               style={{
-                display: "inline-block",
-                width: 28,
-                height: 1,
-                background: "var(--color-oliva)",
-                flexShrink: 0,
+                fontFamily: "var(--font-inter)",
+                fontSize: 12,
+                fontWeight: 500,
+                textTransform: "uppercase",
+                letterSpacing: "0.18em",
+                color: "var(--color-oliva)",
+                display: "flex",
+                alignItems: "center",
+                gap: 12,
+                margin: 0,
               }}
-            />
-            {hero.eyebrow}
-          </p>
+            >
+              <span
+                style={{
+                  display: "inline-block",
+                  width: 28,
+                  height: 1,
+                  background: "var(--color-oliva)",
+                  flexShrink: 0,
+                }}
+              />
+              {hero.eyebrow}
+            </p>
+          </div>
 
           <h1
             style={{
               fontFamily: "var(--font-playfair)",
-              fontSize: "clamp(2.4rem, 5.4vw, 4.6rem)",
+              fontSize: "clamp(1.4rem, 2.6vw, 2rem)",
               fontWeight: 500,
-              lineHeight: 1.04,
+              lineHeight: 1.3,
               letterSpacing: "-0.035em",
               color: "var(--color-preto)",
               margin: 0,
             }}
           >
-            {hero.title.plain}{" "}
-            <em style={{ fontStyle: "italic", color: "var(--color-oliva)" }}>
-              {hero.title.italic}
-            </em>
+            {hero.title.plain}
+            {hero.title.italic && (
+              <>
+                {" "}
+                <em style={{ fontStyle: "italic", color: "var(--color-oliva)" }}>
+                  {hero.title.italic}
+                </em>
+              </>
+            )}
           </h1>
 
-          <p
-            style={{
-              fontFamily: "var(--font-inter)",
-              fontSize: 16,
-              lineHeight: 1.65,
-              color: "var(--color-cinza)",
-              maxWidth: "56ch",
-              margin: 0,
-            }}
-          >
-            {hero.subtitle}
-          </p>
+          {(Array.isArray(hero.subtitle) ? hero.subtitle : [hero.subtitle]).map((p, i) => (
+            <p
+              key={i}
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontSize: 16,
+                lineHeight: 1.65,
+                color: "var(--color-cinza)",
+                maxWidth: "56ch",
+                margin: 0,
+                marginTop: i > 0 ? 2 : 0,
+              }}
+            >
+              {p}
+            </p>
+          ))}
 
           <div style={{ display: "flex", alignItems: "center", gap: 20, flexWrap: "wrap" }}>
             <a

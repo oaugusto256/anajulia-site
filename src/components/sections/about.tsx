@@ -168,32 +168,21 @@ export function About() {
                 paddingTop: 16,
               }}
             >
-              <p
-                style={{
-                  fontFamily: "var(--font-playfair)",
-                  fontStyle: "italic",
-                  fontSize: 15,
-                  lineHeight: 1.65,
-                  color: "var(--color-cinza)",
-                  margin: 0,
-                }}
-              >
-                {about.trajectory.intro}
-              </p>
-
               {about.trajectory.sections.map((section, i) => (
                 <div key={i} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
-                  <h4
-                    style={{
-                      fontFamily: "var(--font-playfair)",
-                      fontSize: "clamp(1.05rem, 1.5vw, 1.25rem)",
-                      fontWeight: 500,
-                      color: "var(--color-preto)",
-                      margin: 0,
-                    }}
-                  >
-                    {section.title}
-                  </h4>
+                  {section.title && (
+                    <h4
+                      style={{
+                        fontFamily: "var(--font-playfair)",
+                        fontSize: "clamp(1.05rem, 1.5vw, 1.25rem)",
+                        fontWeight: 500,
+                        color: "var(--color-preto)",
+                        margin: 0,
+                      }}
+                    >
+                      {section.title}
+                    </h4>
+                  )}
                   {section.body.map((para, j) => (
                     <p
                       key={j}

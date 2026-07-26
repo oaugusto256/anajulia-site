@@ -122,9 +122,9 @@ export const brand = {
 
 export const nav = {
   links: [
+    { label: "Como eu trabalho", href: "#abordagem" },
+    { label: "Como posso ajudar", href: "#servicos" },
     { label: "Trajetória", href: "#sobre" },
-    { label: "Abordagem", href: "#abordagem" },
-    { label: "Serviços", href: "#servicos" },
     { label: "Dúvidas", href: "#faq" },
     { label: "Contato", href: "#contato" },
   ],
@@ -155,13 +155,15 @@ export const nav = {
 export const hero = {
   eyebrow: "Psicologia Clínica",
   title: {
-    plain: "Escuta profunda, suporte técnico e emocional para a sua",
-    italic: "saúde mental.", // Playfair italic, cor oliva, mesmo tamanho do título
+    plain: "Há momentos em que a vida muda mais rápido do que conseguimos acompanhar.",
+    italic: "",
   },
   /** Texto plano para SEO/SSR: */
-  titlePlain: "Escuta profunda, suporte técnico e emocional para a sua saúde mental.",
-  subtitle:
-    "Para quem busca segurança e sentido diante das exigências da vida moderna, do trabalho e da parentalidade.",
+  titlePlain: "Há momentos em que a vida muda mais rápido do que conseguimos acompanhar.",
+  subtitle: [
+    "Conflitos, perdas, maternidade, desafios profissionais, adoecimento ou mudanças inesperadas podem gerar dúvidas, angústias e a sensação de que algo deixou de fazer sentido.",
+    "A psicoterapia é um espaço para compreender esse momento, cuidar do sofrimento e construir novas formas de seguir adiante.",
+  ],
   cta: {
     label: "Agendar conversa inicial",
     href: "https://wa.me/5551982831876?text=Ol%C3%A1%2C%20Ana%20Julia.%20Vi%20seu%20site%20e%20gostaria%20de%20agendar%20uma%20conversa%20inicial.",
@@ -239,7 +241,7 @@ export const support = {
     topDivider: true,
     notes: [
       "Pull-quote em Cormorant italic 300, 1.6–2.4rem",
-      "Aspas curvas decorativas (“) renderizadas grandes acima do texto, em oliva",
+      "Aspas curvas decorativas renderizadas grandes acima do texto, em oliva",
       "Lista usa bullets pontuais (6px, oliva) — sem numeração",
       "Cada item tem um <strong> seguido de texto regular",
     ],
@@ -251,32 +253,22 @@ export const support = {
 // ────────────────────────────────────────────────────────────────
 
 export const about = {
-  eyebrow: "Quem é Ana Julia",
-  title: "Psicóloga, especialista em saúde mental, mãe...",
-  lead: "Unindo a densidade da Residência Hospitalar a mais de 5 anos de experiência na gestão de saúde mental corporativa, ajudo adultos a (re)conquistarem segurança emocional para viver com mais consciência e leveza.",
-  body: "Minha prática é pautada no acolhimento genuíno e na escuta ativa, integrando o rigor técnico a orientações práticas para a vida real. Como mãe e profissional, compreendo as pressões que a carreira e a parentalidade impõem, oferecendo o suporte necessário para que você atravesse seus desafios com clareza.",
+  eyebrow: "Quem é a sua Psicóloga",
+  title: "Olá, sou Ana Julia",
+  lead: "Sou psicóloga clínica, especialista em Oncologia por meio de Residência Multiprofissional em Saúde.",
+  body: "Minha trajetória profissional foi construída em diferentes contextos de cuidado, incluindo hospitais, cuidados paliativos, saúde mental, saúde da família e programas de promoção da saúde em empresas.",
   expandToggle: {
     closedLabel: "Conheça mais sobre a minha trajetória",
     openLabel: "Recolher trajetória",
   },
   trajectory: {
-    intro:
-      "Olá, eu sou a Ana Julia Vognach. Sou psicóloga clínica e especialista em compreender as conexões profundas entre a vida pessoal e as exigências do trabalho.",
     sections: [
       {
-        title: "Do hospital ao corporativo",
+        title: "",
         body: [
-          "Minha jornada na Psicologia foi construída em cenários de alta complexidade. Por meio da Residência Multiprofissional, atuei em ambientes hospitalares e acompanhei de perto os ciclos de vida, do nascimento ao luto.",
-          "Essas experiências lapidaram o meu olhar e a minha escuta: aprendi que, mesmo nas situações mais difíceis, é possível construir caminhos de dignidade e sentido.",
-          "Ao longo de 5 anos, mergulhei na área da Saúde Mental do Trabalhador. Atuei em grandes empresas, geri projetos, ações em saúde e equipes de psicologia. Ali, compreendi na prática como as pressões por produtividade e as dinâmicas de trabalho podem impactar a nossa saúde mental e a nossa identidade pessoal e profissional.",
-        ],
-      },
-      {
-        title: "A travessia entre a maternidade e a clínica",
-        body: [
-          "Hoje, além da minha bagagem técnica, trago comigo a experiência da maternidade. Vivi na pele a ambivalência de assumir um cargo de gestão enquanto atravessava a licença-maternidade e, ao mesmo tempo, aprendia a ser mãe.",
-          "Foi nesse lugar de transformações que encontrei a coragem de fazer uma escolha: a de deixar a gestão corporativa e redirecionar minha energia para a minha clínica e a maternidade. Uma escolha pautada pelo que considero essencial na Psicologia: o respeito ao tempo de cada processo e aos afetos que nos sustentam.",
-          "Conheço o medo do desconhecido, a ansiedade de equilibrar múltiplos papéis e o desafio de redescobrir quem somos quando a vida ganha novos contornos. Hoje, utilizo toda essa bagagem técnica e humana para oferecer um espaço onde a sua história é vista de forma integral. Deixei a gestão corporativa para me dedicar à clínica justamente por acreditar que cada travessia merece um tempo de cuidado e respeito.",
+          "Ao longo desses anos, acompanhei pessoas e famílias em momentos marcados por intenso sofrimento, adoecimento, perdas, mudanças, conflitos e processos de reconstrução da própria vida.",
+          "Essas experiências fortaleceram uma compreensão que orienta minha prática clínica até hoje: o sofrimento humano nem sempre pode ser evitado, mas deve ser acolhido, compreendido e transformado quando encontra espaço para ser vivido e elaborado.",
+          "Atualmente realizo atendimentos psicológicos online para adolescentes, adultos e idosos, oferecendo um espaço ético, acolhedor e comprometido com a singularidade e as necessidades de cada pessoa.",
         ],
         cta: {
           label: "Agendar uma conversa comigo",
@@ -317,10 +309,10 @@ export const about = {
 
 export const approach = {
   eyebrow: "Como eu trabalho",
-  title: "Acolhimento genuíno, escuta ativa e orientações práticas.",
+  title: "Um espaço de escuta, reflexão e cuidado",
   body: [
-    "Defendo que a psicoterapia não deve ser apenas um lugar de fala, mas um espaço de construção conjunta. Minha prática une a densidade clínica com acolhimento genuíno, escuta ativa e orientações práticas.",
-    "Seja para lidar com o esgotamento profissional, elaborar um luto ou encontrar o seu lugar em uma nova fase da vida, estou aqui para caminharmos juntos em busca de mais leveza, presença e sentido.",
+    "A psicoterapia é um processo construído em conjunto, respeitando a singularidade, o tempo e as necessidades de cada pessoa.",
+    "Um espaço para compreender o sofrimento, ampliar a consciência sobre si mesmo e encontrar novas formas de lidar com os desafios da vida.",
   ],
   cta: {
     label: "Agendar uma conversa comigo",
@@ -347,59 +339,14 @@ export const approach = {
 // ────────────────────────────────────────────────────────────────
 
 export const services = {
-  eyebrow: "Serviços",
-  title: "Oito frentes de cuidado.",
+  eyebrow: "Como posso ajudar",
+  title: "Psicoterapia Individual Online",
   intro:
-    "Atendimento clínico individual, online, com o mesmo rigor ético e profundidade do presencial. Cada serviço pode ser combinado de forma personalizada, no seu tempo, dentro da nossa relação terapêutica.",
-  items: [
-    {
-      id: "atendimento-online",
-      icon: "monitor", // desktop / computador
-      title: "Atendimento Psicológico Online",
-      body: "Psicoterapia individual para adultos realizada de forma remota, com o mesmo rigor ético e profundidade do presencial, oferecendo flexibilidade e segurança para o cuidado com a saúde mental onde quer que você esteja.",
-    },
-    {
-      id: "psicoterapia-adultos",
-      icon: "person", // silhueta de pessoa única
-      title: "Psicoterapia para Adultos",
-      body: "Atendimento clínico individual com foco em suporte emocional, autoconhecimento e no manejo de questões fundamentais da vida, como ansiedade, estresse e conflitos pessoais. Um espaço seguro para desenvolver segurança emocional e clareza diante de decisões importantes.",
-    },
-    {
-      id: "clinica-do-trabalho",
-      icon: "briefcase", // pasta com alça
-      title: "Clínica do Trabalho e Saúde Mental",
-      body: "Atendimento especializado nos impactos do trabalho na saúde mental. Foco no acolhimento de sofrimentos relacionados a exigências, pressões e conflitos no ambiente de trabalho, visando a prevenção do adoecimento e o fortalecimento do bem-estar emocional do profissional.",
-    },
-    {
-      id: "burnout",
-      icon: "person-fatigue", // pessoa com sinais de exaustão acima da cabeça
-      title: "Acompanhamento em Burnout",
-      body: "Intervenção clínica especializada para o esgotamento profissional (Burnout). Trabalho direcionado à recuperação da energia vital, manejo do estresse crônico e construção de novas formas de se posicionar diante das demandas profissionais, respeitando os limites da saúde psíquica.",
-    },
-    {
-      id: "psicoterapia-maes",
-      icon: "person-with-child", // adulto segurando criança no colo
-      title: "Psicoterapia para Mães",
-      body: "Espaço dedicado às mulheres na travessia da maternidade, desde a gestação até o retorno ao trabalho pós-licença. Foco nos desafios da nova identidade, na ambivalência dos sentimentos e na busca por equilíbrio entre os múltiplos papéis (mãe, mulher, companheira, profissional...).",
-    },
-    {
-      id: "luto-transicoes",
-      icon: "horizon", // ondas/horizonte com pequena luz
-      title: "Luto e Transições de Vida",
-      body: "Suporte especializado para pessoas em processos de perda, luto ou grandes mudanças de vida. Através de uma escuta aprofundada vinda da experiência hospitalar, auxilio na elaboração da dor e na ressignificação da trajetória pessoal diante de crises e rupturas.",
-    },
-    {
-      id: "acolhimento-orientacoes",
-      icon: "compass",
-      title: "Acolhimento e Orientações Práticas",
-      body: "Um formato de atendimento focado e objetivo para momentos de tomada de decisão e crises pontuais. Ideal para quem busca clareza imediata para resolver impasses específicos na carreira, na rotina familiar ou nas relações, sem a necessidade inicial de um processo terapêutico de longo prazo.",
-    },
-    {
-      id: "saude-mental-empresas",
-      icon: "clipboard", // prancheta corporativa
-      title: "Saúde Mental no Trabalho — Empresas e Instituições",
-      body: "Palestras, Workshops e Consultoria em Saúde Mental. O foco é humanizar as relações de trabalho e prevenir o adoecimento psíquico dos indivíduos e organizações.",
-    },
+    "Atendimento psicológico para adolescentes, adultos e idosos realizado de forma online, com sigilo, acolhimento e o mesmo rigor ético do atendimento presencial.",
+  title2: "Psicoterapia de Grupo",
+  intro2: [
+    "Modalidade de atendimento que favorece a troca de experiências, o sentimento de pertencimento e a construção coletiva de recursos para lidar com os desafios da vida.",
+    "Os grupos serão organizados de acordo com temas e demandas específicas, sendo divulgados conforme a formação de novas turmas.",
   ],
   layout: {
     desktopColumns: 2, // head: eyebrow+título esquerda · intro direita
@@ -447,10 +394,12 @@ export const reviews = {
 // ────────────────────────────────────────────────────────────────
 
 export const mission = {
-  eyebrow: "Minha Missão",
-  /** Renderizar entre aspas curvas, em Cormorant italic, sobre fundo oliva */
-  quote:
-    "Minha missão é oferecer o suporte técnico e humano necessário para que você possa atravessar e lidar com os seus desafios com segurança. Através de uma escuta ativa e orientações práticas, ajudo você a fazer escolhas conscientes e a (re)conquistar sua clareza emocional em todas as esferas da vida.",
+  eyebrow: "No que acredito",
+  paragraphs: [
+    "Acredito que algumas experiências da vida nos transformam profundamente.",
+    "A psicoterapia não elimina as dificuldades da vida, mas pode ser um espaço para compreender o sofrimento, ampliar a consciência sobre si mesmo e construir formas mais autênticas de atravessar aquilo que se vive.",
+    "Cada história é única. Por isso, o processo terapêutico é construído de forma singular, respeitando o tempo, as necessidades e os recursos de cada pessoa.",
+  ],
   layout: {
     desktopColumns: 1, // sem cartão lateral (removido a pedido)
     mobileColumns: 1,
@@ -461,7 +410,7 @@ export const mission = {
       "Fundo verde-oliva sólido, texto em off-white",
       "Eyebrow alinhado à ESQUERDA",
       "Citação em itálico, centralizada APENAS no mobile",
-      "Aspas curvas (“ ”) integradas no próprio texto",
+      "Aspas curvas integradas no próprio texto",
       "Mission-card lateral (foco/modalidade/formação/registro) foi REMOVIDA",
       "Sem CTA — fechamento emocional",
       "Cormorant Garamond italic 300, line-height 1.35, font-size 1.4–2rem",
@@ -470,7 +419,44 @@ export const mission = {
 };
 
 // ────────────────────────────────────────────────────────────────
-// 8 · FAQ
+// 8 · AREAS (Áreas de Atuação)
+// ────────────────────────────────────────────────────────────────
+
+export const areas = {
+  eyebrow: "Áreas de Atuação",
+  items: [
+    {
+      id: "clinica-do-trabalho",
+      icon: "briefcase",
+      title: "Saúde mental e trabalho",
+      body: "Dificuldades emocionais relacionadas ao trabalho, autocobrança, insegurança, conflitos interpessoais, mudanças de carreira, sobrecarga, esgotamento emocional e burnout.",
+    },
+    {
+      id: "psicoterapia-maes",
+      icon: "person-with-child",
+      title: "Maternidade, parentalidade e família",
+      body: "Gestação, puerpério, adaptação à maternidade e à paternidade, orientação parental, conflitos familiares e desafios que acompanham a construção da vida em família.",
+    },
+    {
+      id: "psico-oncologia",
+      icon: "horizon",
+      title: "Psico-oncologia e Cuidados Paliativos",
+      body: [
+        "Acompanhamento psicológico para pacientes em tratamento oncológico, pessoas que convivem com doenças graves ou ameaçadoras da vida e seus familiares.",
+        "Um espaço de acolhimento para lidar com os impactos emocionais do adoecimento, com as mudanças trazidas pelo tratamento, as incertezas e os desafios relacionados aos cuidados paliativos.",
+      ],
+    },
+    {
+      id: "luto-transicoes",
+      icon: "horizon",
+      title: "Luto, perdas e adoecimento",
+      body: "Processos de luto, luto antecipatório, adoecimento próprio ou de familiares e outras experiências de perda ou mudança que impactam profundamente a vida, exigindo adaptação, reconstrução e novos significados.",
+    },
+  ],
+};
+
+// ────────────────────────────────────────────────────────────────
+// 9 · FAQ
 // ────────────────────────────────────────────────────────────────
 
 export const faq = {
@@ -480,7 +466,7 @@ export const faq = {
       id: "o-que-e",
       question: "O que é psicoterapia e será que eu preciso?",
       answer:
-        "A psicoterapia é um espaço de acolhimento que serve para todas as pessoas; não precisa existir um “problema” para iniciar. É um espaço para conhecer mais sobre si, se entender e aprender a se autorregular para viver com mais consciência, presença e leveza.",
+        "A psicoterapia é um espaço de acolhimento que serve para todas as pessoas; não precisa existir um problema para iniciar. É um espaço para conhecer mais sobre si, se entender e aprender a se autorregular para viver com mais consciência, presença e leveza.",
     },
     {
       id: "como-funciona-online",
@@ -504,7 +490,15 @@ export const faq = {
       id: "primeiro-encontro",
       question: "O que esperar do nosso primeiro encontro?",
       answer:
-        "O foco é o acolhimento. Não há roteiro rígido ou pressão para “saber por onde começar”. É um espaço para nos conhecermos e entendermos como posso te acompanhar nessa jornada.",
+        "O foco é o acolhimento. Não há roteiro rígido ou pressão para \"saber por onde começar\". É um espaço para nos conhecermos e entendermos como posso te acompanhar nessa jornada.",
+    },
+    {
+      id: "atendimento-empresas",
+      question: "Você também realiza atendimentos para empresas e instituições?",
+      answer: [
+        "Sim. Além da atuação clínica, também desenvolvo palestras, workshops e ações voltadas à promoção da saúde mental em empresas e instituições.",
+        "Os temas podem ser adaptados às necessidades de cada organização, com foco em prevenção do adoecimento psíquico, qualidade de vida, saúde emocional e fortalecimento das relações de trabalho.",
+      ],
     },
   ],
   cta: {

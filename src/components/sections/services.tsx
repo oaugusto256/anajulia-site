@@ -1,28 +1,6 @@
-"use client";
-
-import { useState } from "react";
-import { Monitor, User, Briefcase, BatteryLow, Baby, Sunset, ClipboardList, Compass } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 import { services } from "@/content/site-content";
-import { AccordionItem } from "@/components/ui/accordion-item";
-
-const iconMap: Record<string, LucideIcon> = {
-  monitor: Monitor,
-  person: User,
-  briefcase: Briefcase,
-  "person-fatigue": BatteryLow,
-  "person-with-child": Baby,
-  horizon: Sunset,
-  clipboard: ClipboardList,
-  compass: Compass,
-};
 
 export function Services() {
-  const [openId, setOpenId] = useState<string | null>(null);
-
-  function handleToggle(id: string) {
-    setOpenId((prev) => (prev === id ? null : id));
-  }
 
   return (
     <section
@@ -30,7 +8,10 @@ export function Services() {
       style={{
         background: "var(--color-off-white-2)",
         borderTop: "1px solid var(--color-linhas)",
-        padding: "clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px)",
+        paddingTop: "clamp(32px, 4vw, 52px)",
+        paddingBottom: "clamp(16px, 2vw, 24px)",
+        paddingLeft: "clamp(20px, 5vw, 60px)",
+        paddingRight: "clamp(20px, 5vw, 60px)",
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
@@ -53,7 +34,7 @@ export function Services() {
                 textTransform: "uppercase",
                 letterSpacing: "0.18em",
                 color: "var(--color-oliva)",
-                marginBottom: 12,
+                marginBottom: 28,
                 display: "flex",
                 alignItems: "center",
                 gap: 12,
@@ -73,7 +54,7 @@ export function Services() {
             <h2
               style={{
                 fontFamily: "var(--font-playfair)",
-                fontSize: "clamp(1.9rem, 3.5vw, 3rem)",
+                fontSize: "clamp(1.2rem, 2vw, 1.6rem)",
                 fontWeight: 500,
                 lineHeight: 1.1,
                 letterSpacing: "-0.025em",
@@ -83,77 +64,64 @@ export function Services() {
             >
               {services.title}
             </h2>
+            <p
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontSize: 16,
+                lineHeight: 1.65,
+                color: "var(--color-cinza)",
+                maxWidth: "48ch",
+                margin: 0,
+                marginTop: 10,
+              }}
+            >
+              {services.intro}
+            </p>
           </div>
-          <p
-            style={{
-              fontFamily: "var(--font-inter)",
-              fontSize: 16,
-              lineHeight: 1.65,
-              color: "var(--color-cinza)",
-              maxWidth: "48ch",
-              margin: 0,
-            }}
-          >
-            {services.intro}
-          </p>
+          <div className="services-group" style={{ marginTop: 32 }}>
+            <h2
+              style={{
+                fontFamily: "var(--font-playfair)",
+                fontSize: "clamp(1.2rem, 2vw, 1.6rem)",
+                fontWeight: 500,
+                lineHeight: 1.1,
+                letterSpacing: "-0.025em",
+                color: "var(--color-preto)",
+                margin: 0,
+              }}
+            >
+              {services.title2}
+            </h2>
+            {(Array.isArray(services.intro2) ? services.intro2 : [services.intro2]).map((p, i) => (
+              <p
+                key={i}
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: i === 0 ? 16 : 12,
+                  lineHeight: 1.65,
+                  color: i === 0 ? "var(--color-cinza)" : "var(--color-oliva-light)",
+                  maxWidth: "48ch",
+                  margin: 0,
+                  marginTop: i === 0 ? 10 : 6,
+                  fontStyle: i === 0 ? "normal" : "italic",
+                }}
+              >
+                {p}
+              </p>
+            ))}
+          </div>
         </div>
 
-        {/* Accordion list */}
-        <div>
-          {services.items.map((item) => {
-            const Icon = iconMap[item.icon] ?? Monitor;
-            return (
-              <AccordionItem
-                key={item.id}
-                id={item.id}
-                isOpen={openId === item.id}
-                onToggle={() => handleToggle(item.id)}
-                analyticsEvent="services_expand"
-                trigger={
-                  <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-                    <Icon
-                      size={28}
-                      strokeWidth={1.5}
-                      style={{ color: "var(--color-oliva)", flexShrink: 0 }}
-                    />
-                    <span
-                      style={{
-                        fontFamily: "var(--font-playfair)",
-                        fontSize: "clamp(1.15rem, 1.7vw, 1.5rem)",
-                        color: "var(--color-preto)",
-                        fontWeight: 500,
-                      }}
-                    >
-                      {item.title}
-                    </span>
-                  </div>
-                }
-              >
-                <p
-                  style={{
-                    fontFamily: "var(--font-inter)",
-                    fontSize: 16,
-                    lineHeight: 1.65,
-                    color: "var(--color-cinza)",
-                    paddingBottom: 24,
-                    paddingLeft: 48,
-                    maxWidth: "68ch",
-                    margin: 0,
-                  }}
-                >
-                  {item.body}
-                </p>
-              </AccordionItem>
-            );
-          })}
-        </div>
       </div>
 
       <style>{`
         @media (min-width: 900px) {
           .services-header {
             grid-template-columns: 1fr 1fr !important;
-            align-items: end;
+            align-items: start;
+          }
+          .services-group {
+            margin-top: 0 !important;
           }
         }
       `}</style>
