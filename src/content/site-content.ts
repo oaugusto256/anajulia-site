@@ -182,9 +182,9 @@ export const hero = {
     line2: "saúde mental",
   },
   metrics: [
-    { value: "5+", label: "anos em saúde mental corporativa" },
+    { value: "Residência Hospitalar", label: "em Oncologia" },
     { value: "CRP 12/30269", label: "registro ativo no Conselho" },
-    { value: "Online", label: "e presencial em Florianópolis" },
+    { value: "Atendimento Online", label: "e em Florianópolis" },
   ],
   layout: {
     desktopColumns: 2, // texto à esquerda · foto à direita
