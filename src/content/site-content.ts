@@ -184,7 +184,6 @@ export const hero = {
   metrics: [
     { value: "5+", label: "anos em saúde mental corporativa" },
     { value: "Residência Hospitalar", label: "em Oncologia" },
-    { value: "CRP 12/30269", label: "registro ativo no Conselho" },
     { value: "Atendimento Online", label: "e em Florianópolis" },
   ],
   layout: {

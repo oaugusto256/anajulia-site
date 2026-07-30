@@ -202,7 +202,7 @@ export function Hero() {
           <div
             style={{
               display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
+              gridTemplateColumns: "repeat(3, 1fr)",
               borderTop: "1px solid var(--color-linhas)",
               paddingTop: 32,
               marginTop: 8,
@@ -218,7 +218,7 @@ export function Hero() {
                   <div
                     style={{
                       fontFamily: "var(--font-playfair)",
-                      fontSize: "clamp(1.6rem, 2.6vw, 2.1rem)",
+                      fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
                       color: "var(--color-preto)",
                       lineHeight: 1,
                       marginBottom: 8,
