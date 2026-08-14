@@ -7,9 +7,10 @@ export const alt = "Ana Julia Vognach | Psicóloga Clínica em Florianópolis e 
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
+const imageBuffer = readFileSync(join(process.cwd(), "public/fotos/IMG_8209.jpg"));
+const base64Image = `data:image/jpeg;base64,${imageBuffer.toString("base64")}`;
+
 export default function Image() {
-  const imageBuffer = readFileSync(join(process.cwd(), "public/fotos/IMG_8209.jpg"));
-  const base64Image = `data:image/jpeg;base64,${imageBuffer.toString("base64")}`;
 
   return new ImageResponse(
     <div
