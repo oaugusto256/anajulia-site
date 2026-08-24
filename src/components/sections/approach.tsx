@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { approach } from "@/content/site-content";
 
 export function Approach() {
@@ -11,95 +12,129 @@ export function Approach() {
       }}
     >
       <div
+        className="approach-grid"
         style={{
-          maxWidth: 780,
+          maxWidth: 1100,
           margin: "0 auto",
-          textAlign: "center",
-          display: "flex",
-          flexDirection: "column",
+          display: "grid",
+          gridTemplateColumns: "1fr",
+          gap: "clamp(40px, 6vw, 80px)",
           alignItems: "center",
-          gap: 24,
         }}
       >
-        <p
-          style={{
-            fontFamily: "var(--font-inter)",
-            fontSize: 12,
-            fontWeight: 500,
-            textTransform: "uppercase",
-            letterSpacing: "0.18em",
-            color: "var(--color-oliva)",
-            margin: 0,
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            gap: 12,
-          }}
-        >
-          {approach.eyebrow}
-        </p>
-
-        <h2
-          style={{
-            fontFamily: "var(--font-playfair)",
-            fontSize: "clamp(1.9rem, 3.5vw, 3rem)",
-            fontWeight: 500,
-            lineHeight: 1.1,
-            letterSpacing: "-0.025em",
-            color: "var(--color-preto)",
-            margin: 0,
-            textWrap: "balance" as const,
-            maxWidth: "20ch",
-          }}
-        >
-          {approach.title}
-        </h2>
-
-        <div style={{ display: "flex", flexDirection: "column", gap: 16, maxWidth: "60ch" }}>
-          {approach.body.map((para, i) => (
-            <p
-              key={i}
+        {/* Text column */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+          <p
+            style={{
+              fontFamily: "var(--font-inter)",
+              fontSize: 12,
+              fontWeight: 500,
+              textTransform: "uppercase",
+              letterSpacing: "0.18em",
+              color: "var(--color-oliva)",
+              margin: 0,
+              display: "flex",
+              alignItems: "center",
+              gap: 12,
+            }}
+          >
+            <span
               style={{
-                fontFamily: "var(--font-inter)",
-                fontSize: 16,
-                lineHeight: 1.65,
-                color: "var(--color-cinza)",
-                margin: 0,
+                display: "inline-block",
+                width: 28,
+                height: 1,
+                background: "var(--color-oliva)",
+                flexShrink: 0,
               }}
-            >
-              {para}
-            </p>
-          ))}
+            />
+            {approach.eyebrow}
+          </p>
+
+          <h2
+            style={{
+              fontFamily: "var(--font-playfair)",
+              fontSize: "clamp(1.6rem, 2.8vw, 2.4rem)",
+              fontWeight: 500,
+              lineHeight: 1.2,
+              letterSpacing: "-0.025em",
+              color: "var(--color-preto)",
+              margin: 0,
+              textWrap: "balance" as const,
+            }}
+          >
+            {approach.title}
+          </h2>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {approach.body.map((para, i) => (
+              <p
+                key={i}
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: 16,
+                  lineHeight: 1.7,
+                  color: "var(--color-cinza)",
+                  margin: 0,
+                }}
+              >
+                {para}
+              </p>
+            ))}
+          </div>
+
+          <a
+            href={approach.cta.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="approach-cta"
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: 8,
+              background: "var(--color-oliva-light)",
+              color: "var(--color-offwhite)",
+              borderRadius: 999,
+              padding: "12px 24px",
+              fontFamily: "var(--font-inter)",
+              fontSize: 15,
+              fontWeight: 500,
+              textDecoration: "none",
+              alignSelf: "flex-start",
+            }}
+          >
+            {approach.cta.label} →
+          </a>
         </div>
 
-        <a
-          href={approach.cta.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="approach-cta"
+        {/* Photo column */}
+        <div
           style={{
-            display: "inline-flex",
-            alignItems: "center",
-            gap: 8,
-            background: "var(--color-oliva-light)",
-            color: "var(--color-offwhite)",
-            borderRadius: 999,
-            padding: "12px 24px",
-            fontFamily: "var(--font-inter)",
-            fontSize: 15,
-            fontWeight: 500,
-            textDecoration: "none",
+            borderRadius: 8,
+            overflow: "hidden",
+            aspectRatio: "4/3",
+            position: "relative",
           }}
         >
-          {approach.cta.label} →
-        </a>
-
-        <style>{`
-          .approach-cta:hover {
-            background: var(--color-oliva) !important;
-          }
-        `}</style>
+          <Image
+            src="/fotos/consultorio.jpg"
+            alt="Consultório de Ana Julia Vognach — espaço de atendimento presencial em Florianópolis"
+            fill
+            sizes="(max-width: 860px) 100vw, 48vw"
+            style={{ objectFit: "cover", objectPosition: "center" }}
+          />
+        </div>
       </div>
+
+      <style>{`
+        .approach-cta:hover {
+          background: var(--color-oliva) !important;
+        }
+        @media (min-width: 860px) {
+          .approach-grid {
+            grid-template-columns: 1fr 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

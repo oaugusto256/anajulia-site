@@ -40,6 +40,7 @@ export function Hero() {
               alt={hero.photo.alt}
               fill
               priority
+              loading="eager"
               sizes="(max-width: 979px) min(380px, 100vw), min(560px, 48vw)"
               style={{ objectFit: "cover", objectPosition: hero.photo.objectPosition }}
             />
@@ -218,10 +219,11 @@ export function Hero() {
                   <div
                     style={{
                       fontFamily: "var(--font-playfair)",
-                      fontSize: "clamp(1.1rem, 1.8vw, 1.4rem)",
+                      fontSize: "clamp(0.85rem, 1.2vw, 1rem)",
+                      fontWeight: 500,
                       color: "var(--color-preto)",
-                      lineHeight: 1,
-                      marginBottom: 8,
+                      lineHeight: 1.3,
+                      marginBottom: 6,
                     }}
                   >
                     {base}
@@ -232,7 +234,7 @@ export function Hero() {
                   <div
                     style={{
                       fontFamily: "var(--font-inter)",
-                      fontSize: 12,
+                      fontSize: 11,
                       color: "var(--color-cinza)",
                       lineHeight: 1.4,
                     }}

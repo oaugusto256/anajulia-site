@@ -1,9 +1,10 @@
 const items = [
-  "A vida mudou e você sente que ainda está tentando encontrar seu lugar diante dessas mudanças.",
-  "Tem carregado responsabilidades, preocupações e problemas que parecem difíceis de sustentar sozinho(a).",
+  "Tem carregado responsabilidades, preocupações e problemas que parecem difíceis de enfrentar sozinho(a).",
+  "Tem a sensação de que está sempre tentando dar conta de tudo, mas nunca parece ser suficiente.",
   "Cuida de muitas pessoas e tarefas, mas encontra pouco espaço para cuidar de si.",
   "Vive um momento de perda, luto, adoecimento, maternidade ou outras transformações que têm impactado sua forma de ver e viver a vida.",
-  "Sente que algo precisa mudar, mas ainda não sabe por onde começar.",
+  "Sente-se triste, angustiado(a) ou percebe que já não se reconhece como antes.",
+  "A vida mudou e você sente que perdeu o sentido das coisas, sem saber exatamente como reencontrar o seu caminho.",
 ];
 
 function WaveIcon() {
@@ -15,7 +16,7 @@ function WaveIcon() {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       aria-hidden="true"
-      style={{ flexShrink: 0, marginTop: 6 }}
+      style={{ flexShrink: 0, marginTop: 4 }}
     >
       <path
         d="M1 6 C3.5 1, 6.5 1, 10 6 C13.5 11, 16.5 11, 19 6"
@@ -36,19 +37,9 @@ export function Callout() {
         padding: "clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px)",
       }}
     >
-      <div
-        className="callout-grid"
-        style={{
-          maxWidth: 1100,
-          margin: "0 auto",
-          display: "grid",
-          gridTemplateColumns: "1fr",
-          gap: "clamp(40px, 6vw, 80px)",
-          alignItems: "start",
-        }}
-      >
-        {/* Left: title */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+      <div style={{ maxWidth: 1100, margin: "0 auto" }}>
+        {/* Title */}
+        <div style={{ display: "flex", flexDirection: "column", gap: 16, marginBottom: "clamp(32px, 4vw, 48px)" }}>
           <span
             style={{
               display: "block",
@@ -72,65 +63,70 @@ export function Callout() {
           </p>
         </div>
 
-        {/* Right: list + paragraph */}
-        <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
-          <ul
-            style={{
-              listStyle: "none",
-              padding: 0,
-              margin: 0,
-              display: "flex",
-              flexDirection: "column",
-              gap: 18,
-            }}
-          >
-            {items.map((item, i) => (
-              <li
-                key={i}
+        {/* Grid 2 linhas × 3 colunas */}
+        <ul
+          className="callout-items"
+          style={{
+            listStyle: "none",
+            padding: 0,
+            margin: 0,
+            display: "grid",
+            gridTemplateColumns: "1fr",
+            gap: 14,
+          }}
+        >
+          {items.map((item, i) => (
+            <li
+              key={i}
+              style={{
+                display: "flex",
+                alignItems: "flex-start",
+                gap: 12,
+                padding: "16px 18px",
+                borderRadius: 6,
+                background: "rgba(253,251,247,0.06)",
+                border: "1px solid rgba(253,251,247,0.10)",
+              }}
+            >
+              <WaveIcon />
+              <span
                 style={{
-                  display: "flex",
-                  alignItems: "flex-start",
-                  gap: 14,
-                  paddingBottom: i < items.length - 1 ? 18 : 0,
-                  borderBottom: i < items.length - 1 ? "1px solid rgba(253,251,247,0.12)" : "none",
+                  fontFamily: "var(--font-inter)",
+                  fontSize: 14,
+                  lineHeight: 1.6,
+                  color: "rgba(253,251,247,0.85)",
                 }}
               >
-                <WaveIcon />
-                <span
-                  style={{
-                    fontFamily: "var(--font-inter)",
-                    fontSize: 15,
-                    lineHeight: 1.65,
-                    color: "rgba(253,251,247,0.85)",
-                  }}
-                >
-                  {item}
-                </span>
-              </li>
-            ))}
-          </ul>
+                {item}
+              </span>
+            </li>
+          ))}
+        </ul>
 
-          <p
-            style={{
-              fontFamily: "var(--font-inter)",
-              fontSize: 15,
-              lineHeight: 1.75,
-              color: "rgba(253,251,247,0.65)",
-              margin: 0,
-              fontStyle: "italic",
-              borderTop: "1px solid rgba(253,251,247,0.15)",
-              paddingTop: 24,
-            }}
-          >
-            A psicoterapia pode ser um espaço para compreender o que está acontecendo, acolher o sofrimento e construir novas formas de atravessar esse momento.
-          </p>
-        </div>
+        {/* Parágrafo final */}
+        <p
+          style={{
+            fontFamily: "var(--font-playfair)",
+            fontStyle: "italic",
+            fontSize: "clamp(1rem, 1.4vw, 1.2rem)",
+            lineHeight: 1.7,
+            color: "rgba(253,251,247,0.80)",
+            margin: 0,
+            marginTop: "clamp(32px, 4vw, 48px)",
+            textAlign: "center",
+            maxWidth: 680,
+            marginLeft: "auto",
+            marginRight: "auto",
+          }}
+        >
+          A psicoterapia pode ser um espaço para compreender o que está acontecendo, acolher os sentimentos e encontrar novas formas de lidar com os desafios desse momento.
+        </p>
       </div>
 
       <style>{`
-        @media (min-width: 860px) {
-          .callout-grid {
-            grid-template-columns: 1fr 1.4fr !important;
+        @media (min-width: 680px) {
+          .callout-items {
+            grid-template-columns: 1fr 1fr 1fr !important;
           }
         }
       `}</style>

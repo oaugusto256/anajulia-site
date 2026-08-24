@@ -153,16 +153,15 @@ export const nav = {
 // ────────────────────────────────────────────────────────────────
 
 export const hero = {
-  eyebrow: "Psicologia Clínica",
+  eyebrow: "Psicologia Clínica | Online e Presencial",
   title: {
-    plain: "Há momentos em que a vida muda mais rápido do que conseguimos acompanhar.",
+    plain: "Psicoterapia para momentos em que a vida muda mais rápido do que conseguimos acompanhar.",
     italic: "",
   },
   /** Texto plano para SEO/SSR: */
-  titlePlain: "Há momentos em que a vida muda mais rápido do que conseguimos acompanhar.",
+  titlePlain: "Psicoterapia para momentos em que a vida muda mais rápido do que conseguimos acompanhar.",
   subtitle: [
-    "Conflitos, perdas, maternidade, desafios profissionais, adoecimento ou mudanças inesperadas podem gerar dúvidas, angústias e a sensação de que algo deixou de fazer sentido.",
-    "A psicoterapia é um espaço para compreender esse momento, cuidar do sofrimento e construir novas formas de seguir adiante.",
+    "Acolher o que está sendo vivido, compreender seus impactos e construir caminhos mais coerentes com quem você é.",
   ],
   cta: {
     label: "Agendar conversa inicial",
@@ -172,7 +171,7 @@ export const hero = {
   } satisfies CTA,
   photo: {
     src: "fotos/IMG_8209.jpg",
-    alt: "Retrato de Ana Julia Vognach, psicóloga clínica",
+    alt: "Ana Julia Vognach - Psicóloga Clínica (CRP 12/30269)",
     objectPosition: "center 30%",
   },
   stamp: {
@@ -182,9 +181,9 @@ export const hero = {
     line2: "saúde mental",
   },
   metrics: [
-    { value: "5+", label: "anos em saúde mental corporativa" },
-    { value: "Residência Hospitalar", label: "em Oncologia" },
-    { value: "Atendimento Online", label: "e em Florianópolis" },
+    { value: "CRP 12/30269", label: "Psicóloga Clínica" },
+    { value: "8+", label: "anos de experiência clínica" },
+    { value: "Residência Hospitalar", label: "Especialização em Oncologia" },
   ],
   layout: {
     desktopColumns: 2, // texto à esquerda · foto à direita
@@ -268,7 +267,7 @@ export const about = {
         body: [
           "Ao longo desses anos, acompanhei pessoas e famílias em momentos marcados por intenso sofrimento, adoecimento, perdas, mudanças, conflitos e processos de reconstrução da própria vida.",
           "Essas experiências fortaleceram uma compreensão que orienta minha prática clínica até hoje: o sofrimento humano nem sempre pode ser evitado, mas deve ser acolhido, compreendido e transformado quando encontra espaço para ser vivido e elaborado.",
-          "Atualmente realizo atendimentos psicológicos online para adolescentes, adultos e idosos, oferecendo um espaço ético, acolhedor e comprometido com a singularidade e as necessidades de cada pessoa.",
+          "Atualmente realizo atendimentos psicológicos para adolescentes, adultos e idosos, de forma online e presencial em Florianópolis oferecendo um espaço ético, acolhedor e comprometido com a singularidade e as necessidades de cada pessoa.",
         ],
         cta: {
           label: "Agendar uma conversa comigo",
@@ -309,10 +308,9 @@ export const about = {
 
 export const approach = {
   eyebrow: "Como eu trabalho",
-  title: "Um espaço de escuta, reflexão e cuidado",
+  title: "Um espaço de escuta, presença e cuidado",
   body: [
-    "A psicoterapia é um processo construído em conjunto, respeitando a singularidade, o tempo e as necessidades de cada pessoa.",
-    "Um espaço para compreender o sofrimento, ampliar a consciência sobre si mesmo e encontrar novas formas de lidar com os desafios da vida.",
+    "Na psicoterapia, vamos construindo juntos um espaço seguro para você falar sobre o que está vivendo. Meu papel é estar ao seu lado nesse processo, com escuta, respeito, presença e cuidado, ajudando você a olhar com mais consciência para o que está acontecendo, compreender melhor a própria experiência e construir novas possibilidades diante dos desafios da vida.",
   ],
   cta: {
     label: "Agendar uma conversa comigo",
@@ -340,28 +338,34 @@ export const approach = {
 
 export const services = {
   eyebrow: "Como posso ajudar",
-  title: "Psicoterapia Individual Online",
-  intro:
-    "Atendimento psicológico para adolescentes, adultos e idosos realizado de forma online, com sigilo, acolhimento e o mesmo rigor ético do atendimento presencial.",
-  title2: "Psicoterapia de Grupo",
-  intro2: [
-    "Modalidade de atendimento que favorece a troca de experiências, o sentimento de pertencimento e a construção coletiva de recursos para lidar com os desafios da vida.",
-    "Os grupos serão organizados de acordo com temas e demandas específicas, sendo divulgados conforme a formação de novas turmas.",
+  tagline: "Atendimentos presenciais em Florianópolis e online para todo o Brasil e exterior.",
+  items: [
+    {
+      title: "Psicoterapia Individual",
+      body: [
+        "Atendimento psicológico individual para adolescentes, adultos e idosos, construído a partir da história, das necessidades e dos objetivos de cada pessoa, favorecendo mudanças e novas possibilidades.",
+      ],
+    },
+    {
+      title: "Psicoterapia de Casal",
+      body: [
+        "Acompanhamento para casais que desejam compreender melhor os conflitos da relação, fortalecer o diálogo e construir formas mais saudáveis de convivência.",
+      ],
+    },
+    {
+      title: "Psicoterapia Familiar",
+      body: [
+        "Acompanhamento voltado à compreensão das relações familiares, conflitos e mudanças que impactam a dinâmica da família.",
+      ],
+    },
+    {
+      title: "Psicoterapia de Grupo",
+      body: [
+        "Encontros terapêuticos realizados a partir de temas e demandas específicas, favorecendo a troca de experiências, o sentimento de pertencimento e a construção coletiva de novas possibilidades.",
+        "Novos grupos serão divulgados conforme a formação de turmas.",
+      ],
+    },
   ],
-  layout: {
-    desktopColumns: 2, // head: eyebrow+título esquerda · intro direita
-    mobileColumns: 1,
-    textAlign: "left",
-    background: "off-white-2",
-    topDivider: true,
-    notes: [
-      "Accordion com apenas 1 item aberto por vez",
-      "Cada item: ícone outline oliva (28px) + título serif + chevron (+)",
-      "Numeração 01–08 foi REMOVIDA da lista",
-      "Não há CTA ao final da seção",
-      "Animação suave via grid-template-rows 0fr → 1fr",
-    ],
-  } as Layout & { notes: string[] },
 };
 
 // ────────────────────────────────────────────────────────────────
@@ -396,9 +400,8 @@ export const reviews = {
 export const mission = {
   eyebrow: "No que acredito",
   paragraphs: [
-    "Acredito que algumas experiências da vida nos transformam profundamente.",
-    "A psicoterapia não elimina as dificuldades da vida, mas pode ser um espaço para compreender o sofrimento, ampliar a consciência sobre si mesmo e construir formas mais autênticas de atravessar aquilo que se vive.",
-    "Cada história é única. Por isso, o processo terapêutico é construído de forma singular, respeitando o tempo, as necessidades e os recursos de cada pessoa.",
+    "Acredito no potencial de mudança e autorrealização que existe em cada pessoa.",
+    "Mesmo diante das dificuldades, é possível ampliar a compreensão sobre si mesma(o) e encontrar novas possibilidades de viver com mais consciência, autenticidade e sentido de vida.",
   ],
   layout: {
     desktopColumns: 1, // sem cartão lateral (removido a pedido)
@@ -428,29 +431,29 @@ export const areas = {
     {
       id: "clinica-do-trabalho",
       icon: "briefcase",
-      title: "Saúde mental e trabalho",
+      title: "Saúde Mental e Trabalho",
       body: "Dificuldades emocionais relacionadas ao trabalho, autocobrança, insegurança, conflitos interpessoais, mudanças de carreira, sobrecarga, esgotamento emocional e burnout.",
     },
     {
       id: "psicoterapia-maes",
       icon: "person-with-child",
-      title: "Maternidade, parentalidade e família",
-      body: "Gestação, puerpério, adaptação à maternidade e à paternidade, orientação parental, conflitos familiares e desafios que acompanham a construção da vida em família.",
-    },
-    {
-      id: "psico-oncologia",
-      icon: "horizon",
-      title: "Psico-oncologia e Cuidados Paliativos",
-      body: [
-        "Acompanhamento psicológico para pacientes em tratamento oncológico, pessoas que convivem com doenças graves ou ameaçadoras da vida e seus familiares.",
-        "Um espaço de acolhimento para lidar com os impactos emocionais do adoecimento, com as mudanças trazidas pelo tratamento, as incertezas e os desafios relacionados aos cuidados paliativos.",
-      ],
+      title: "Maternidade, Parentalidade e Família",
+      body: "Gestação, puerpério, adaptação à maternidade e à paternidade, orientação parental, terapia de casal e familiar, conflitos familiares e desafios que acompanham a construção da vida em família.",
     },
     {
       id: "luto-transicoes",
       icon: "horizon",
-      title: "Luto, perdas e adoecimento",
-      body: "Processos de luto, luto antecipatório, adoecimento próprio ou de familiares e outras experiências de perda ou mudança que impactam profundamente a vida, exigindo adaptação, reconstrução e novos significados.",
+      title: "Luto e Perdas",
+      body: "Processos de luto, luto antecipatório e diferentes experiências de perda e mudança que podem impactar profundamente a vida e exigir novas formas de lidar com o que foi vivido.",
+    },
+    {
+      id: "psico-oncologia",
+      icon: "horizon",
+      title: "Psico-Oncologia e Cuidados Paliativos",
+      body: [
+        "Acompanhamento psicológico para pessoas em tratamento oncológico (câncer), que convivem com doenças graves ou ameaçadoras da vida, e seus familiares.",
+        "Um espaço de acolhimento para lidar com os impactos emocionais do adoecimento, as mudanças decorrentes do tratamento, as incertezas e os desafios relacionados aos cuidados paliativos.",
+      ],
     },
   ],
 };
@@ -578,7 +581,7 @@ export const footer = {
   ],
   legal: {
     copyright: "© {YEAR} Ana Julia Vognach · Todos os direitos reservados",
-    registry: "Psicóloga Clínica · CRP/SC 12/30269",
+    registry: "Psicóloga Clínica · CRP/SC 12/30269 · CNPJ 67.100.449/0001-00",
   },
   layout: {
     desktopColumns: 4, // brand | contato | navegação | atendimento

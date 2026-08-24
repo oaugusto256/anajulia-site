@@ -39,7 +39,7 @@ export async function getPlaceData(): Promise<PlaceData | null> {
         "X-Goog-Api-Key": apiKey,
         "X-Goog-FieldMask": "reviews,rating,userRatingCount",
       },
-      next: { revalidate: 86400 }, // revalidate every 24 hours
+      next: { revalidate: 86400 },
     })
 
     if (!res.ok) return null
