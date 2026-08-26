@@ -1,28 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { Monitor, User, Briefcase, BatteryLow, Baby, Sunset, ClipboardList, Compass } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
 import { services } from "@/content/site-content";
-import { AccordionItem } from "@/components/ui/accordion-item";
-
-const iconMap: Record<string, LucideIcon> = {
-  monitor: Monitor,
-  person: User,
-  briefcase: Briefcase,
-  "person-fatigue": BatteryLow,
-  "person-with-child": Baby,
-  horizon: Sunset,
-  clipboard: ClipboardList,
-  compass: Compass,
-};
 
 export function Services() {
-  const [openId, setOpenId] = useState<string | null>(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  function handleToggle(id: string) {
-    setOpenId((prev) => (prev === id ? null : id));
-  }
+  const toggle = (i: number) => setOpenIndex(openIndex === i ? null : i);
 
   return (
     <section
@@ -30,133 +14,151 @@ export function Services() {
       style={{
         background: "var(--color-off-white-2)",
         borderTop: "1px solid var(--color-linhas)",
-        padding: "clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px)",
+        paddingTop: "clamp(32px, 4vw, 52px)",
+        paddingBottom: "clamp(40px, 5vw, 72px)",
+        paddingLeft: "clamp(20px, 5vw, 60px)",
+        paddingRight: "clamp(20px, 5vw, 60px)",
       }}
     >
-      <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        {/* Header: 2-col desktop */}
-        <div
-          className="services-header"
+      <div style={{ maxWidth: 800, margin: "0 auto" }}>
+
+        {/* Eyebrow */}
+        <p
           style={{
-            display: "grid",
-            gridTemplateColumns: "1fr",
-            gap: 24,
-            marginBottom: "clamp(40px, 5vw, 64px)",
+            fontFamily: "var(--font-inter)",
+            fontSize: 12,
+            fontWeight: 500,
+            textTransform: "uppercase",
+            letterSpacing: "0.18em",
+            color: "var(--color-oliva)",
+            marginBottom: 24,
+            display: "flex",
+            alignItems: "center",
+            gap: 12,
           }}
         >
-          <div>
-            <p
-              style={{
-                fontFamily: "var(--font-inter)",
-                fontSize: 12,
-                fontWeight: 500,
-                textTransform: "uppercase",
-                letterSpacing: "0.18em",
-                color: "var(--color-oliva)",
-                marginBottom: 12,
-                display: "flex",
-                alignItems: "center",
-                gap: 12,
-              }}
-            >
-              <span
-                style={{
-                  display: "inline-block",
-                  width: 28,
-                  height: 1,
-                  background: "var(--color-oliva)",
-                  flexShrink: 0,
-                }}
-              />
-              {services.eyebrow}
-            </p>
-            <h2
-              style={{
-                fontFamily: "var(--font-playfair)",
-                fontSize: "clamp(1.9rem, 3.5vw, 3rem)",
-                fontWeight: 500,
-                lineHeight: 1.1,
-                letterSpacing: "-0.025em",
-                color: "var(--color-preto)",
-                margin: 0,
-              }}
-            >
-              {services.title}
-            </h2>
-          </div>
-          <p
+          <span
             style={{
-              fontFamily: "var(--font-inter)",
-              fontSize: 16,
-              lineHeight: 1.65,
-              color: "var(--color-cinza)",
-              maxWidth: "48ch",
-              margin: 0,
+              display: "inline-block",
+              width: 28,
+              height: 1,
+              background: "var(--color-oliva)",
+              flexShrink: 0,
             }}
-          >
-            {services.intro}
-          </p>
-        </div>
+          />
+          {services.eyebrow}
+        </p>
 
-        {/* Accordion list */}
-        <div>
-          {services.items.map((item) => {
-            const Icon = iconMap[item.icon] ?? Monitor;
+        {/* Accordion */}
+        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
+          {services.items.map((item, i) => {
+            const isOpen = openIndex === i;
             return (
-              <AccordionItem
-                key={item.id}
-                id={item.id}
-                isOpen={openId === item.id}
-                onToggle={() => handleToggle(item.id)}
-                analyticsEvent="services_expand"
-                trigger={
-                  <div style={{ display: "flex", alignItems: "center", gap: 20 }}>
-                    <Icon
-                      size={28}
-                      strokeWidth={1.5}
-                      style={{ color: "var(--color-oliva)", flexShrink: 0 }}
-                    />
-                    <span
-                      style={{
-                        fontFamily: "var(--font-playfair)",
-                        fontSize: "clamp(1.15rem, 1.7vw, 1.5rem)",
-                        color: "var(--color-preto)",
-                        fontWeight: 500,
-                      }}
-                    >
-                      {item.title}
-                    </span>
-                  </div>
-                }
+              <li
+                key={i}
+                style={{
+                  borderBottom: "1px solid var(--color-linhas)",
+                }}
               >
-                <p
+                <button
+                  onClick={() => toggle(i)}
+                  aria-expanded={isOpen}
                   style={{
-                    fontFamily: "var(--font-inter)",
-                    fontSize: 16,
-                    lineHeight: 1.65,
-                    color: "var(--color-cinza)",
-                    paddingBottom: 24,
-                    paddingLeft: 48,
-                    maxWidth: "68ch",
-                    margin: 0,
+                    width: "100%",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    gap: 16,
+                    padding: "20px 0",
+                    background: "none",
+                    border: "none",
+                    cursor: "pointer",
+                    textAlign: "left",
                   }}
                 >
-                  {item.body}
-                </p>
-              </AccordionItem>
+                  <span
+                    style={{
+                      fontFamily: "var(--font-playfair)",
+                      fontSize: "clamp(1rem, 1.6vw, 1.2rem)",
+                      fontWeight: 500,
+                      color: isOpen ? "var(--color-oliva)" : "var(--color-preto)",
+                      lineHeight: 1.3,
+                      transition: "color 0.2s",
+                    }}
+                  >
+                    {item.title}
+                  </span>
+                  <span
+                    style={{
+                      flexShrink: 0,
+                      width: 24,
+                      height: 24,
+                      borderRadius: "50%",
+                      border: "1px solid var(--color-linhas)",
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      color: "var(--color-oliva)",
+                      fontSize: 18,
+                      fontWeight: 300,
+                      lineHeight: 1,
+                      transition: "transform 0.25s",
+                      transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
+                    }}
+                  >
+                    +
+                  </span>
+                </button>
+
+                {/* Content */}
+                <div
+                  style={{
+                    display: "grid",
+                    gridTemplateRows: isOpen ? "1fr" : "0fr",
+                    transition: "grid-template-rows 0.28s ease",
+                  }}
+                >
+                  <div style={{ overflow: "hidden" }}>
+                    <div style={{ paddingBottom: 24, display: "flex", flexDirection: "column", gap: 10 }}>
+                      {(Array.isArray(item.body) ? item.body : [item.body]).map((p, j) => (
+                        <p
+                          key={j}
+                          style={{
+                            fontFamily: "var(--font-inter)",
+                            fontSize: 15,
+                            lineHeight: 1.7,
+                            color: j === (Array.isArray(item.body) ? item.body.length - 1 : 0) && item.title === "Psicoterapia de Grupo" && j > 0
+                              ? "var(--color-oliva-light)"
+                              : "var(--color-cinza)",
+                            margin: 0,
+                            fontStyle: item.title === "Psicoterapia de Grupo" && j > 0 ? "italic" : "normal",
+                          }}
+                        >
+                          {p}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </li>
             );
           })}
-        </div>
-      </div>
+        </ul>
 
-      <style>{`
-        @media (min-width: 900px) {
-          .services-header {
-            grid-template-columns: 1fr 1fr !important;
-            align-items: end;
-          }
-        }
-      `}</style>
+        {/* Observação */}
+        <p
+          style={{
+            fontFamily: "var(--font-inter)",
+            fontSize: 13,
+            lineHeight: 1.6,
+            color: "var(--color-cinza)",
+            fontStyle: "italic",
+            marginTop: 28,
+          }}
+        >
+          Atendimentos presenciais em Florianópolis e online para todo o Brasil e exterior.
+        </p>
+      </div>
     </section>
   );
 }

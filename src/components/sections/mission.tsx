@@ -1,24 +1,28 @@
 import { mission } from "@/content/site-content";
 
 export function Mission() {
+  const [lead, ...rest] = mission.paragraphs;
+
   return (
     <section
       id="missao"
       style={{
         background: "var(--color-oliva)",
-        padding: "clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px)",
+        padding: "clamp(72px, 10vw, 120px) clamp(20px, 5vw, 60px)",
       }}
     >
       <div
         style={{
-          maxWidth: 1200,
+          maxWidth: 720,
           margin: "0 auto",
-          textAlign: "center",
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
+          textAlign: "center",
+          gap: 32,
         }}
       >
+        {/* Eyebrow */}
         <p
           style={{
             fontFamily: "var(--font-inter)",
@@ -26,57 +30,58 @@ export function Mission() {
             fontWeight: 500,
             textTransform: "uppercase",
             letterSpacing: "0.18em",
-            color: "rgba(253,251,247,0.8)",
-            marginBottom: 32,
+            color: "rgba(253,251,247,0.5)",
+            margin: 0,
             display: "flex",
             alignItems: "center",
-            justifyContent: "center",
             gap: 12,
-            alignSelf: "center",
           }}
         >
+          <span style={{ display: "inline-block", width: 24, height: 1, background: "rgba(253,251,247,0.35)" }} />
           {mission.eyebrow}
+          <span style={{ display: "inline-block", width: 24, height: 1, background: "rgba(253,251,247,0.35)" }} />
         </p>
 
-        <blockquote
+        {/* Lead */}
+        <p
           style={{
-            fontFamily: "var(--font-cormorant)",
+            fontFamily: "var(--font-playfair)",
             fontStyle: "italic",
-            fontWeight: 300,
-            fontSize: "clamp(1.4rem, 2.6vw, 2rem)",
-            lineHeight: 1.35,
+            fontWeight: 400,
+            fontSize: "clamp(1.5rem, 2.8vw, 2.2rem)",
+            lineHeight: 1.4,
             color: "rgba(253,251,247,0.95)",
-            maxWidth: "65ch",
-            margin: "0 auto",
-            textAlign: "center",
+            margin: 0,
           }}
         >
-          <span
-            aria-hidden="true"
+          {lead}
+        </p>
+
+        {/* Linha separadora */}
+        <span
+          style={{
+            display: "block",
+            width: 40,
+            height: 1,
+            background: "rgba(253,251,247,0.25)",
+          }}
+        />
+
+        {/* Parágrafos restantes */}
+        {rest.map((p, i) => (
+          <p
+            key={i}
             style={{
-              fontFamily: "var(--font-playfair)",
-              fontStyle: "normal",
-              fontSize: "4rem",
-              color: "rgba(253,251,247,0.95)",
-              lineHeight: 0.5,
+              fontFamily: "var(--font-inter)",
+              fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)",
+              lineHeight: 1.85,
+              color: "rgba(253,251,247,0.72)",
+              margin: 0,
             }}
           >
-            &ldquo;
-          </span>
-          {mission.quote}
-          <span
-            aria-hidden="true"
-            style={{
-              fontFamily: "var(--font-playfair)",
-              fontStyle: "normal",
-              fontSize: "4rem",
-              color: "rgba(253,251,247,0.95)",
-              lineHeight: 0.5,
-            }}
-          >
-            &rdquo;
-          </span>
-        </blockquote>
+            {p}
+          </p>
+        ))}
       </div>
     </section>
   );

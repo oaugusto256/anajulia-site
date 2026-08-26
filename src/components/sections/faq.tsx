@@ -58,18 +58,19 @@ export function FAQ() {
                 </span>
               }
             >
-              <p style={{
-                fontFamily: "var(--font-inter)",
-                fontSize: 15,
-                lineHeight: 1.6,
-                color: "var(--color-cinza)",
-                paddingBottom: 24,
-                paddingRight: 32,
-                maxWidth: "68ch",
-                margin: 0,
-              }}>
-                {item.answer}
-              </p>
+              <div style={{ paddingBottom: 24, paddingRight: 32, maxWidth: "68ch", display: "flex", flexDirection: "column", gap: 12 }}>
+                {(Array.isArray(item.answer) ? item.answer : [item.answer]).map((p, j) => (
+                  <p key={j} style={{
+                    fontFamily: "var(--font-inter)",
+                    fontSize: 15,
+                    lineHeight: 1.6,
+                    color: "var(--color-cinza)",
+                    margin: 0,
+                  }}>
+                    {p}
+                  </p>
+                ))}
+              </div>
             </AccordionItem>
           ))}
         </div>

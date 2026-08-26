@@ -29,9 +29,9 @@ const cormorant = Cormorant_Garamond({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://psicoanajulia.com.br"),
-  title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis e Online",
+  title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
   description:
-    "Psicoterapia para adultos em Florianópolis e online para todo Brasil e exterior. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
+    "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
   keywords: [
     "psicóloga florianópolis",
     "psicóloga campeche",
@@ -45,9 +45,9 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis e Online",
+    title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
     description:
-      "Psicoterapia para adultos em Florianópolis e online para todo Brasil e exterior. Especialista em burnout, maternidade, luto e saúde mental no trabalho.",
+      "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
     url: "https://psicoanajulia.com.br",
     locale: "pt_BR",
     type: "website",
@@ -55,9 +55,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Ana Julia Vognach | Psicóloga Clínica em Florianópolis e Online",
+    title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
     description:
-      "Psicoterapia para adultos em Florianópolis e online para todo Brasil e exterior. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
+      "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
   },
   icons: {
     icon: [
