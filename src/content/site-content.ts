@@ -308,9 +308,9 @@ export const about = {
 
 export const approach = {
   eyebrow: "Como eu trabalho",
-  title: "Um espaço de escuta, presença e cuidado",
+  title: "Um espaço de escuta, presença e acolhimento",
   body: [
-    "Na psicoterapia, vamos construindo juntos um espaço seguro para você falar sobre o que está vivendo. Meu papel é estar ao seu lado nesse processo, com escuta, respeito, presença e cuidado, ajudando você a olhar com mais consciência para o que está acontecendo, compreender melhor a própria experiência e construir novas possibilidades diante dos desafios da vida.",
+    "Na psicoterapia, você encontra um espaço seguro e sigiloso para expressar o que está vivendo. Com escuta, empatia e respeito, acompanho você na compreensão do que sente e de como se relaciona com o mundo, desenvolvendo recursos para construir caminhos mais leves e autênticos diante dos desafios da vida.",
   ],
   cta: {
     label: "Agendar uma conversa comigo",
@@ -400,7 +400,7 @@ export const reviews = {
 export const mission = {
   eyebrow: "No que acredito",
   paragraphs: [
-    "Acredito no potencial de mudança e autorrealização que existe em cada pessoa.",
+    "Acredito no potencial de mudança e transformação que existe em cada pessoa.",
     "Mesmo diante das dificuldades, é possível ampliar a compreensão sobre si mesma(o) e encontrar novas possibilidades de viver com mais consciência, autenticidade e sentido de vida.",
   ],
   layout: {

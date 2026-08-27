@@ -1,10 +1,8 @@
 const items = [
-  "Tem carregado responsabilidades, preocupações e problemas que parecem difíceis de enfrentar sozinho(a).",
-  "Tem a sensação de que está sempre tentando dar conta de tudo, mas nunca parece ser suficiente.",
-  "Cuida de muitas pessoas e tarefas, mas encontra pouco espaço para cuidar de si.",
-  "Vive um momento de perda, luto, adoecimento, maternidade ou outras transformações que têm impactado sua forma de ver e viver a vida.",
-  "Sente-se triste, angustiado(a) ou percebe que já não se reconhece como antes.",
-  "A vida mudou e você sente que perdeu o sentido das coisas, sem saber exatamente como reencontrar o seu caminho.",
+  "Carrega responsabilidades e preocupações que parecem pesadas demais para enfrentar sem apoio.",
+  "Sente que está sempre tentando dar conta de tudo e de todos, mas nunca parece ser o suficiente.",
+  "Atravessa uma transição importante, no trabalho, na saúde ou na família, e sente que perdeu a referência de quem era.",
+  "Percebe-se triste ou angustiada(o) sem saber exatamente como reencontrar o equilíbrio e o sentido nas suas escolhas.",
 ];
 
 function WaveIcon() {
@@ -119,14 +117,14 @@ export function Callout() {
             marginRight: "auto",
           }}
         >
-          A psicoterapia pode ser um espaço para compreender o que está acontecendo, acolher os sentimentos e encontrar novas formas de lidar com os desafios desse momento.
+          A psicoterapia é um espaço para compreender o que você está vivendo, acolher seus sentimentos e construir formas mais leves de caminhar.
         </p>
       </div>
 
       <style>{`
         @media (min-width: 680px) {
           .callout-items {
-            grid-template-columns: 1fr 1fr 1fr !important;
+            grid-template-columns: 1fr 1fr !important;
           }
         }
       `}</style>
