@@ -107,13 +107,36 @@ export function TestimonialsCarousel({
               </span>
             </div>
           </div> */}
-          {/* Stars */}
-          <div style={{ display: "flex", gap: 2, color: "var(--color-gold)", fontSize: 14 }}>
-            {Array.from({ length: review.rating }).map((_, i) => (
-              <span key={i} aria-hidden="true">
-                ★
-              </span>
-            ))}
+          {/* Stars + review date */}
+          <div
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: 12,
+            }}
+          >
+            <div style={{ display: "flex", gap: 2, color: "var(--color-gold)", fontSize: 14 }}>
+              {Array.from({ length: review.rating }).map((_, i) => (
+                <span key={i} aria-hidden="true">
+                  ★
+                </span>
+              ))}
+            </div>
+            {review.publishedLabel && (
+              <time
+                dateTime={review.publishTime}
+                style={{
+                  fontFamily: "var(--font-inter)",
+                  fontSize: 12,
+                  color: "var(--color-cinza)",
+                  letterSpacing: "0.02em",
+                  flexShrink: 0,
+                }}
+              >
+                {review.publishedLabel}
+              </time>
+            )}
           </div>
           {/* Text */}
           <p

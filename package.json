@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "test": "node --test 'src/**/*.test.ts'",
     "generate-favicons": "node scripts/generate-favicons.mjs"
   },
   "dependencies": {
