@@ -1,3 +1,5 @@
+import { cache } from "react"
+
 interface GoogleReview {
   rating?: number
   text?: { text?: string }
@@ -28,7 +30,7 @@ export interface PlaceData {
   reviews: PlaceReview[]
 }
 
-export async function getPlaceData(): Promise<PlaceData | null> {
+export const getPlaceData = cache(async (): Promise<PlaceData | null> => {
   const apiKey = process.env.GOOGLE_PLACES_API_KEY
   const placeId = process.env.GOOGLE_PLACE_ID
   if (!apiKey || !placeId) return null
@@ -39,7 +41,10 @@ export async function getPlaceData(): Promise<PlaceData | null> {
         "X-Goog-Api-Key": apiKey,
         "X-Goog-FieldMask": "reviews,rating,userRatingCount",
       },
-      next: { revalidate: 86400 },
+      // revalidate: refetch from Google at most once per 24h (Vercel Data Cache,
+      // shared across instances, persists across deploys).
+      // tags: lets you force a refresh on demand via revalidateTag("google-reviews").
+      next: { revalidate: 86400, tags: ["google-reviews"] },
     })
 
     if (!res.ok) return null
@@ -62,4 +67,4 @@ export async function getPlaceData(): Promise<PlaceData | null> {
   } catch {
     return null
   }
-}
+})

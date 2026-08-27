@@ -9,6 +9,11 @@ import { Testimonials } from "@/components/sections/testimonials"
 import { FAQ } from "@/components/sections/faq"
 import { Footer } from "@/components/sections/footer"
 
+// Regenerate the page (and any server-side fetches it makes, e.g. Google Places
+// reviews) at most once per 24h. Between regenerations Vercel serves cached HTML
+// with zero function work and zero external API calls.
+export const revalidate = 86400
+
 export default function Home() {
   return (
     <main>
