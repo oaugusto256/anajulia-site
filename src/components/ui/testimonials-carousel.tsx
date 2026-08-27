@@ -115,6 +115,20 @@ export function TestimonialsCarousel({
               </span>
             ))}
           </div>
+          {/* Review date */}
+          {review.publishedLabel && (
+            <time
+              dateTime={review.publishTime}
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontSize: 12,
+                color: "var(--color-cinza)",
+                letterSpacing: "0.02em",
+              }}
+            >
+              {review.publishedLabel}
+            </time>
+          )}
           {/* Text */}
           <p
             style={{

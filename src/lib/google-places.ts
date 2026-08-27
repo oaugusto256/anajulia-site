@@ -4,6 +4,7 @@ interface GoogleReview {
   rating?: number
   text?: { text?: string }
   relativePublishTimeDescription?: string
+  publishTime?: string
   authorAttribution?: {
     displayName?: string
     photoUri?: string
@@ -22,12 +23,46 @@ export interface PlaceReview {
   rating: number
   text: string
   relativeTime: string
+  /** Raw ISO 8601 timestamp from Google, or "" when absent. For <time dateTime>. */
+  publishTime: string
+  /** Formatted pt-BR month + year, e.g. "Agosto de 2026". "" when no date. */
+  publishedLabel: string
 }
 
 export interface PlaceData {
   rating: number
   totalRatings: number
   reviews: PlaceReview[]
+}
+
+/** Format a Google ISO timestamp as a capitalized pt-BR "month de year" label. */
+export function formatPublishedLabel(iso?: string): string {
+  if (!iso || Number.isNaN(Date.parse(iso))) return ""
+  const label = new Intl.DateTimeFormat("pt-BR", {
+    month: "long",
+    year: "numeric",
+  }).format(new Date(iso))
+  return label.charAt(0).toUpperCase() + label.slice(1)
+}
+
+/**
+ * Filter to 5-star reviews with text, map to PlaceReview, and order newest-first.
+ * ISO 8601 timestamps sort lexicographically, so a string compare is chronological;
+ * reviews without a publishTime sort last.
+ */
+export function normalizeReviews(raw: GoogleReview[]): PlaceReview[] {
+  return raw
+    .filter((r) => r.text?.text && r.rating === 5)
+    .map((r) => ({
+      authorName: r.authorAttribution?.displayName ?? "Cliente",
+      authorPhotoUrl: r.authorAttribution?.photoUri ?? null,
+      rating: r.rating ?? 5,
+      text: r.text!.text!,
+      relativeTime: r.relativePublishTimeDescription ?? "",
+      publishTime: r.publishTime ?? "",
+      publishedLabel: formatPublishedLabel(r.publishTime),
+    }))
+    .sort((a, b) => b.publishTime.localeCompare(a.publishTime))
 }
 
 export const getPlaceData = cache(async (): Promise<PlaceData | null> => {
@@ -54,15 +89,7 @@ export const getPlaceData = cache(async (): Promise<PlaceData | null> => {
     return {
       rating: data.rating ?? 5.0,
       totalRatings: data.userRatingCount ?? 0,
-      reviews: (data.reviews ?? [])
-        .filter((r) => r.text?.text && r.rating === 5)
-        .map((r) => ({
-          authorName: r.authorAttribution?.displayName ?? "Cliente",
-          authorPhotoUrl: r.authorAttribution?.photoUri ?? null,
-          rating: r.rating ?? 5,
-          text: r.text!.text!,
-          relativeTime: r.relativePublishTimeDescription ?? "",
-        })),
+      reviews: normalizeReviews(data.reviews ?? []),
     }
   } catch {
     return null
