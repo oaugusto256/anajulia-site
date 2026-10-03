@@ -6,6 +6,7 @@ import "./globals.css";
 import { Nav } from "@/components/sections/nav";
 import { WhatsAppFloat } from "@/components/ui/whatsapp-float";
 import { ScrollTracker } from "@/components/ui/scroll-tracker";
+import { WhatsAppClickTracker } from "@/components/ui/whatsapp-click-tracker";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -128,6 +129,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         )}
         <ScrollTracker />
+        <WhatsAppClickTracker />
         <Nav />
         {children}
         <WhatsAppFloat />

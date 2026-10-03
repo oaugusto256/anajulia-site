@@ -8,6 +8,7 @@ export function WhatsAppFloat() {
       target="_blank"
       rel="noopener noreferrer"
       className="wa-float"
+      data-wa-location="float"
       style={{
         position: "fixed",
         bottom: 22,

@@ -21,6 +21,7 @@ export function NavDrawer({ open, onClose }: NavDrawerProps) {
   return (
     <div
       aria-hidden={!open}
+      data-wa-location="nav-drawer"
       style={{
         position: "fixed",
         inset: 0,
