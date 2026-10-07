@@ -2,6 +2,7 @@
 // SEO smoke check against a running production build.
 // Usage: pnpm build && pnpm start   (in another terminal)  then  pnpm check:seo
 // BASE_URL defaults to http://localhost:3000. Exits non-zero on any failure.
+import { brand } from "../src/content/site-content.ts"
 
 const BASE_URL = (process.env.BASE_URL ?? "http://localhost:3000").replace(/\/$/, "")
 const SITE_URL = "https://psicoanajulia.com.br"
@@ -78,6 +79,15 @@ pageChecks.push((path, html, kind) => {
   const noindex = robots.includes("noindex")
   if (kind === "draft" && !noindex) fail(path, "draft page is missing noindex")
   if (kind !== "draft" && noindex) fail(path, "indexable page has noindex")
+})
+
+// ── home: location + anchors + float ──
+pageChecks.push((path, html, kind) => {
+  if (kind !== "home") return
+  if (!/<address[\s>]/.test(html)) fail(path, "footer <address> missing")
+  if (!html.includes(brand.location.postalCode)) fail(path, "postal code missing from footer")
+  if (/href="#/.test(html)) fail(path, 'found same-page href="#…" (use "/#…" so links work from other pages)')
+  if (!/data-wa-location="float"/.test(html)) fail(path, "floating WhatsApp button missing")
 })
 
 // ── run ──

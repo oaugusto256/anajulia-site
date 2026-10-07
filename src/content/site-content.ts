@@ -91,6 +91,9 @@ export const meta = {
   },
 };
 
+/** Data da última alteração de conteúdo (ISO). Atualizar manualmente — usada no sitemap. */
+export const contentUpdatedAt = "2026-10-07";
+
 // ────────────────────────────────────────────────────────────────
 // BRAND · identidade
 // ────────────────────────────────────────────────────────────────
@@ -114,6 +117,31 @@ export const brand = {
       href: "https://instagram.com/psicoanavognach",
     },
   },
+  location: {
+    streetAddress: "Rodovia SC-405, 4397",
+    complement: "Shopping Oka Floripa, Torre Sol, Sala 114",
+    neighborhood: "Campeche",
+    city: "Florianópolis",
+    region: "SC",
+    postalCode: "88065-000",
+    country: "BR",
+    /** Preencher a partir do Google Business Profile; omitido do schema enquanto undefined. */
+    geo: undefined as { lat: number; lng: number } | undefined,
+    hours: [
+      {
+        days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "08:00",
+        closes: "20:00",
+      },
+    ],
+    hoursLabel: "Segunda a sexta, 8h às 20h",
+    gbpUrl: "https://maps.app.goo.gl/yx6VRRiSPBZc5SBH7?g_st=iw",
+    areaServed: {
+      city: "Florianópolis",
+      places: ["Sul da Ilha", "Campeche"],
+      country: "Brasil",
+    },
+  },
 };
 
 // ────────────────────────────────────────────────────────────────
@@ -122,11 +150,11 @@ export const brand = {
 
 export const nav = {
   links: [
-    { label: "Como eu trabalho", href: "#abordagem" },
-    { label: "Como posso ajudar", href: "#servicos" },
-    { label: "Trajetória", href: "#sobre" },
-    { label: "Dúvidas", href: "#faq" },
-    { label: "Contato", href: "#contato" },
+    { label: "Como eu trabalho", href: "/#abordagem" },
+    { label: "Como posso ajudar", href: "/#servicos" },
+    { label: "Trajetória", href: "/#sobre" },
+    { label: "Dúvidas", href: "/#faq" },
+    { label: "Contato", href: "/#contato" },
   ],
   cta: {
     label: "Agendar conversa",
@@ -563,10 +591,10 @@ export const footer = {
     {
       title: "Navegação",
       links: [
-        { label: "Trajetória", href: "#sobre" },
-        { label: "Abordagem", href: "#abordagem" },
-        { label: "Serviços", href: "#servicos" },
-        { label: "FAQ", href: "#faq" },
+        { label: "Trajetória", href: "/#sobre" },
+        { label: "Abordagem", href: "/#abordagem" },
+        { label: "Serviços", href: "/#servicos" },
+        { label: "FAQ", href: "/#faq" },
       ],
     },
     {
@@ -579,6 +607,9 @@ export const footer = {
       ],
     },
   ],
+  address: {
+    postalCodePrefix: "CEP",
+  },
   legal: {
     copyright: "© {YEAR} Ana Julia Vognach · Todos os direitos reservados",
     registry: "Psicóloga Clínica · CRP/SC 12/30269 · CNPJ 67.100.449/0001-00",
