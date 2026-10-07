@@ -37,11 +37,18 @@ export function AnalyticsProvider() {
       setAnalyticsClient(posthog)
     }
 
-    if ("requestIdleCallback" in window) window.requestIdleCallback(() => void start())
-    else setTimeout(() => void start(), 1)
+    const run = () => {
+      start().catch(() => {})
+    }
+    let idleHandle: number | undefined
+    let timeoutHandle: ReturnType<typeof setTimeout> | undefined
+    if ("requestIdleCallback" in window) idleHandle = window.requestIdleCallback(run)
+    else timeoutHandle = setTimeout(run, 1)
 
     return () => {
       cancelled = true
+      if (idleHandle !== undefined) window.cancelIdleCallback(idleHandle)
+      if (timeoutHandle !== undefined) clearTimeout(timeoutHandle)
     }
   }, [])
 
