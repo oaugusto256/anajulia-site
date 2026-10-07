@@ -153,6 +153,39 @@ siteChecks.push(async () => {
   for (const slug of draftSlugs()) if (sitemap.body.includes(`/${slug}<`)) fail("/sitemap.xml", `lists draft page ${slug}`)
 })
 
+// ── topic pages ──
+for (const slug of draftSlugs()) extraPages.push({ path: `/${slug}`, kind: "draft" })
+
+const reviewDate = new Intl.DateTimeFormat("pt-BR", { dateStyle: "long", timeZone: "UTC" })
+const topicBySlug = new Map(topicPages.map((p) => [p.slug, p]))
+
+pageChecks.push((path, html) => {
+  const page = topicBySlug.get(path.slice(1))
+  if (!page) return
+  const types = ldTypes(path, html)
+  for (const t of ["MedicalWebPage", "FAQPage", "BreadcrumbList"]) {
+    if (!types.has(t)) fail(path, `JSON-LD missing @type ${t}`)
+  }
+  if (!html.includes(`data-topic="${page.slug}"`)) fail(path, "missing data-topic")
+  const expectedDate = reviewDate.format(new Date(`${page.reviewedAt}T00:00:00Z`))
+  if (!html.includes(`>${expectedDate}</time>`)) fail(path, `review date should read "${expectedDate}"`)
+  const float = findTag(html, /<a[^>]+data-wa-location="float"[^>]*>/)
+  const text = float ? new URL(attr(float, "href")).searchParams.get("text") : null
+  if (text !== page.cta.whatsappMessage) fail(path, `float WhatsApp message is ${JSON.stringify(text)}`)
+})
+
+siteChecks.push(async (pages, bodies) => {
+  // Draft leakage: no indexable page may link to a draft topic.
+  for (const { path, kind } of pages) {
+    if (kind === "draft") continue
+    for (const slug of draftSlugs()) {
+      if (bodies.get(path)?.includes(`href="/${slug}"`)) fail(path, `links to draft page /${slug}`)
+    }
+  }
+  const missing = await get("/nao-existe")
+  if (missing.res.status !== 404) fail("/nao-existe", `expected 404, got ${missing.res.status}`)
+})
+
 // ── run ──
 async function main() {
   const sitemap = await get("/sitemap.xml")

@@ -1,4 +1,5 @@
-import { areas, brand, faq, hero, meta, services } from "@/content/site-content"
+import { areas, brand, faq, hero, meta, services, topicPageUi, type TopicPage } from "@/content/site-content"
+import { topicPath } from "@/lib/topics"
 import { SITE_URL, absoluteUrl } from "@/lib/seo"
 import { asText } from "@/lib/text"
 
@@ -169,5 +170,35 @@ export function homeGraph(): JsonLdNode {
       about: { "@id": ids.practice },
     }),
     faqPageNode(faq.items, "/"),
+  )
+}
+
+export function topicGraph(page: TopicPage): JsonLdNode {
+  const path = topicPath(page)
+  const url = absoluteUrl(path)
+  return graph(
+    {
+      "@type": "MedicalWebPage",
+      "@id": pageId(path, "webpage"),
+      url,
+      name: page.hero.title,
+      description: page.seo.description,
+      inLanguage: meta.language,
+      isPartOf: { "@id": ids.website },
+      about: { "@type": "Thing", name: page.breadcrumbLabel },
+      audience: { "@type": "Patient" },
+      reviewedBy: { "@id": ids.person },
+      lastReviewed: page.reviewedAt,
+      breadcrumb: { "@id": pageId(path, "breadcrumb") },
+    },
+    faqPageNode(page.faq, path),
+    {
+      "@type": "BreadcrumbList",
+      "@id": pageId(path, "breadcrumb"),
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: topicPageUi.breadcrumbHome, item: absoluteUrl("/") },
+        { "@type": "ListItem", position: 2, name: page.breadcrumbLabel, item: url },
+      ],
+    },
   )
 }
