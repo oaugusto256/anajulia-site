@@ -40,49 +40,49 @@ export function AccordionItem({
   return (
     <div style={{ borderBottom: "1px solid var(--color-linhas)" }}>
       <Heading style={{ margin: 0, font: "inherit" }}>
-      <button
-        type="button"
-        id={`accordion-trigger-${id}`}
-        aria-controls={`accordion-body-${id}`}
-        aria-expanded={isOpen}
-        onClick={handleToggle}
-        className="accordion-trigger"
-        style={{
-          display: "grid",
-          gridTemplateColumns: "1fr 28px",
-          alignItems: "center",
-          width: "100%",
-          padding: "20px 0",
-          background: "transparent",
-          border: "none",
-          cursor: "pointer",
-          textAlign: "left",
-          gap: 16,
-          paddingInlineStart: isOpen ? 8 : 4,
-          transition: "padding-inline-start 0.25s ease",
-        }}
-      >
-        {trigger}
-        <span
-          aria-hidden="true"
+        <button
+          type="button"
+          id={`accordion-trigger-${id}`}
+          aria-controls={`accordion-body-${id}`}
+          aria-expanded={isOpen}
+          onClick={handleToggle}
+          className="accordion-trigger"
           style={{
-            display: "flex",
+            display: "grid",
+            gridTemplateColumns: "1fr 28px",
             alignItems: "center",
-            justifyContent: "center",
-            width: 28,
-            height: 28,
-            color: "var(--color-oliva)",
-            fontSize: 20,
-            fontWeight: 300,
-            transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
-            transition: "transform 0.35s ease",
-            flexShrink: 0,
-            lineHeight: 1,
+            width: "100%",
+            padding: "20px 0",
+            background: "transparent",
+            border: "none",
+            cursor: "pointer",
+            textAlign: "left",
+            gap: 16,
+            paddingInlineStart: isOpen ? 8 : 4,
+            transition: "padding-inline-start 0.25s ease",
           }}
         >
-          +
-        </span>
-      </button>
+          {trigger}
+          <span
+            aria-hidden="true"
+            style={{
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              width: 28,
+              height: 28,
+              color: "var(--color-oliva)",
+              fontSize: 20,
+              fontWeight: 300,
+              transform: isOpen ? "rotate(45deg)" : "rotate(0deg)",
+              transition: "transform 0.35s ease",
+              flexShrink: 0,
+              lineHeight: 1,
+            }}
+          >
+            +
+          </span>
+        </button>
       </Heading>
 
       <div

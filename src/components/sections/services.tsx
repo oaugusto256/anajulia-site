@@ -114,6 +114,7 @@ export function Services() {
 
                 {/* Content */}
                 <div
+                  inert={!isOpen}
                   style={{
                     display: "grid",
                     gridTemplateRows: isOpen ? "1fr" : "0fr",
