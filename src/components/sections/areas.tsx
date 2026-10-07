@@ -34,7 +34,7 @@ export function Areas() {
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <p
+        <h2
           style={{
             fontFamily: "var(--font-inter)",
             fontSize: 12,
@@ -58,7 +58,7 @@ export function Areas() {
             }}
           />
           {areas.eyebrow}
-        </p>
+        </h2>
 
         <div>
           {areas.items.map((item) => {

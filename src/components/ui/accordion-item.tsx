@@ -1,6 +1,14 @@
 "use client"
 
 import type { ReactNode } from "react"
+import { trackFaqExpand, trackServicesExpand } from "@/lib/analytics"
+
+type AccordionEvent = "faq_expand" | "services_expand"
+
+const trackers: Record<AccordionEvent, (id: string) => void> = {
+  faq_expand: trackFaqExpand,
+  services_expand: trackServicesExpand,
+}
 
 interface AccordionItemProps {
   id: string
@@ -8,7 +16,9 @@ interface AccordionItemProps {
   children: ReactNode
   isOpen: boolean
   onToggle: () => void
-  analyticsEvent?: string
+  analyticsEvent?: AccordionEvent
+  /** Heading level wrapping the trigger (WAI-ARIA accordion pattern). */
+  headingLevel?: 2 | 3 | 4
 }
 
 export function AccordionItem({
@@ -18,19 +28,18 @@ export function AccordionItem({
   isOpen,
   onToggle,
   analyticsEvent,
+  headingLevel = 3,
 }: AccordionItemProps) {
+  const Heading = `h${headingLevel}` as "h2" | "h3" | "h4"
+
   function handleToggle() {
-    if (analyticsEvent && typeof window !== "undefined") {
-      const w = window as unknown as { gtag?: (...args: unknown[]) => void }
-      if (w.gtag) {
-        w.gtag("event", analyticsEvent, { item_id: id })
-      }
-    }
+    if (analyticsEvent && !isOpen) trackers[analyticsEvent](id)
     onToggle()
   }
 
   return (
     <div style={{ borderBottom: "1px solid var(--color-linhas)" }}>
+      <Heading style={{ margin: 0, font: "inherit" }}>
       <button
         type="button"
         id={`accordion-trigger-${id}`}
@@ -74,10 +83,12 @@ export function AccordionItem({
           +
         </span>
       </button>
+      </Heading>
 
       <div
         id={`accordion-body-${id}`}
         role="region"
+        inert={!isOpen}
         aria-labelledby={`accordion-trigger-${id}`}
         style={{
           display: "grid",

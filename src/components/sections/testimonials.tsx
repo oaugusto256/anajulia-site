@@ -31,7 +31,7 @@ export async function Testimonials() {
         }}
       >
         {/* Eyebrow */}
-        <p
+        <h2
           style={{
             fontFamily: "var(--font-inter)",
             fontSize: 13,
@@ -47,7 +47,7 @@ export async function Testimonials() {
           }}
         >
           {reviews.eyebrow}
-        </p>
+        </h2>
 
         {/* Stars + rating number + Google attribution */}
         {/* <div

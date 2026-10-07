@@ -90,6 +90,18 @@ pageChecks.push((path, html, kind) => {
   if (!/data-wa-location="float"/.test(html)) fail(path, "floating WhatsApp button missing")
 })
 
+// ── home: heading outline ──
+// h2: approach, about, services, areas, mission, testimonials, faq.
+// h3: 4 services + 4 áreas + 6 FAQ questions.
+pageChecks.push((path, html, kind) => {
+  if (kind !== "home") return
+  const h2 = count(html, /<h2[\s>]/g)
+  const h3 = count(html, /<h3[\s>]/g)
+  if (h2 < 7) fail(path, `expected ≥ 7 <h2>, found ${h2}`)
+  if (h3 < 14) fail(path, `expected ≥ 14 <h3>, found ${h3}`)
+  if (/<h4[\s>]/.test(html)) fail(path, "unexpected <h4> (About trajectory should be <h3>)")
+})
+
 // ── run ──
 async function main() {
   const sitemap = await get("/sitemap.xml")

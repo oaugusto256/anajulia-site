@@ -171,7 +171,7 @@ export function About() {
               {about.trajectory.sections.map((section, i) => (
                 <div key={i} style={{ display: "flex", flexDirection: "column", gap: 16 }}>
                   {section.title && (
-                    <h4
+                    <h3
                       style={{
                         fontFamily: "var(--font-playfair)",
                         fontSize: "clamp(1.05rem, 1.5vw, 1.25rem)",
@@ -181,7 +181,7 @@ export function About() {
                       }}
                     >
                       {section.title}
-                    </h4>
+                    </h3>
                   )}
                   {section.body.map((para, j) => (
                     <p

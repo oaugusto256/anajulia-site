@@ -23,7 +23,7 @@ export function Mission() {
         }}
       >
         {/* Eyebrow */}
-        <p
+        <h2
           style={{
             fontFamily: "var(--font-inter)",
             fontSize: 12,
@@ -40,7 +40,7 @@ export function Mission() {
           <span style={{ display: "inline-block", width: 24, height: 1, background: "rgba(253,251,247,0.35)" }} />
           {mission.eyebrow}
           <span style={{ display: "inline-block", width: 24, height: 1, background: "rgba(253,251,247,0.35)" }} />
-        </p>
+        </h2>
 
         {/* Lead */}
         <p

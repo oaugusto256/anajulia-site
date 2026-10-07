@@ -21,7 +21,7 @@ export function FAQ() {
       }}
     >
       <div style={{ maxWidth: 820, margin: "0 auto" }}>
-        <p style={{
+        <h2 style={{
           fontFamily: "var(--font-inter)",
           fontSize: 12,
           fontWeight: 500,
@@ -35,7 +35,7 @@ export function FAQ() {
         }}>
           <span style={{ display: "inline-block", width: 28, height: 1, background: "var(--color-oliva)", flexShrink: 0 }} />
           {faq.eyebrow}
-        </p>
+        </h2>
 
         <div>
           {faq.items.map((item) => (
