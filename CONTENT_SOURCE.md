@@ -346,6 +346,7 @@ Olá, Ana Julia. Vi seu site e gostaria de tirar uma dúvida sobre como funciona
 - Cargo (`brand.jobTitle`): "Psicóloga Clínica"
 - Credencial (`brand.credentials.residency.name`): "Residência Multiprofissional em Saúde – Oncologia"
 - Áreas de conhecimento extras (`brand.knowsAboutExtra`): "Psicologia sistêmica"
+- Link do rodapé (`footer.legal.privacyLink`): "Política de privacidade"
 - Canais de atendimento (`services.channels`): "Atendimento online", "Atendimento presencial em Florianópolis"
 
 ## Página: Burnout e saúde mental no trabalho (/burnout-saude-mental-trabalho)
@@ -707,3 +708,36 @@ Olá, Ana Julia. Vi sua página sobre psico-oncologia e gostaria de agendar uma 
 /luto-e-perdas, /burnout-saude-mental-trabalho
 
 ---
+
+## Página: Política de privacidade (/privacidade)
+
+- Título: Política de privacidade
+- SEO title: Política de Privacidade
+- SEO description: Como este site trata dados: estatísticas anônimas de navegação, contato pelo WhatsApp e seus direitos previstos na LGPD.
+- Atualizada em: 7 de outubro de 2026
+
+### Quem é responsável pelos dados
+
+Este site é mantido por Ana Julia Vognach, psicóloga clínica (CRP/SC 12/30269), CNPJ 67.100.449/0001-00, responsável pelo tratamento dos dados descritos nesta página.
+
+### Estatísticas de visita
+
+Para entender como o site é encontrado e utilizado, coletamos estatísticas anônimas de navegação com a ferramenta PostHog, com dados hospedados na União Europeia. Registramos, por exemplo, quais páginas foram visitadas, de onde a visita veio (como uma busca no Google ou um assistente de inteligência artificial) e se um botão de WhatsApp foi clicado.
+
+Essa coleta não usa cookies, não grava a tela nem a sessão de navegação e não identifica quem visita o site. Os dados não são vendidos nem usados para publicidade.
+
+Durante um período de transição, também utilizamos o Google Analytics e o Vercel Analytics. O Google Analytics pode armazenar cookies no seu navegador; você pode bloqueá-los nas configurações do navegador sem prejuízo ao uso do site.
+
+### Avaliações do Google
+
+As avaliações exibidas no site são públicas e vêm do perfil de Ana Julia Vognach no Google. Elas são mostradas como foram publicadas, com o nome que cada pessoa escolheu exibir no Google.
+
+### Contato pelo WhatsApp
+
+Ao clicar em um botão de WhatsApp, você é direcionada(o) ao aplicativo com uma mensagem sugerida, que pode ser editada antes do envio. As conversas acontecem diretamente no WhatsApp, sujeitas à política de privacidade do aplicativo, e são tratadas com o sigilo previsto no Código de Ética Profissional do Psicólogo.
+
+### Seus direitos
+
+Você pode solicitar informações, correção ou exclusão dos seus dados pessoais, nos termos da Lei Geral de Proteção de Dados (Lei nº 13.709/2018), escrevendo para o e-mail abaixo.
+
+(Ao final, o e-mail de contato é exibido como link.)

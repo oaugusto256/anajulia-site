@@ -228,6 +228,18 @@ export function Footer() {
                 Otávio Silva
               </a>
             </span>
+            <Link
+              href={footer.legal.privacyLink.href}
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontSize: 12.5,
+                color: "rgba(253,251,247,0.7)",
+                textDecoration: "underline",
+                textUnderlineOffset: 3,
+              }}
+            >
+              {footer.legal.privacyLink.label}
+            </Link>
           </div>
           <span
             style={{

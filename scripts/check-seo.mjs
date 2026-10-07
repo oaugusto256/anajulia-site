@@ -186,6 +186,16 @@ siteChecks.push(async (pages, bodies) => {
   if (missing.res.status !== 404) fail("/nao-existe", `expected 404, got ${missing.res.status}`)
 })
 
+// ── privacy page ──
+siteChecks.push(async (pages, bodies) => {
+  if (!pages.some((p) => p.path === "/privacidade")) fail("/sitemap.xml", "missing /privacidade")
+  if (!bodies.get("/")?.includes('href="/privacidade"')) fail("/", "footer has no link to /privacidade")
+})
+pageChecks.push((path, html) => {
+  if (path !== "/privacidade") return
+  if (!ldTypes(path, html).has("WebPage")) fail(path, "JSON-LD missing @type WebPage")
+})
+
 // ── run ──
 async function main() {
   const sitemap = await get("/sitemap.xml")

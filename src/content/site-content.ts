@@ -627,6 +627,7 @@ export const footer = {
   legal: {
     copyright: "© {YEAR} Ana Julia Vognach · Todos os direitos reservados",
     registry: "Psicóloga Clínica · CRP/SC 12/30269 · CNPJ 67.100.449/0001-00",
+    privacyLink: { label: "Política de privacidade", href: "/privacidade" },
   },
   layout: {
     desktopColumns: 4, // brand | contato | navegação | atendimento
@@ -1076,6 +1077,55 @@ export const llmsTxt = {
   whatsappLabel: "WhatsApp",
   emailLabel: "E-mail",
   siteLabel: "Site",
+};
+
+// ────────────────────────────────────────────────────────────────
+// PRIVACIDADE · /privacidade (rascunho para revisão de Ana Julia)
+// ────────────────────────────────────────────────────────────────
+
+export const privacy = {
+  seo: {
+    title: "Política de Privacidade",
+    description:
+      "Como este site trata dados: estatísticas anônimas de navegação, contato pelo WhatsApp e seus direitos previstos na LGPD.",
+  },
+  title: "Política de privacidade",
+  updatedLabel: "Atualizada em",
+  updatedAt: "2026-10-07",
+  sections: [
+    {
+      heading: "Quem é responsável pelos dados",
+      paragraphs: [
+        "Este site é mantido por Ana Julia Vognach, psicóloga clínica (CRP/SC 12/30269), CNPJ 67.100.449/0001-00, responsável pelo tratamento dos dados descritos nesta página.",
+      ],
+    },
+    {
+      heading: "Estatísticas de visita",
+      paragraphs: [
+        "Para entender como o site é encontrado e utilizado, coletamos estatísticas anônimas de navegação com a ferramenta PostHog, com dados hospedados na União Europeia. Registramos, por exemplo, quais páginas foram visitadas, de onde a visita veio (como uma busca no Google ou um assistente de inteligência artificial) e se um botão de WhatsApp foi clicado.",
+        "Essa coleta não usa cookies, não grava a tela nem a sessão de navegação e não identifica quem visita o site. Os dados não são vendidos nem usados para publicidade.",
+        "Durante um período de transição, também utilizamos o Google Analytics e o Vercel Analytics. O Google Analytics pode armazenar cookies no seu navegador; você pode bloqueá-los nas configurações do navegador sem prejuízo ao uso do site.",
+      ],
+    },
+    {
+      heading: "Avaliações do Google",
+      paragraphs: [
+        "As avaliações exibidas no site são públicas e vêm do perfil de Ana Julia Vognach no Google. Elas são mostradas como foram publicadas, com o nome que cada pessoa escolheu exibir no Google.",
+      ],
+    },
+    {
+      heading: "Contato pelo WhatsApp",
+      paragraphs: [
+        "Ao clicar em um botão de WhatsApp, você é direcionada(o) ao aplicativo com uma mensagem sugerida, que pode ser editada antes do envio. As conversas acontecem diretamente no WhatsApp, sujeitas à política de privacidade do aplicativo, e são tratadas com o sigilo previsto no Código de Ética Profissional do Psicólogo.",
+      ],
+    },
+    {
+      heading: "Seus direitos",
+      paragraphs: [
+        "Você pode solicitar informações, correção ou exclusão dos seus dados pessoais, nos termos da Lei Geral de Proteção de Dados (Lei nº 13.709/2018), escrevendo para o e-mail abaixo.",
+      ],
+    },
+  ],
 };
 
 // ────────────────────────────────────────────────────────────────
