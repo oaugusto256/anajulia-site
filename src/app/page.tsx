@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
-import { meta } from "@/content/site-content"
+import { areas, meta } from "@/content/site-content"
+import { publishedTopicForArea, topicPath } from "@/lib/topics"
 import { buildMetadata } from "@/lib/seo"
 import { homeGraph } from "@/lib/schema"
 import { JsonLd } from "@/components/seo/json-ld"
@@ -29,6 +30,13 @@ import { WhatsAppFloat } from "@/components/ui/whatsapp-float"
 // with zero function work and zero external API calls.
 export const revalidate = 86400
 
+// Resolved on the server so draft topic copy never enters the client bundle.
+const topicLinks: Record<string, string> = {}
+for (const item of areas.items) {
+  const topic = publishedTopicForArea(item.id)
+  if (topic) topicLinks[item.id] = topicPath(topic)
+}
+
 export default function Home() {
   return (
     <>
@@ -39,7 +47,7 @@ export default function Home() {
         <Callout />
         <Approach />
         <Services />
-        <Areas />
+        <Areas topicLinks={topicLinks} />
         <About />
         <Mission />
         <Testimonials />

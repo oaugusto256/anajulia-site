@@ -1,6 +1,6 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
-import { topicPageUi, topicPages } from "@/content/site-content"
+import { topicPageUi } from "@/content/site-content"
 import { Footer } from "@/components/sections/footer"
 import { JsonLd } from "@/components/seo/json-ld"
 import { Breadcrumb } from "@/components/topic/breadcrumb"
@@ -14,7 +14,7 @@ import { ScrollTracker } from "@/components/ui/scroll-tracker"
 import { WhatsAppFloat } from "@/components/ui/whatsapp-float"
 import { topicGraph } from "@/lib/schema"
 import { buildMetadata } from "@/lib/seo"
-import { findTopicPage, topicPath } from "@/lib/topics"
+import { findTopicPage, servableTopicPages, topicPath } from "@/lib/topics"
 import { whatsappHref } from "@/lib/whatsapp"
 
 type Props = { params: Promise<{ topic: string }> }
@@ -22,7 +22,7 @@ type Props = { params: Promise<{ topic: string }> }
 export const dynamicParams = false
 
 export function generateStaticParams() {
-  return topicPages.map((page) => ({ topic: page.slug }))
+  return servableTopicPages().map((page) => ({ topic: page.slug }))
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {

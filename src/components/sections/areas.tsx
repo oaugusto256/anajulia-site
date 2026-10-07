@@ -6,7 +6,6 @@ import { Monitor, User, Briefcase, BatteryLow, Baby, Sunset, ClipboardList, Comp
 import type { LucideIcon } from "lucide-react";
 import { areas } from "@/content/site-content";
 import { AccordionItem } from "@/components/ui/accordion-item";
-import { publishedTopicForArea, topicPath } from "@/lib/topics";
 
 const iconMap: Record<string, LucideIcon> = {
   monitor: Monitor,
@@ -19,7 +18,7 @@ const iconMap: Record<string, LucideIcon> = {
   compass: Compass,
 };
 
-export function Areas() {
+export function Areas({ topicLinks = {} }: { topicLinks?: Record<string, string> }) {
   const [openId, setOpenId] = useState<string | null>(null);
 
   function handleToggle(id: string) {
@@ -65,7 +64,7 @@ export function Areas() {
         <div>
           {areas.items.map((item) => {
             const Icon = iconMap[item.icon] ?? Monitor;
-            const topic = publishedTopicForArea(item.id);
+            const topicHref = topicLinks[item.id];
             return (
               <AccordionItem
                 key={item.id}
@@ -108,9 +107,9 @@ export function Areas() {
                       {p}
                     </p>
                   ))}
-                  {topic && (
+                  {topicHref && (
                     <Link
-                      href={topicPath(topic)}
+                      href={topicHref}
                       aria-label={`${areas.linkLabel}: ${item.title}`}
                       style={{
                         alignSelf: "flex-start",

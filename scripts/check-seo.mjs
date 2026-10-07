@@ -215,6 +215,20 @@ siteChecks.push(async (pages) => {
   if (ingest.res.status !== 200) fail("/ingest/static/array.js", `proxy status ${ingest.res.status}`)
 })
 
+// ── draft topic copy must not reach client JS ──
+siteChecks.push(async (_pages, bodies) => {
+  const home = bodies.get("/") ?? ""
+  const srcs = [...new Set([...home.matchAll(/<script[^>]+src="(\/_next\/static\/[^"]+\.js[^"]*)"/g)].map((m) => m[1]))]
+  const drafts = topicPages.filter((p) => p.status === "draft")
+  for (const src of srcs) {
+    const { body } = await get(src)
+    for (const d of drafts) {
+      if (body.includes(d.slug)) fail(src, `client JS contains draft slug ${d.slug}`)
+      if (body.includes(d.hero.intro)) fail(src, `client JS contains draft intro of ${d.slug}`)
+    }
+  }
+})
+
 // ── run ──
 async function main() {
   const sitemap = await get("/sitemap.xml")

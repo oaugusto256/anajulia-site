@@ -55,7 +55,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} ${cormorant.variable}`}>
+    <html lang="pt-BR" data-scroll-behavior="smooth" className={`${inter.variable} ${playfair.variable} ${cormorant.variable}`}>
       <body suppressHydrationWarning className="bg-offwhite font-body antialiased">
         <JsonLd data={siteGraph()} />
         {process.env.NEXT_PUBLIC_GA_ID && (
