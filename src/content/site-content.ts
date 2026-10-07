@@ -815,7 +815,7 @@ export const topicPages: TopicPage[] = [
         heading: "O que é normal sentir no puerpério?",
         paragraphs: [
           "No puerpério, é comum sentir emoções intensas e, muitas vezes, contraditórias: amor e cansaço, alegria e tristeza, encantamento e medo. Viver essa mistura não significa que algo esteja errado com você ou com o seu vínculo com o bebê.",
-          "Nas primeiras semanas, muitas mulheres vivem oscilações de humor, choro fácil, insegurança e a sensação de estar sobrecarregadas. A privação de sono, as mudanças no corpo e a nova rotina pesam, e não reconhecer a própria vida pode assustar.",
+          "Nas primeiras semanas, muitas mulheres vivem oscilações de humor, choro fácil, insegurança e a sensação de estar sobrecarregadas. A privação de sono, as mudanças no corpo e a nova rotina pesam, e a sensação de não reconhecer a própria vida pode assustar.",
           "Quando a tristeza, a ansiedade ou a falta de interesse se prolongam, se intensificam ou dificultam o cuidado consigo e com o bebê, isso pode indicar quadros como a depressão ou a ansiedade pós-parto, que merecem atenção. Essa avaliação é feita com cuidado, em sessão, e pode envolver outros profissionais de saúde que acompanham você.",
         ],
       },
@@ -832,7 +832,7 @@ export const topicPages: TopicPage[] = [
         paragraphs: [
           "A psicoterapia pode acompanhar você desde a gestação até os primeiros anos com o bebê, oferecendo um espaço de escuta para o que muda no corpo, nas relações e na forma de se perceber.",
           "Na gestação, podem surgir expectativas, medos, lembranças da própria história familiar e dúvidas sobre o parto e a chegada do bebê. No pós-parto, o foco muitas vezes se volta para a adaptação à nova rotina, para o cansaço e para o lugar que você passa a ocupar nessa nova configuração.",
-          "Também há espaço para experiências mais difíceis, como gestações de risco, perdas gestacionais e partos vividos com medo ou sofrimento. Cada processo respeita o seu tempo e aquilo que você deseja trabalhar.",
+          "Também há espaço para a adaptação à paternidade e para as mudanças que a chegada do bebê traz para o casal e para a família. Cada processo respeita o seu tempo e aquilo que você deseja trabalhar.",
         ],
       },
       {
@@ -857,13 +857,13 @@ export const topicPages: TopicPage[] = [
         id: "maternidade-bebe",
         question: "Posso fazer a sessão online com o bebê por perto?",
         answer:
-          "Pode, sim. Nem sempre é possível ter alguém para cuidar do bebê durante a sessão, e a sua presença continua sendo bem-vinda, com as pausas que forem necessárias. O importante é estar em um ambiente o mais tranquilo e privativo possível, para que você possa falar com liberdade.",
+          "Isso pode ser conversado e combinado entre nós, a partir da sua rotina. Nem sempre é possível ter alguém para cuidar do bebê durante a sessão, e a presença do bebê faz parte da realidade de muitas mães nesse período. O importante é estar em um ambiente o mais tranquilo e privativo possível, para que você possa falar com liberdade.",
       },
       {
         id: "maternidade-pais",
         question: "Você atende pais e casais também?",
         answer:
-          "Sim. Atendo pais em psicoterapia individual e também ofereço psicoterapia de casal, psicoterapia familiar e orientação parental. Os desafios da parentalidade atravessam todas as pessoas envolvidas no cuidado, e cada uma delas pode precisar de um espaço próprio de escuta.",
+          "Sim. Atendo mães e pais em psicoterapia individual e também ofereço psicoterapia de casal, psicoterapia familiar e orientação parental. Os desafios da parentalidade atravessam todas as pessoas envolvidas no cuidado, e cada uma delas pode precisar de um espaço próprio de escuta.",
       },
       {
         id: "maternidade-quando",
@@ -1029,7 +1029,7 @@ export const topicPages: TopicPage[] = [
         id: "onco-tratamento",
         question: "Você atende pacientes durante o tratamento?",
         answer:
-          "Sim. Atendo pessoas em diferentes momentos do tratamento oncológico e também depois dele, quando a vida começa a se reorganizar. O acompanhamento respeita a sua disposição em cada fase, e a frequência das sessões pode ser combinada de acordo com a sua rotina de tratamento.",
+          "Sim. Atendo pessoas em diferentes momentos do tratamento oncológico, assim como pessoas que convivem com doenças graves ou ameaçadoras da vida. O acompanhamento respeita a sua disposição em cada fase, e a frequência das sessões pode ser combinada de acordo com a sua rotina de tratamento.",
       },
       {
         id: "onco-familia",
