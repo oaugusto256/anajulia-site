@@ -467,6 +467,8 @@ export const mission = {
 
 export const areas = {
   eyebrow: "Áreas de Atuação",
+  /** Link do card para a página do tema (só aparece quando a página está publicada). */
+  linkLabel: "Saiba mais",
   items: [
     {
       id: "clinica-do-trabalho",
@@ -682,6 +684,54 @@ export const analyticsEvents = [
   "services_expand", // serviço aberto
   "scroll_75", // 75% da página atingido
 ] as const;
+
+// ────────────────────────────────────────────────────────────────
+// TOPIC PAGES · uma página por área de atuação
+// ────────────────────────────────────────────────────────────────
+
+export type TopicPage = {
+  slug: string;
+  /** Corresponde a areas.items[].id */
+  areaId: string;
+  /** "draft": acessível pela URL, mas noindex, fora do sitemap/llms.txt e sem links internos. */
+  status: "draft" | "published";
+  seo: { title: string; description: string };
+  breadcrumbLabel: string;
+  hero: { eyebrow: string; title: string; intro: string };
+  sections: { heading: string; paragraphs: string[] }[];
+  faq: { id: string; question: string; answer: string }[];
+  cta: { label: string; whatsappMessage: string };
+  /** Data ISO (AAAA-MM-DD) da última revisão por Ana Julia. */
+  reviewedAt: string;
+  /** Slugs de outras páginas de tema. */
+  related: string[];
+};
+
+export const topicPages: TopicPage[] = [];
+
+export const topicPageUi = {
+  breadcrumbHome: "Início",
+  breadcrumbAriaLabel: "Você está em",
+  reviewedByLabel: "Revisado por",
+  relatedHeading: "Outras áreas",
+  faqHeading: "Perguntas frequentes",
+};
+
+// ────────────────────────────────────────────────────────────────
+// LLMS.TXT · resumo para assistentes de IA
+// ────────────────────────────────────────────────────────────────
+
+export const llmsTxt = {
+  summary:
+    "Ana Julia Vognach é psicóloga clínica (CRP/SC 12/30269), especialista em Oncologia por Residência Multiprofissional em Saúde. Atende adolescentes, adultos e idosos online, para todo o Brasil e exterior, e presencialmente em Florianópolis, no Campeche (Sul da Ilha).",
+  areasHeading: "Áreas de atuação",
+  servicesHeading: "Serviços",
+  faqHeading: "Perguntas frequentes",
+  contactHeading: "Agendamento",
+  whatsappLabel: "WhatsApp",
+  emailLabel: "E-mail",
+  siteLabel: "Site",
+};
 
 // ────────────────────────────────────────────────────────────────
 // CONTEÚDO COMPLETO · export agregado

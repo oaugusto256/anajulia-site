@@ -2,7 +2,7 @@
 // SEO smoke check against a running production build.
 // Usage: pnpm build && pnpm start   (in another terminal)  then  pnpm check:seo
 // BASE_URL defaults to http://localhost:3000. Exits non-zero on any failure.
-import { brand } from "../src/content/site-content.ts"
+import { brand, contentUpdatedAt, topicPages } from "../src/content/site-content.ts"
 
 const BASE_URL = (process.env.BASE_URL ?? "http://localhost:3000").replace(/\/$/, "")
 const SITE_URL = "https://psicoanajulia.com.br"
@@ -128,6 +128,29 @@ pageChecks.push((path, html, kind) => {
   for (const t of EXPECTED_TYPES[kind] ?? GLOBAL_TYPES) {
     if (!types.has(t)) fail(path, `JSON-LD missing @type ${t}`)
   }
+})
+
+// ── robots, llms.txt, sitemap dates ──
+const draftSlugs = () => topicPages.filter((p) => p.status === "draft").map((p) => p.slug)
+
+siteChecks.push(async () => {
+  const robots = await get("/robots.txt")
+  if (robots.res.status !== 200) fail("/robots.txt", `status ${robots.res.status}`)
+  for (const agent of ["OAI-SearchBot", "Claude-SearchBot", "PerplexityBot"]) {
+    if (!robots.body.includes(agent)) fail("/robots.txt", `missing ${agent}`)
+  }
+  if (!robots.body.includes(`Sitemap: ${SITE_URL}/sitemap.xml`)) fail("/robots.txt", "missing Sitemap line")
+
+  const llms = await get("/llms.txt")
+  if (llms.res.status !== 200) fail("/llms.txt", `status ${llms.res.status}`)
+  if (!(llms.res.headers.get("content-type") ?? "").startsWith("text/plain")) fail("/llms.txt", "content-type is not text/plain")
+  if (!llms.body.startsWith(`# ${brand.name}`)) fail("/llms.txt", "must start with '# <name>'")
+  for (const slug of draftSlugs()) if (llms.body.includes(`/${slug}`)) fail("/llms.txt", `lists draft page ${slug}`)
+
+  const sitemap = await get("/sitemap.xml")
+  const homeLastmod = sitemap.body.match(/<loc>https:\/\/psicoanajulia\.com\.br\/?<\/loc>\s*<lastmod>([^<]+)</)?.[1]
+  if (!homeLastmod?.startsWith(contentUpdatedAt)) fail("/sitemap.xml", `home lastmod ${homeLastmod} != ${contentUpdatedAt}`)
+  for (const slug of draftSlugs()) if (sitemap.body.includes(`/${slug}<`)) fail("/sitemap.xml", `lists draft page ${slug}`)
 })
 
 // ── run ──
