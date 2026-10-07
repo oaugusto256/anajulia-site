@@ -102,6 +102,34 @@ pageChecks.push((path, html, kind) => {
   if (/<h4[\s>]/.test(html)) fail(path, "unexpected <h4> (About trajectory should be <h3>)")
 })
 
+// ── JSON-LD ──
+function ldTypes(path, html) {
+  const types = new Set()
+  for (const m of html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
+    let data
+    try {
+      data = JSON.parse(m[1])
+    } catch (e) {
+      fail(path, `JSON-LD does not parse: ${e.message}`)
+      continue
+    }
+    for (const node of data["@graph"] ?? [data]) {
+      for (const t of [node["@type"]].flat()) if (t) types.add(t)
+    }
+  }
+  return types
+}
+
+const GLOBAL_TYPES = ["Person", "Psychologist", "WebSite"]
+const EXPECTED_TYPES = { home: [...GLOBAL_TYPES, "WebPage", "FAQPage"] }
+
+pageChecks.push((path, html, kind) => {
+  const types = ldTypes(path, html)
+  for (const t of EXPECTED_TYPES[kind] ?? GLOBAL_TYPES) {
+    if (!types.has(t)) fail(path, `JSON-LD missing @type ${t}`)
+  }
+})
+
 // ── run ──
 async function main() {
   const sitemap = await get("/sitemap.xml")

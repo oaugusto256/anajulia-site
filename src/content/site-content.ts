@@ -104,6 +104,17 @@ export const brand = {
   sub: "CRP 12/30269", // small caps no header
   fullTitle: "Ana Julia Vognach · Psicóloga Clínica",
   crp: "CRP/SC 12/30269",
+  jobTitle: "Psicóloga Clínica",
+  credentials: {
+    license: {
+      name: "CRP/SC 12/30269",
+      issuer: "Conselho Regional de Psicologia – 12ª Região",
+    },
+    residency: {
+      name: "Residência Multiprofissional em Saúde – Oncologia",
+    },
+  },
+  knowsAboutExtra: ["Psicologia sistêmica"],
   symbol: "Ψ", // psi grego — usado no selo circular do header
   contact: {
     whatsapp: {
@@ -367,6 +378,7 @@ export const approach = {
 export const services = {
   eyebrow: "Como posso ajudar",
   tagline: "Atendimentos presenciais em Florianópolis e online para todo o Brasil e exterior.",
+  channels: ["Atendimento online", "Atendimento presencial em Florianópolis"],
   items: [
     {
       title: "Psicoterapia Individual",

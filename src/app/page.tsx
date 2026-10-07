@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { meta } from "@/content/site-content"
 import { buildMetadata } from "@/lib/seo"
+import { homeGraph } from "@/lib/schema"
+import { JsonLd } from "@/components/seo/json-ld"
 
 export const metadata: Metadata = buildMetadata({
   title: meta.title,
@@ -31,6 +33,7 @@ export default function Home() {
   return (
     <>
       <main>
+        <JsonLd data={homeGraph()} />
         <ScrollTracker />
         <Hero />
         <Callout />
