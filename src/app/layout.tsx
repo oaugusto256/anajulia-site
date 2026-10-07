@@ -7,6 +7,8 @@ import { Nav } from "@/components/sections/nav";
 import { WhatsAppFloat } from "@/components/ui/whatsapp-float";
 import { ScrollTracker } from "@/components/ui/scroll-tracker";
 import { WhatsAppClickTracker } from "@/components/ui/whatsapp-click-tracker";
+import { brand, meta } from "@/content/site-content";
+import { SITE_URL } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,36 +31,14 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://psicoanajulia.com.br"),
-  title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
-  description:
-    "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
-  keywords: [
-    "psicóloga florianópolis",
-    "psicóloga campeche",
-    "saúde mental e trabalho",
-    "psicoterapia para adultos",
-    "equilíbrio carreira e maternidade",
-    "psicologia sistêmica",
-    "supervisão clínica para psicólogos",
-  ],
-  alternates: {
-    canonical: "/",
-  },
+  metadataBase: new URL(SITE_URL),
+  title: { default: meta.title, template: `%s | ${brand.name}` },
+  description: meta.description,
   openGraph: {
-    title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
-    description:
-      "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
-    url: "https://psicoanajulia.com.br",
-    locale: "pt_BR",
+    siteName: meta.openGraph.siteName,
+    locale: meta.openGraph.locale,
     type: "website",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
-    description:
-      "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
   },
   icons: {
     icon: [
@@ -69,10 +49,7 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
     other: { rel: "manifest", url: "/site.webmanifest" },
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
+  robots: { index: true, follow: true },
 };
 
 const jsonLd = {

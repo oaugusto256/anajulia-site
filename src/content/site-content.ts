@@ -52,9 +52,9 @@ export type Layout = {
 
 export const meta = {
   language: "pt-BR",
-  title: "Ana Julia Vognach · Psicóloga Clínica",
+  title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
   description:
-    "Psicoterapia para adultos com foco em burnout, maternidade, luto e saúde mental no trabalho. Atendimento online, CRP 12/30269.",
+    "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
   keywords: [
     "psicóloga online",
     "psicoterapia",

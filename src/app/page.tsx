@@ -1,3 +1,14 @@
+import type { Metadata } from "next"
+import { meta } from "@/content/site-content"
+import { buildMetadata } from "@/lib/seo"
+
+export const metadata: Metadata = buildMetadata({
+  title: meta.title,
+  description: meta.description,
+  path: "/",
+  absoluteTitle: true,
+})
+
 import { Hero } from "@/components/sections/hero"
 import { Callout } from "@/components/sections/callout"
 import { About } from "@/components/sections/about"
