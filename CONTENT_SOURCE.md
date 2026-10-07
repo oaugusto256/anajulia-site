@@ -334,7 +334,7 @@ Olá, Ana Julia. Vi seu site e gostaria de tirar uma dúvida sobre como funciona
 
 # DRAFT — revisão Ana Julia
 
-> Textos redigidos por Claude em 2026-10-07. Nada aqui é publicado (indexado ou linkado) antes da aprovação.
+> Textos redigidos por Claude em 2026-10-07. As páginas de tema ficam sem publicação (rascunho, noindex, sem link e fora do ar em produção) até a aprovação. A página de privacidade e os rótulos e mensagens listados abaixo entram no ar junto com o site e precisam da revisão de Ana Julia antes ou logo após o deploy.
 > Para publicar uma página: trocar `status` para `"published"`, atualizar `reviewedAt` e `contentUpdatedAt` em `src/content/site-content.ts`.
 
 ## Novos rótulos e mensagens
@@ -722,7 +722,7 @@ Este site é mantido por Ana Julia Vognach, psicóloga clínica (CRP/SC 12/30269
 
 ### Estatísticas de visita
 
-Para entender como o site é encontrado e utilizado, coletamos estatísticas anônimas de navegação com a ferramenta PostHog, com dados hospedados na União Europeia. Registramos, por exemplo, quais páginas foram visitadas, de onde a visita veio (como uma busca no Google ou um assistente de inteligência artificial) e se um botão de WhatsApp foi clicado.
+Para entender como o site é encontrado e utilizado, coletamos estatísticas anônimas de navegação com a ferramenta PostHog, com dados hospedados na União Europeia. Registramos, por exemplo, quais páginas foram visitadas, de onde a visita veio (como uma busca no Google ou um assistente de inteligência artificial) e se um botão de WhatsApp foi clicado. Também registramos, de forma anônima, cliques em elementos da página, como botões e links.
 
 Essa coleta não usa cookies, não grava a tela nem a sessão de navegação e não identifica quem visita o site. Os dados não são vendidos nem usados para publicidade.
 

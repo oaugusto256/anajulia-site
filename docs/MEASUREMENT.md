@@ -16,6 +16,8 @@
 2. Tendência: `whatsapp_click` (total), breakdown por `landing_page`; segunda série com breakdown por `topic`.
 3. Tendência: `$pageview` com filtro `channel` começando com `ai_`, breakdown por `channel`.
 
+4. Configuração única do projeto: Project settings → ative "Discard client IP data". Necessário para que a afirmação da página de privacidade ("anônimas", "não identifica quem visita") seja verdadeira.
+
 ## Registro de contatos → pacientes (Google Sheet)
 Colunas: `data do contato` · `origem` (mensagem do WhatsApp — ex.: "Vi sua página sobre luto…" — ou resposta a "como me encontrou?") · `virou paciente (s/n)` · `data da 1ª sessão`.
 Revisão mensal: comparar contagem de linhas por origem com `whatsapp_click` por `channel`/`topic` no mesmo mês.

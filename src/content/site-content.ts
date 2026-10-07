@@ -1102,7 +1102,7 @@ export const privacy = {
     {
       heading: "Estatísticas de visita",
       paragraphs: [
-        "Para entender como o site é encontrado e utilizado, coletamos estatísticas anônimas de navegação com a ferramenta PostHog, com dados hospedados na União Europeia. Registramos, por exemplo, quais páginas foram visitadas, de onde a visita veio (como uma busca no Google ou um assistente de inteligência artificial) e se um botão de WhatsApp foi clicado.",
+        "Para entender como o site é encontrado e utilizado, coletamos estatísticas anônimas de navegação com a ferramenta PostHog, com dados hospedados na União Europeia. Registramos, por exemplo, quais páginas foram visitadas, de onde a visita veio (como uma busca no Google ou um assistente de inteligência artificial) e se um botão de WhatsApp foi clicado. Também registramos, de forma anônima, cliques em elementos da página, como botões e links.",
         "Essa coleta não usa cookies, não grava a tela nem a sessão de navegação e não identifica quem visita o site. Os dados não são vendidos nem usados para publicidade.",
         "Durante um período de transição, também utilizamos o Google Analytics e o Vercel Analytics. O Google Analytics pode armazenar cookies no seu navegador; você pode bloqueá-los nas configurações do navegador sem prejuízo ao uso do site.",
       ],
