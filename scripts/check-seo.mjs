@@ -196,6 +196,25 @@ pageChecks.push((path, html) => {
   if (!ldTypes(path, html).has("WebPage")) fail(path, "JSON-LD missing @type WebPage")
 })
 
+// ── trailing slash + analytics proxy ──
+siteChecks.push(async (pages) => {
+  for (const { path } of pages) {
+    if (path === "/") continue
+    const { res, body } = await get(`${path}/`)
+    if (res.status >= 300 && res.status < 400) {
+      const location = new URL(res.headers.get("location") ?? "", BASE_URL).pathname
+      if (location !== path) fail(`${path}/`, `redirects to ${location}, expected ${path}`)
+    } else if (res.status === 200) {
+      const canonical = attr(findTag(body, /<link[^>]+rel="canonical"[^>]*>/), "href")
+      if (stripSlash(canonical ?? "") !== SITE_URL + path) fail(`${path}/`, `canonical ${canonical} should be ${SITE_URL + path}`)
+    } else if (res.status !== 404) {
+      fail(`${path}/`, `unexpected status ${res.status}`)
+    }
+  }
+  const ingest = await get("/ingest/static/array.js")
+  if (ingest.res.status !== 200) fail("/ingest/static/array.js", `proxy status ${ingest.res.status}`)
+})
+
 // ── run ──
 async function main() {
   const sitemap = await get("/sitemap.xml")

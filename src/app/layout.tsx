@@ -5,6 +5,7 @@ import Script from "next/script";
 import "./globals.css";
 import { Nav } from "@/components/sections/nav";
 import { WhatsAppClickTracker } from "@/components/ui/whatsapp-click-tracker";
+import { AnalyticsProvider } from "@/components/analytics/analytics-provider";
 import { brand, meta } from "@/content/site-content";
 import { JsonLd } from "@/components/seo/json-ld";
 import { SITE_URL } from "@/lib/seo";
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </>
         )}
         <WhatsAppClickTracker />
+        <AnalyticsProvider />
         <Nav />
         {children}
         <Analytics />
