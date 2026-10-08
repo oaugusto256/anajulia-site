@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 import { Monitor, User, Briefcase, BatteryLow, Baby, Sunset, ClipboardList, Compass } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { areas } from "@/content/site-content";
@@ -17,7 +18,7 @@ const iconMap: Record<string, LucideIcon> = {
   compass: Compass,
 };
 
-export function Areas() {
+export function Areas({ topicLinks = {} }: { topicLinks?: Record<string, string> }) {
   const [openId, setOpenId] = useState<string | null>(null);
 
   function handleToggle(id: string) {
@@ -34,7 +35,7 @@ export function Areas() {
       }}
     >
       <div style={{ maxWidth: 1200, margin: "0 auto" }}>
-        <p
+        <h2
           style={{
             fontFamily: "var(--font-inter)",
             fontSize: 12,
@@ -58,11 +59,12 @@ export function Areas() {
             }}
           />
           {areas.eyebrow}
-        </p>
+        </h2>
 
         <div>
           {areas.items.map((item) => {
             const Icon = iconMap[item.icon] ?? Monitor;
+            const topicHref = topicLinks[item.id];
             return (
               <AccordionItem
                 key={item.id}
@@ -105,6 +107,23 @@ export function Areas() {
                       {p}
                     </p>
                   ))}
+                  {topicHref && (
+                    <Link
+                      href={topicHref}
+                      aria-label={`${areas.linkLabel}: ${item.title}`}
+                      style={{
+                        alignSelf: "flex-start",
+                        fontFamily: "var(--font-inter)",
+                        fontSize: 14,
+                        color: "var(--color-preto)",
+                        textDecoration: "none",
+                        borderBottom: "1px solid var(--color-preto)",
+                        paddingBottom: 2,
+                      }}
+                    >
+                      {areas.linkLabel}
+                    </Link>
+                  )}
                 </div>
               </AccordionItem>
             );

@@ -1,6 +1,7 @@
 "use client"
 
 import { useEffect } from "react"
+import Link from "next/link"
 import { nav, brand } from "@/content/site-content"
 
 interface NavDrawerProps {
@@ -103,7 +104,7 @@ export function NavDrawer({ open, onClose }: NavDrawerProps) {
         style={{ flex: 1, display: "flex", flexDirection: "column", padding: "0 20px", overflowY: "auto" }}
       >
         {nav.links.map((link) => (
-          <a
+          <Link
             key={link.href}
             href={link.href}
             onClick={onClose}
@@ -119,7 +120,7 @@ export function NavDrawer({ open, onClose }: NavDrawerProps) {
             }}
           >
             {link.label}
-          </a>
+          </Link>
         ))}
       </nav>
 

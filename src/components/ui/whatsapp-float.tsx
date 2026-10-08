@@ -1,9 +1,9 @@
 import { floatingWhatsapp } from "@/content/site-content"
 
-export function WhatsAppFloat() {
+export function WhatsAppFloat({ href = floatingWhatsapp.href }: { href?: string }) {
   return (
     <a
-      href={floatingWhatsapp.href}
+      href={href}
       aria-label={floatingWhatsapp.ariaLabel}
       target="_blank"
       rel="noopener noreferrer"

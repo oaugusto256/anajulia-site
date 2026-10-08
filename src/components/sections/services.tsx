@@ -23,7 +23,7 @@ export function Services() {
       <div style={{ maxWidth: 800, margin: "0 auto" }}>
 
         {/* Eyebrow */}
-        <p
+        <h2
           style={{
             fontFamily: "var(--font-inter)",
             fontSize: 12,
@@ -47,7 +47,7 @@ export function Services() {
             }}
           />
           {services.eyebrow}
-        </p>
+        </h2>
 
         {/* Accordion */}
         <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
@@ -60,6 +60,7 @@ export function Services() {
                   borderBottom: "1px solid var(--color-linhas)",
                 }}
               >
+                <h3 style={{ margin: 0, font: "inherit" }}>
                 <button
                   onClick={() => toggle(i)}
                   aria-expanded={isOpen}
@@ -109,9 +110,11 @@ export function Services() {
                     +
                   </span>
                 </button>
+                </h3>
 
                 {/* Content */}
                 <div
+                  inert={!isOpen}
                   style={{
                     display: "grid",
                     gridTemplateRows: isOpen ? "1fr" : "0fr",
@@ -156,7 +159,7 @@ export function Services() {
             marginTop: 28,
           }}
         >
-          Atendimentos presenciais em Florianópolis e online para todo o Brasil e exterior.
+          {services.tagline}
         </p>
       </div>
     </section>

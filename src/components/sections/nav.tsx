@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Link from "next/link";
 import { nav, brand } from "@/content/site-content";
 import { NavDrawer } from "@/components/ui/nav-drawer";
 
@@ -94,7 +95,7 @@ export function Nav() {
             className="nav-desktop-links"
           >
             {nav.links.map((link) => (
-              <a
+              <Link
                 key={link.href}
                 href={link.href}
                 className="nav-link"
@@ -108,7 +109,7 @@ export function Nav() {
                 }}
               >
                 {link.label}
-              </a>
+              </Link>
             ))}
           </nav>
 

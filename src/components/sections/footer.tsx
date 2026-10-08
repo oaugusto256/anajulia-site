@@ -1,7 +1,19 @@
+import Link from "next/link";
 import { footer, brand } from "@/content/site-content";
 
 export function Footer() {
   const year = new Date().getFullYear();
+
+  const linkStyle: React.CSSProperties = {
+    fontFamily: "var(--font-inter)",
+    fontSize: 14,
+    color: "rgba(253,251,247,0.8)",
+    textDecoration: "none",
+    display: "flex",
+    alignItems: "center",
+    gap: 8,
+    lineHeight: 1.4,
+  };
 
   return (
     <footer
@@ -72,6 +84,26 @@ export function Footer() {
                 {footer.brand.sub}
               </div>
             </div>
+            <address
+              style={{
+                fontStyle: "normal",
+                fontFamily: "var(--font-inter)",
+                fontSize: 13,
+                lineHeight: 1.6,
+                color: "rgba(253,251,247,0.6)",
+                marginTop: 8,
+              }}
+            >
+              {brand.location.streetAddress}
+              <br />
+              {brand.location.complement}
+              <br />
+              {brand.location.neighborhood}, {brand.location.city} – {brand.location.region}
+              <br />
+              {footer.address.postalCodePrefix} {brand.location.postalCode}
+              <br />
+              {brand.location.hoursLabel}
+            </address>
           </div>
 
           {/* Cols 2–4: Contato, Navegação, Atendimento */}
@@ -107,24 +139,21 @@ export function Footer() {
                   return (
                     <li key={i}>
                       {href ? (
-                        <a
-                          href={href}
-                          target={external ? "_blank" : undefined}
-                          rel={external ? "noopener noreferrer" : undefined}
-                          style={{
-                            fontFamily: "var(--font-inter)",
-                            fontSize: 14,
-                            color: "rgba(253,251,247,0.8)",
-                            textDecoration: "none",
-                            display: "flex",
-                            alignItems: "center",
-                            gap: 8,
-                            lineHeight: 1.4,
-                          }}
-                        >
-                          {icon && <FooterIcon name={icon} />}
-                          {link.label}
-                        </a>
+                        href.startsWith("/") ? (
+                          <Link href={href} style={linkStyle}>
+                            {link.label}
+                          </Link>
+                        ) : (
+                          <a
+                            href={href}
+                            target={external ? "_blank" : undefined}
+                            rel={external ? "noopener noreferrer" : undefined}
+                            style={linkStyle}
+                          >
+                            {icon && <FooterIcon name={icon} />}
+                            {link.label}
+                          </a>
+                        )
                       ) : (
                         <span
                           style={{
@@ -199,6 +228,18 @@ export function Footer() {
                 Otávio Silva
               </a>
             </span>
+            <Link
+              href={footer.legal.privacyLink.href}
+              style={{
+                fontFamily: "var(--font-inter)",
+                fontSize: 12.5,
+                color: "rgba(253,251,247,0.7)",
+                textDecoration: "underline",
+                textUnderlineOffset: 3,
+              }}
+            >
+              {footer.legal.privacyLink.label}
+            </Link>
           </div>
           <span
             style={{

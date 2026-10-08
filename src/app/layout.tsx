@@ -4,9 +4,12 @@ import { Inter, Playfair_Display, Cormorant_Garamond } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 import { Nav } from "@/components/sections/nav";
-import { WhatsAppFloat } from "@/components/ui/whatsapp-float";
-import { ScrollTracker } from "@/components/ui/scroll-tracker";
 import { WhatsAppClickTracker } from "@/components/ui/whatsapp-click-tracker";
+import { AnalyticsProvider } from "@/components/analytics/analytics-provider";
+import { brand, meta } from "@/content/site-content";
+import { JsonLd } from "@/components/seo/json-ld";
+import { SITE_URL } from "@/lib/seo";
+import { siteGraph } from "@/lib/schema";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -29,36 +32,14 @@ const cormorant = Cormorant_Garamond({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://psicoanajulia.com.br"),
-  title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
-  description:
-    "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
-  keywords: [
-    "psicóloga florianópolis",
-    "psicóloga campeche",
-    "saúde mental e trabalho",
-    "psicoterapia para adultos",
-    "equilíbrio carreira e maternidade",
-    "psicologia sistêmica",
-    "supervisão clínica para psicólogos",
-  ],
-  alternates: {
-    canonical: "/",
-  },
+  metadataBase: new URL(SITE_URL),
+  title: { default: meta.title, template: `%s | ${brand.name}` },
+  description: meta.description,
   openGraph: {
-    title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
-    description:
-      "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
-    url: "https://psicoanajulia.com.br",
-    locale: "pt_BR",
+    siteName: meta.openGraph.siteName,
+    locale: meta.openGraph.locale,
     type: "website",
     images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
-    description:
-      "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
   },
   icons: {
     icon: [
@@ -69,49 +50,14 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
     other: { rel: "manifest", url: "/site.webmanifest" },
   },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
-
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Psychologist",
-  name: "Ana Julia Vognach",
-  inLanguage: "pt-BR",
-  description:
-    "Psicoterapia para adultos em Florianópolis e online para todo Brasil e exterior. Especialista em burnout, maternidade, luto e saúde mental no trabalho. CRP 12/30269.",
-  url: "https://psicoanajulia.com.br",
-  telephone: "+5551982831876",
-  priceRange: "$$",
-  hasCredential: "CRP/SC 12/30269",
-  address: {
-    "@type": "PostalAddress",
-    addressLocality: "Florianópolis",
-    addressRegion: "SC",
-    addressCountry: "BR",
-  },
-  areaServed: ["Florianópolis", "Sul da Ilha", "Campeche"],
-  knowsAbout: [
-    "burnout",
-    "maternidade",
-    "luto",
-    "saúde mental no trabalho",
-    "psicoterapia para adultos",
-    "psicologia sistêmica",
-  ],
-  sameAs: ["https://maps.app.goo.gl/yx6VRRiSPBZc5SBH7?g_st=iw"],
+  robots: { index: true, follow: true },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="pt-BR" className={`${inter.variable} ${playfair.variable} ${cormorant.variable}`}>
+    <html lang="pt-BR" data-scroll-behavior="smooth" className={`${inter.variable} ${playfair.variable} ${cormorant.variable}`}>
       <body suppressHydrationWarning className="bg-offwhite font-body antialiased">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-        />
+        <JsonLd data={siteGraph()} />
         {process.env.NEXT_PUBLIC_GA_ID && (
           <>
             <Script
@@ -128,11 +74,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </Script>
           </>
         )}
-        <ScrollTracker />
         <WhatsAppClickTracker />
+        <AnalyticsProvider />
         <Nav />
         {children}
-        <WhatsAppFloat />
         <Analytics />
       </body>
     </html>
