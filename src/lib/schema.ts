@@ -55,7 +55,9 @@ function personNode(): JsonLdNode {
 
 function practiceNode(): JsonLdNode {
   return {
-    "@type": "Psychologist",
+    // schema.org has no Psychologist type; MedicalBusiness is a LocalBusiness/Organization,
+    // so it is a valid worksFor target and keeps address and opening hours.
+    "@type": "MedicalBusiness",
     "@id": ids.practice,
     name: brand.name,
     description: meta.description,

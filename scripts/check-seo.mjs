@@ -120,7 +120,7 @@ function ldTypes(path, html) {
   return types
 }
 
-const GLOBAL_TYPES = ["Person", "Psychologist", "WebSite"]
+const GLOBAL_TYPES = ["Person", "MedicalBusiness", "WebSite"]
 const EXPECTED_TYPES = { home: [...GLOBAL_TYPES, "WebPage", "FAQPage"] }
 
 pageChecks.push((path, html, kind) => {
