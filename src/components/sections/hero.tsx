@@ -45,65 +45,6 @@ export function Hero() {
               style={{ objectFit: "cover", objectPosition: hero.photo.objectPosition }}
             />
           </div>
-
-          {/* Stamp */}
-          <div
-            className="hero-stamp"
-            style={{
-              position: "absolute",
-              bottom: -28,
-              left: -28,
-              width: 132,
-              height: 132,
-              borderRadius: "50%",
-              background: "var(--color-offwhite)",
-              border: "1px solid var(--color-linhas)",
-              boxShadow: "0 4px 16px rgba(0,0,0,0.06)",
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              justifyContent: "center",
-              textAlign: "center",
-              gap: 2,
-              zIndex: 2,
-            }}
-          >
-            <span
-              style={{
-                fontFamily: "var(--font-inter)",
-                fontSize: 9,
-                textTransform: "uppercase",
-                letterSpacing: "0.15em",
-                color: "var(--color-cinza)",
-              }}
-            >
-              Desde
-            </span>
-            <span
-              style={{
-                fontFamily: "var(--font-playfair)",
-                fontSize: 22,
-                color: "var(--color-oliva)",
-                lineHeight: 1,
-              }}
-            >
-              2018
-            </span>
-            <span
-              style={{
-                fontFamily: "var(--font-playfair)",
-                fontSize: 11,
-                color: "var(--color-oliva)",
-                lineHeight: 1.3,
-                maxWidth: 80,
-                textAlign: "center",
-              }}
-            >
-              {hero.stamp.line1}
-              <br />
-              {hero.stamp.line2}
-            </span>
-          </div>
         </div>
 
         {/* Text column */}
@@ -269,21 +210,6 @@ export function Hero() {
           }
         }
         .hero-cta:hover { background: var(--color-oliva) !important; }
-        @media (max-width: 979px) {
-          .hero-stamp {
-            width: 80px !important;
-            height: 80px !important;
-            bottom: -10px !important;
-            left: -10px !important;
-          }
-          .hero-stamp span:last-child {
-            font-size: 9px !important;
-            max-width: 60px !important;
-          }
-          .hero-stamp span:nth-child(2) {
-            font-size: 16px !important;
-          }
-        }
       `}</style>
     </section>
   );

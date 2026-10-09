@@ -194,13 +194,13 @@ export const nav = {
 export const hero = {
   eyebrow: "Psicologia Clínica | Online e Presencial",
   title: {
-    plain: "Psicoterapia para momentos em que a vida muda mais rápido do que conseguimos acompanhar.",
+    plain: "Um espaço seguro para você ser escutada(o), desacelerar, acolher o que sente e se reencontrar no presente.",
     italic: "",
   },
   /** Texto plano para SEO/SSR: */
-  titlePlain: "Psicoterapia para momentos em que a vida muda mais rápido do que conseguimos acompanhar.",
+  titlePlain: "Um espaço seguro para você ser escutada(o), desacelerar, acolher o que sente e se reencontrar no presente.",
   subtitle: [
-    "Acolher o que está sendo vivido, compreender seus impactos e construir caminhos mais coerentes com quem você é.",
+    "Psicoterapia individual online e presencial para jovens, adultos e idosos em momentos de transição e busca por sentido.",
   ],
   cta: {
     label: "Agendar conversa inicial",
@@ -213,15 +213,9 @@ export const hero = {
     alt: "Ana Julia Vognach - Psicóloga Clínica (CRP 12/30269)",
     objectPosition: "center 30%",
   },
-  stamp: {
-    /** Selo circular sobreposto à foto (canto inferior-esquerdo) */
-    small: "Desde 2018",
-    line1: "Cuidado em",
-    line2: "saúde mental",
-  },
   metrics: [
     { value: "CRP 12/30269", label: "Psicóloga Clínica" },
-    { value: "8+", label: "anos de experiência clínica" },
+    { value: "Desde 2018", label: "Cuidado em saúde mental" },
     { value: "Residência Hospitalar", label: "Especialização em Oncologia" },
   ],
   layout: {
@@ -242,8 +236,7 @@ export const hero = {
       "Métricas no desktop aparecem abaixo do CTA, com borda-top divisória",
       "Métricas no mobile vão para baixo da foto, em 3 colunas",
       "Título usa Playfair 500; itálico em Cormorant não — itálico é Playfair italic",
-      "Foto tem aspect 4/5 com selo circular ‘Desde 2018’ sobreposto",
-      "No mobile o selo encolhe (80px) e fica próximo ao canto",
+      "Foto tem aspect 4/5, sem selo sobreposto",
     ],
   } as Layout & { notes: string[] },
 };
