@@ -117,7 +117,7 @@ export function Callout() {
             marginRight: "auto",
           }}
         >
-          A psicoterapia é um espaço para compreender o que você está vivendo, acolher seus sentimentos e construir formas mais leves de caminhar.
+          Você não precisa dar conta de tudo sozinha(o). No processo terapêutico, olhamos para a sua realidade de hoje para que você possa resgatar sua autonomia e viver com mais presença.
         </p>
       </div>
 
