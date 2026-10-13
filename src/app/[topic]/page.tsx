@@ -39,8 +39,6 @@ export default async function TopicRoute({ params }: Props) {
   if (!page) notFound()
 
   const href = whatsappHref(page.cta.whatsappMessage)
-  const leading = page.sections.slice(0, 2)
-  const trailing = page.sections.slice(2)
 
   return (
     <>
@@ -57,14 +55,10 @@ export default async function TopicRoute({ params }: Props) {
         >
           <Breadcrumb label={page.breadcrumbLabel} />
           <TopicHero {...page.hero} />
-          {leading.map((section) => (
+          {page.sections.map((section) => (
             <TopicSection key={section.heading} {...section} />
           ))}
-          <TopicCta label={page.cta.label} href={href} variant="ghost" location="topic-soft" />
-          {trailing.map((section) => (
-            <TopicSection key={section.heading} {...section} />
-          ))}
-          <TopicCta label={page.cta.label} href={href} variant="primary" location="topic-end" />
+          <TopicCta label={page.cta.label} href={href} location="topic-end" />
           <TopicFaq heading={topicPageUi.faqHeading} items={page.faq} />
           <ReviewLine reviewedAt={page.reviewedAt} />
           <RelatedTopics slugs={page.related} />
