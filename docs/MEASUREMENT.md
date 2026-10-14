@@ -9,7 +9,7 @@
 | `services_expand` | `id`, `page_path` |
 | `scroll_75` | `page_path`, `topic` |
 
-`channel`: valor de `utm_source` (minúsculo) ou `organic_search`, `ai_chatgpt`, `ai_perplexity`, `ai_gemini`, `ai_claude`, `ai_copilot`, `instagram`, `facebook`, `referral`, `internal`, `direct`.
+`channel`: valor de `utm_source` (minúsculo) ou `organic_search`, `ai_chatgpt`, `ai_perplexity`, `ai_gemini`, `ai_claude`, `ai_copilot`, `instagram`, `facebook`, `doctoralia`, `referral`, `internal`, `direct`.
 
 ## Dashboard (configurar uma vez no PostHog)
 1. Funil: `$pageview` → `scroll_75` → `whatsapp_click`, breakdown por `channel`, janela de conversão 1 dia.
@@ -41,7 +41,7 @@ Revisão mensal: comparar contagem de linhas por origem com `whatsapp_click` por
 ## Checklist externo (manual, por prioridade)
 Origem: export do Search Console de 2026-10-14 (spec `docs/superpowers/specs/2026-10-14-search-performance-design.md`).
 
-1. Doctoralia: a cidade principal do perfil está como Estrela (RS), com Florianópolis/Campeche como segundo endereço. Se o consultório de Estrela não estiver mais ativo, removê-lo para o perfil ficar em Florianópolis; nome, endereço e telefone idênticos ao site (NAP), também no Psicologia Viva (ou equivalente). Se a URL do perfil mudar, atualizar `brand.location.doctoraliaUrl`.
+1. Doctoralia: a cidade principal do perfil está como Estrela (RS), com Florianópolis/Campeche como segundo endereço. Se o consultório de Estrela não estiver mais ativo, removê-lo para o perfil ficar em Florianópolis; nome, endereço e telefone idênticos ao site (NAP), também no Psicologia Viva (ou equivalente). Se a URL do perfil mudar, atualizar `brand.location.doctoraliaUrl`. No campo de site do perfil, usar `https://psicoanajulia.com.br/?utm_source=doctoralia&utm_medium=referral` (visitas sem UTM vindas do Doctoralia também caem no canal `doctoralia`).
 2. Google Business Profile: categoria principal Psicólogo; serviços (psicoterapia individual, casal, familiar, grupo e as quatro áreas); descrição; posts quinzenais com link para as páginas de tema usando `?utm_source=gbp&utm_medium=organic`; fotos recentes do consultório; link do site `https://psicoanajulia.com.br/?utm_source=gbp&utm_medium=organic`.
 3. Pedir avaliações no Google a pacientes satisfeitos, dentro da ética do CFP (sem incentivo, sem roteiro).
 4. Bio do Instagram: `https://psicoanajulia.com.br/?utm_source=instagram&utm_medium=social`.

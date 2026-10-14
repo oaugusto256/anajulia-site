@@ -136,8 +136,8 @@ export const brand = {
     region: "SC",
     postalCode: "88065-000",
     country: "BR",
-    /** Preencher a partir do Google Business Profile; omitido do schema enquanto undefined. */
-    geo: undefined as { lat: number; lng: number } | undefined,
+    /** Coordenadas do pin no Google Maps (Shopping Oka Floripa). */
+    geo: { lat: -27.699355, lng: -48.510911 } as { lat: number; lng: number } | undefined,
     hours: [
       {
         days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
