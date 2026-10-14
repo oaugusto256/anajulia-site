@@ -52,9 +52,9 @@ export type Layout = {
 
 export const meta = {
   language: "pt-BR",
-  title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
+  title: "Psicóloga no Campeche, Florianópolis e Online | Ana Julia Vognach",
   description:
-    "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
+    "Psicóloga clínica no Campeche, Sul da Ilha de Florianópolis, e online para todo o Brasil e exterior. Burnout, maternidade, luto e psico-oncologia.",
   keywords: [
     "psicóloga online",
     "psicoterapia",
@@ -146,7 +146,10 @@ export const brand = {
       },
     ],
     hoursLabel: "Segunda a sexta, 8h às 20h",
-    gbpUrl: "https://maps.app.goo.gl/yx6VRRiSPBZc5SBH7?g_st=iw",
+    /** URL canônica do Google Business Profile (cid), não o link curto de compartilhamento. */
+    gbpUrl: "https://www.google.com/maps?cid=12723114800805178726",
+    /** Perfil no Doctoralia (URL final após redirecionamento). Atualizar se a cidade principal do perfil mudar. */
+    doctoraliaUrl: "https://www.doctoralia.com.br/ana-julia-vognach/psicologo/estrela",
     areaServed: {
       city: "Florianópolis",
       places: ["Sul da Ilha", "Campeche"],
@@ -516,7 +519,13 @@ export const faq = {
       id: "pagamento",
       question: "Como é feito o pagamento?",
       answer:
-        "O pagamento é realizado via PIX ou transferência bancária. Trabalho com modalidades por sessão ou pacotes, combinados em nossa primeira conversa. Entrego recibos para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade.",
+        "O pagamento é realizado via PIX ou transferência bancária. Trabalho com modalidades por sessão ou pacotes, combinados em nossa primeira conversa. Emito nota fiscal para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade.",
+    },
+    {
+      id: "plano-de-saude",
+      question: "Você atende por plano de saúde, como a Unimed?",
+      answer:
+        "O atendimento é particular: não sou credenciada a convênios. Emito nota fiscal de cada sessão para que você possa solicitar reembolso ao seu plano de saúde, como a Unimed e outros, caso ele ofereça essa modalidade. O valor reembolsado depende do seu contrato; vale confirmar diretamente com a operadora.",
     },
     {
       id: "conversa-antes",
@@ -651,7 +660,7 @@ export const floatingWhatsapp = {
     mobileColumns: 1,
     notes: [
       "Botão circular fixo, bottom-right (22px do canto)",
-      "Fundo oliva-light (#7B8F7F), hover escurece para oliva (#4A5D4E)",
+      "Fundo oliva-2 (#5C7060), hover escurece para oliva (#4A5D4E)",
       "Diâmetro 58px, ícone WhatsApp branco 28px",
       "Sombra suave (0 14px 40px rgba(74,93,78,.22))",
     ],

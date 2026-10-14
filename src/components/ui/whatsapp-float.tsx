@@ -17,7 +17,7 @@ export function WhatsAppFloat({ href = floatingWhatsapp.href }: { href?: string 
         width: 58,
         height: 58,
         borderRadius: "50%",
-        background: "var(--color-oliva-light)",
+        background: "var(--color-oliva-2)",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",

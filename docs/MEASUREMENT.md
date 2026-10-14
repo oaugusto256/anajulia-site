@@ -38,10 +38,18 @@ Revisão mensal: comparar contagem de linhas por origem com `whatsapp_click` por
 - Lighthouse mobile (home e uma página de tema): Performance, SEO, Acessibilidade ≥ 90.
 - PostHog → Activity: eventos chegando com `channel`.
 
-## Checklist externo (manual, a qualquer momento)
-1. Google Business Profile: categoria principal Psicólogo; lista de serviços; descrição; fotos; posts periódicos; link do site `https://psicoanajulia.com.br/?utm_source=gbp&utm_medium=organic`.
-2. Doctoralia e Psicologia Viva (ou equivalente): nome, endereço e telefone idênticos ao site (NAP).
-3. Bio do Instagram: `https://psicoanajulia.com.br/?utm_source=instagram&utm_medium=social`.
-4. Pedir avaliações no Google a pacientes satisfeitos, dentro da ética do CFP (sem incentivo, sem roteiro).
-5. Google Search Console: enviar `sitemap.xml`; solicitar indexação de cada página nova.
+## Checklist externo (manual, por prioridade)
+Origem: export do Search Console de 2026-10-14 (spec `docs/superpowers/specs/2026-10-14-search-performance-design.md`).
+
+1. Doctoralia: a cidade principal do perfil está como Estrela (RS), com Florianópolis/Campeche como segundo endereço. Se o consultório de Estrela não estiver mais ativo, removê-lo para o perfil ficar em Florianópolis; nome, endereço e telefone idênticos ao site (NAP), também no Psicologia Viva (ou equivalente). Se a URL do perfil mudar, atualizar `brand.location.doctoraliaUrl`.
+2. Google Business Profile: categoria principal Psicólogo; serviços (psicoterapia individual, casal, familiar, grupo e as quatro áreas); descrição; posts quinzenais com link para as páginas de tema usando `?utm_source=gbp&utm_medium=organic`; fotos recentes do consultório; link do site `https://psicoanajulia.com.br/?utm_source=gbp&utm_medium=organic`.
+3. Pedir avaliações no Google a pacientes satisfeitos, dentro da ética do CFP (sem incentivo, sem roteiro).
+4. Bio do Instagram: `https://psicoanajulia.com.br/?utm_source=instagram&utm_medium=social`.
+5. Google Search Console: enviar `sitemap.xml`; solicitar indexação de cada página nova e da home após mudanças de título/descrição.
 6. Bing Webmaster Tools: verificar o site e enviar `sitemap.xml` (alimenta ChatGPT search e Copilot).
+
+## Search Console — revisão periódica
+- Próxima revisão: **2026-11-14**. Exportar Desempenho (Web) dos últimos 28 dias e comparar com a linha de base da spec de 2026-10-14 (23 cliques, 481 impressões, CTR 4,8%, posição 4,8; celular CTR 3,09% vs computador 6,88%).
+- Sinais de sucesso: as quatro páginas de tema aparecem em Páginas; consultas com "campeche" têm CTR > 0; consultas com "unimed" continuam aparecendo e a home recebe cliques; CTR no celular se aproxima do computador.
+- Cruzar com PostHog: `whatsapp_click` com `channel = organic_search` no mesmo período.
+- Guardar o export fora do git (pasta `search-data/`, já no `.gitignore`).

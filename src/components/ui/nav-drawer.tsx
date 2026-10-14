@@ -22,6 +22,7 @@ export function NavDrawer({ open, onClose }: NavDrawerProps) {
   return (
     <div
       aria-hidden={!open}
+      inert={!open}
       data-wa-location="nav-drawer"
       style={{
         position: "fixed",
@@ -132,7 +133,7 @@ export function NavDrawer({ open, onClose }: NavDrawerProps) {
           style={{
             display: "block",
             textAlign: "center",
-            background: "var(--color-oliva-light)",
+            background: "var(--color-oliva-2)",
             color: "var(--color-offwhite)",
             borderRadius: 999,
             padding: "14px 28px",

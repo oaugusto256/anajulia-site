@@ -39,8 +39,9 @@ export function Hero() {
               src="/fotos/IMG_8209.jpg"
               alt={hero.photo.alt}
               fill
-              priority
+              preload
               loading="eager"
+              fetchPriority="high"
               sizes="(max-width: 979px) min(380px, 100vw), min(560px, 48vw)"
               style={{ objectFit: "cover", objectPosition: hero.photo.objectPosition }}
             />
@@ -126,7 +127,7 @@ export function Hero() {
                 display: "inline-flex",
                 alignItems: "center",
                 gap: 8,
-                background: "var(--color-oliva-light)",
+                background: "var(--color-oliva-2)",
                 color: "var(--color-offwhite)",
                 borderRadius: 999,
                 padding: "12px 24px",

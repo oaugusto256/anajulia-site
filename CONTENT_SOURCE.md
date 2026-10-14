@@ -759,3 +759,33 @@ Ao clicar em um botão de WhatsApp, você é direcionada(o) ao aplicativo com um
 Você pode solicitar informações, correção ou exclusão dos seus dados pessoais, nos termos da Lei Geral de Proteção de Dados (Lei nº 13.709/2018), escrevendo para o e-mail abaixo.
 
 (Ao final, o e-mail de contato é exibido como link.)
+
+---
+
+# DRAFT — revisão Ana Julia (busca, 2026-10-14)
+
+> Textos redigidos por Claude a partir dos dados do Google Search Console (spec `docs/superpowers/specs/2026-10-14-search-performance-design.md`). Já aplicados em `src/content/site-content.ts` neste branch para revisão no preview da Vercel; o merge só acontece após a aprovação.
+
+## FAQ (home) — nova pergunta, após "Como é feito o pagamento?"
+
+_id: plano-de-saude_
+
+#### QUESTION
+Você atende por plano de saúde, como a Unimed?
+
+#### ANSWER
+O atendimento é particular: não sou credenciada a convênios. Emito nota fiscal de cada sessão para que você possa solicitar reembolso ao seu plano de saúde, como a Unimed e outros, caso ele ofereça essa modalidade. O valor reembolsado depende do seu contrato; vale confirmar diretamente com a operadora.
+
+## FAQ (home) — ajuste em "Como é feito o pagamento?"
+
+Trocar "Entrego recibos para que você possa solicitar reembolso" por "Emito nota fiscal para que você possa solicitar reembolso", alinhando com as páginas de tema. Restante da resposta sem alteração.
+
+## SEO da home (`meta.title`, `meta.description`)
+
+Atual:
+- Título: Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach
+- Descrição: Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.
+
+Proposta (Campeche é a busca mais frequente; "burnout" não aparecia):
+- Título: Psicóloga no Campeche, Florianópolis e Online | Ana Julia Vognach
+- Descrição: Psicóloga clínica no Campeche, Sul da Ilha de Florianópolis, e online para todo o Brasil e exterior. Burnout, maternidade, luto e psico-oncologia.

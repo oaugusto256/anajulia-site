@@ -2,7 +2,7 @@
 // SEO smoke check against a running production build.
 // Usage: pnpm build && pnpm start   (in another terminal)  then  pnpm check:seo
 // BASE_URL defaults to http://localhost:3000. Exits non-zero on any failure.
-import { brand, contentUpdatedAt, topicPages } from "../src/content/site-content.ts"
+import { brand, contentUpdatedAt, faq, topicPages } from "../src/content/site-content.ts"
 
 const BASE_URL = (process.env.BASE_URL ?? "http://localhost:3000").replace(/\/$/, "")
 const SITE_URL = "https://psicoanajulia.com.br"
@@ -92,7 +92,7 @@ pageChecks.push((path, html, kind) => {
 
 // ── home: heading outline ──
 // h2: approach, about, services, areas, mission, testimonials, faq.
-// h3: 4 services + 4 áreas + 6 FAQ questions.
+// h3: 4 services + 4 áreas + 7 FAQ questions.
 pageChecks.push((path, html, kind) => {
   if (kind !== "home") return
   const h2 = count(html, /<h2[\s>]/g)
@@ -103,8 +103,8 @@ pageChecks.push((path, html, kind) => {
 })
 
 // ── JSON-LD ──
-function ldTypes(path, html) {
-  const types = new Set()
+function ldNodes(path, html) {
+  const nodes = []
   for (const m of html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
     let data
     try {
@@ -113,9 +113,15 @@ function ldTypes(path, html) {
       fail(path, `JSON-LD does not parse: ${e.message}`)
       continue
     }
-    for (const node of data["@graph"] ?? [data]) {
-      for (const t of [node["@type"]].flat()) if (t) types.add(t)
-    }
+    nodes.push(...(data["@graph"] ?? [data]))
+  }
+  return nodes
+}
+
+function ldTypes(path, html) {
+  const types = new Set()
+  for (const node of ldNodes(path, html)) {
+    for (const t of [node["@type"]].flat()) if (t) types.add(t)
   }
   return types
 }
@@ -127,6 +133,62 @@ pageChecks.push((path, html, kind) => {
   const types = ldTypes(path, html)
   for (const t of EXPECTED_TYPES[kind] ?? GLOBAL_TYPES) {
     if (!types.has(t)) fail(path, `JSON-LD missing @type ${t}`)
+  }
+})
+
+// ── home: entity links (sameAs) ──
+const SAME_AS_REQUIRED = [brand.location.gbpUrl, brand.location.doctoraliaUrl, brand.contact.instagram.href]
+pageChecks.push((path, html, kind) => {
+  if (kind !== "home") return
+  for (const type of ["Person", "MedicalBusiness"]) {
+    const node = ldNodes(path, html).find((n) => [n["@type"]].flat().includes(type))
+    const sameAs = node?.sameAs ?? []
+    for (const url of SAME_AS_REQUIRED) {
+      if (!url) fail(path, `${type}.sameAs: required URL is undefined in site-content`)
+      else if (!sameAs.includes(url)) fail(path, `${type}.sameAs missing ${url}`)
+    }
+    if (new Set(sameAs).size !== sameAs.length) fail(path, `${type}.sameAs has duplicates`)
+    for (const url of sameAs) {
+      if (/maps\.app\.goo\.gl|share\.google/.test(url)) fail(path, `${type}.sameAs uses a share short link: ${url}`)
+    }
+  }
+})
+
+// ── home: insurance FAQ (Search Console: "psicólogo unimed" queries) ──
+const INSURANCE_FAQ_ID = "plano-de-saude"
+pageChecks.push((path, html, kind) => {
+  if (kind !== "home") return
+  const item = faq.items.find((i) => i.id === INSURANCE_FAQ_ID)
+  if (!item) return fail(path, `faq.items has no "${INSURANCE_FAQ_ID}"`)
+  const ids = faq.items.map((i) => i.id)
+  if (ids.indexOf(INSURANCE_FAQ_ID) !== ids.indexOf("pagamento") + 1) fail(path, `"${INSURANCE_FAQ_ID}" must come right after "pagamento"`)
+  // Strip <script> blocks: the FAQPage JSON-LD repeats the question, which would mask a missing accordion item.
+  const visibleHtml = decode(html.replace(/<script[\s\S]*?<\/script>/g, ""))
+  if (!visibleHtml.includes(item.question)) fail(path, "insurance FAQ question not rendered")
+  const faqPage = ldNodes(path, html).find((n) => n["@type"] === "FAQPage")
+  const questions = (faqPage?.mainEntity ?? []).map((q) => q.name)
+  if (!questions.includes(item.question)) fail(path, "insurance FAQ missing from FAQPage JSON-LD")
+  if (/Entrego recibos/.test(faq.items.find((i) => i.id === "pagamento")?.answer ?? "")) fail(path, 'pagamento answer still says "Entrego recibos" (topic pages use nota fiscal)')
+})
+siteChecks.push(async () => {
+  const item = faq.items.find((i) => i.id === INSURANCE_FAQ_ID)
+  if (!item) return
+  const llms = await get("/llms.txt")
+  if (!llms.body.includes(`### ${item.question}`)) fail("/llms.txt", "insurance FAQ missing")
+})
+
+// ── home: local intent in metadata (Search Console: "psicologa campeche" is the top query) ──
+const HOME_TITLE_HARD_MAX = 70
+pageChecks.push((path, html, kind) => {
+  if (kind !== "home") return
+  const title = decode(html.match(/<title>([^<]*)<\/title>/)?.[1] ?? "")
+  const description = attr(findTag(html, /<meta[^>]+name="description"[^>]*>/), "content") ?? ""
+  // Case-insensitive: Ana Julia may edit casing; only a missing term should fail (then ask her, don't edit her copy).
+  const has = (text, term) => text.toLocaleLowerCase("pt-BR").includes(term.toLocaleLowerCase("pt-BR"))
+  if (!has(title, "Campeche")) fail(path, "home <title> should mention Campeche")
+  if (title.length > HOME_TITLE_HARD_MAX) fail(path, `home title is ${title.length} chars (> ${HOME_TITLE_HARD_MAX})`)
+  for (const term of ["Campeche", "Sul da Ilha", "Burnout"]) {
+    if (!has(description, term)) fail(path, `home meta description should mention ${term}`)
   }
 })
 
