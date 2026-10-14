@@ -332,12 +332,12 @@ Olá, Ana Julia. Vi seu site e gostaria de tirar uma dúvida sobre como funciona
 
 ---
 
-# DRAFT — revisão Ana Julia
+# PÁGINAS DE TEMA E TEXTOS COMPLEMENTARES
 
-> Textos redigidos por Claude em 2026-10-07. As páginas de tema ficam sem publicação (rascunho, noindex, sem link e fora do ar em produção) até a aprovação. A página de privacidade e os rótulos e mensagens listados abaixo entram no ar junto com o site e precisam da revisão de Ana Julia antes ou logo após o deploy.
-> Para publicar uma página: trocar `status` para `"published"`, atualizar `reviewedAt` e `contentUpdatedAt` em `src/content/site-content.ts`.
+> Textos revisados e aprovados por Ana Julia; páginas de tema publicadas em 2026-10-13. Este bloco espelha `topicPages` e os demais textos em `src/content/site-content.ts`.
+> Para publicar uma nova página de tema, siga o passo a passo em `docs/MEASUREMENT.md` ("Publicar uma página de tema").
 
-## Novos rótulos e mensagens
+## Rótulos e mensagens
 
 - Link dos cards de Áreas (`areas.linkLabel`): "Saiba mais"
 - Topic pages (`topicPageUi`): "Início", "Você está em", "Revisado por", "Outras áreas", "Perguntas frequentes"
@@ -351,7 +351,7 @@ Olá, Ana Julia. Vi seu site e gostaria de tirar uma dúvida sobre como funciona
 
 ## Página: Burnout e saúde mental no trabalho (/burnout-saude-mental-trabalho)
 
-**Status:** draft · **Revisado em:** 2026-10-07
+**Status:** publicada · **Revisado em:** 2026-10-13
 
 ### SEO_TITLE
 Burnout e Saúde Mental no Trabalho
@@ -405,28 +405,30 @@ Minha trajetória inclui programas de promoção da saúde em empresas, além de
 
 ### Como funciona o atendimento
 
-O primeiro passo é uma breve conversa inicial, sem compromisso, para você me conhecer, tirar dúvidas e sentir se o meu modo de trabalho faz sentido para o que você busca. Para agendar, basta me enviar uma mensagem pelo WhatsApp.
+O primeiro passo é entrar em contato pelo WhatsApp para agendarmos o seu atendimento ou tirar dúvidas sobre o processo. Nesse primeiro contato, compreendo brevemente a sua busca e combinamos o melhor dia e horário para a nossa consulta.
 
-Os atendimentos acontecem online, para todo o Brasil e exterior, por chamada de vídeo através de um link seguro enviado previamente. Também atendo presencialmente em Florianópolis, no Shopping Oka Floripa, no Campeche (Sul da Ilha).
+O foco do nosso primeiro encontro é o acolhimento. Não há roteiro ou pressão para "saber por onde começar" — é um espaço seguro para nos conhecermos e entendermos como posso te acompanhar nessa jornada. E, se preferir, podemos conversar antes de agendar.
 
-O pagamento é feito via PIX ou transferência bancária, e entrego recibos para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade. Sou psicóloga clínica, com registro CRP/SC 12/30269.
+Os atendimentos acontecem online, para todo o Brasil e exterior, por chamada de vídeo através de um link seguro enviado previamente e tem duração de 50 minutos. Também atendo presencialmente em Florianópolis, no Shopping Oka Floripa, no Campeche (Sul da Ilha).
+
+O pagamento é feito via PIX ou transferência bancária, e emito nota fiscal para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade. Sou psicóloga clínica, com registro CRP/SC 12/30269.
 
 ### FAQ
 
 #### Preciso ter um diagnóstico para começar?
 _id: burnout-diagnostico_
 
-Não. Você pode começar a psicoterapia a partir do que está sentindo, mesmo sem saber dar um nome a isso. Se já existir um diagnóstico ou um acompanhamento médico, ele é bem-vindo e pode fazer parte da conversa; se não existir, a compreensão do que está acontecendo vai sendo construída em sessão.
+Não. A psicoterapia não exige um diagnóstico formal nem um "nome" prévio para o que você está sentindo. Ela é um espaço de acolhimento para qualquer pessoa que perceba um desconforto, exaustão, angústia ou desejo de entender melhor a sua relação com o trabalho e com a vida. Se houver necessidade de uma avaliação diagnóstica ou interdisciplinar, isso será construído com cuidado ao longo das sessões.
 
 #### O atendimento online é indicado para quem está esgotada(o)?
 _id: burnout-online_
 
-Pode ser, sim. Fazer a sessão de onde você estiver evita deslocamentos e pode facilitar a constância em um período de pouca energia; o importante é estar em um ambiente silencioso, privativo e seguro. Se você preferir o encontro presencial, ele também é possível em Florianópolis, no Campeche.
+Sim. O atendimento online oferece a mesma profundidade, ética e eficácia do presencial, com a vantagem de eliminar deslocamentos e facilitar a constância em um período de pouca energia, algo valioso para quem está se sentindo sobrecarregada(o). Para realizar as sessões, basta ter uma conexão estável de internet e estar em um local silencioso, privativo e seguro. Se você preferir o encontro presencial, ele também é possível em Florianópolis, no Campeche.
 
 #### Quanto tempo dura o acompanhamento?
 _id: burnout-duracao_
 
-Não há um tempo definido de antemão. A duração depende da sua história, do momento que você está vivendo e dos objetivos que vamos construindo ao longo do processo. A frequência e o andamento das sessões são combinados com você e revisitados sempre que necessário.
+A duração do processo terapêutico é singular e varia de acordo com as necessidades, objetivos e a história de cada pessoa. Não trabalhamos com prazos rígidos ou promessas de soluções mágicas. Cada sessão dura cerca de 50 minutos e acontece com frequência semanal (ou conforme combinado), respeitando sempre o seu ritmo e o momento da sua vida.
 
 ### CTA
 Agendar conversa inicial
@@ -441,7 +443,7 @@ Olá, Ana Julia. Vi sua página sobre saúde mental e trabalho e gostaria de age
 
 ## Página: Maternidade, parentalidade e família (/maternidade-parentalidade)
 
-**Status:** draft · **Revisado em:** 2026-10-07
+**Status:** publicada · **Revisado em:** 2026-10-13
 
 ### SEO_TITLE
 Psicóloga para Maternidade e Família
@@ -463,25 +465,25 @@ A chegada de um filho transforma a rotina, as relações e a forma como você se
 
 ### O que é normal sentir no puerpério?
 
-No puerpério, é comum sentir emoções intensas e, muitas vezes, contraditórias: amor e cansaço, alegria e tristeza, encantamento e medo. Viver essa mistura não significa que algo esteja errado com você ou com o seu vínculo com o bebê.
+No puerpério, período que compreende as primeiras semanas e meses após o parto, é comum sentir emoções intensas e, muitas vezes, parecerem contraditórias ou confusas: amor e cansaço, raiva ou estresse, alegria e tristeza, encantamento e medo. Sentir tudo isso não significa que algo esteja errado com você ou com o seu vínculo com o bebê.
 
-Nas primeiras semanas, muitas mulheres vivem oscilações de humor, choro fácil, insegurança e a sensação de estar sobrecarregadas. A privação de sono, as mudanças no corpo e a nova rotina pesam, e a sensação de não reconhecer a própria vida pode assustar.
+Nas primeiras semanas, muitas mulheres vivem oscilações de humor, choro fácil, insegurança e a sensação de estar sobrecarregadas, algo muito influenciado pelas oscilações hormonais do período. A privação de sono, as mudanças no corpo e a nova rotina pesam, e a sensação de não reconhecer mais a própria vida pode assustar.
 
-Quando a tristeza, a ansiedade ou a falta de interesse se prolongam, se intensificam ou dificultam o cuidado consigo e com o bebê, isso pode indicar quadros como a depressão ou a ansiedade pós-parto, que merecem atenção. Essa avaliação é feita com cuidado, em sessão, e pode envolver outros profissionais de saúde que acompanham você.
+Quando a tristeza, a ansiedade ou a falta de interesse se prolongam, se intensificam ou dificultam o cuidado consigo e com o bebê, isso pode indicar quadros como ansiedade ou depressão pós-parto, que merecem atenção. Essa avaliação é feita com cuidado, em sessão, e pode envolver outros profissionais de saúde que acompanham você.
 
 ### Como conciliar maternidade, carreira e identidade?
 
-Não existe uma fórmula única. Conciliar esses papéis costuma envolver escolhas, renúncias e ajustes que precisam fazer sentido para a sua história, e não apenas para as expectativas de fora.
+Não existe uma fórmula única. Conciliar esses papéis costuma envolver escolhas, renúncias e ajustes que precisam fazer sentido para você, e não apenas para as expectativas de fora.
 
-É comum sentir ambivalência: desejar estar com o filho e, ao mesmo tempo, sentir falta do trabalho, ou o contrário. O retorno depois da licença, as cobranças por produtividade e a culpa por não dar conta de tudo podem tornar esse período especialmente exigente.
+É comum sentir ambivalência: desejar estar com o filho e, ao mesmo tempo, sentir falta do trabalho, ou o contrário. O retorno depois da licença, as cobranças por produtividade e a culpa por não dar conta de tudo podem tornar esse período especialmente exigente e provocar ansiedade.
 
 Na psicoterapia, há espaço para olhar para essas tensões sem julgamento e para pensar em quem você está se tornando. A maternidade transforma a identidade, e reconhecer essa mudança pode ajudar você a fazer escolhas mais coerentes com o que considera essencial.
 
 ### Psicoterapia na gestação e no pós-parto
 
-A psicoterapia pode acompanhar você desde a gestação até os primeiros anos com o bebê, oferecendo um espaço de escuta para o que muda no corpo, nas relações e na forma de se perceber.
+A psicoterapia pode acompanhar você desde a gestação até os primeiros anos com o bebê, oferecendo um espaço de escuta para o que muda no corpo, nas relações, na sua identidade e na forma de se perceber.
 
-Na gestação, podem surgir expectativas, medos, lembranças da própria história familiar e dúvidas sobre o parto e a chegada do bebê. No pós-parto, o foco muitas vezes se volta para a adaptação à nova rotina, para o cansaço e para o lugar que você passa a ocupar nessa nova configuração.
+Na gestação, podem surgir expectativas, medos, ansiedade, lembranças da própria história familiar, dificuldade em aceitar ou assimilar a gravidez (seja ela planejada ou não) e dúvidas sobre o parto e a chegada do bebê. No pós-parto, o foco muitas vezes se volta para a adaptação à nova rotina, para o cansaço e para o lugar que você passa a ocupar nessa nova configuração.
 
 Também há espaço para a adaptação à paternidade e para as mudanças que a chegada do bebê traz para o casal e para a família. Cada processo respeita o seu tempo e aquilo que você deseja trabalhar.
 
@@ -489,34 +491,34 @@ Também há espaço para a adaptação à paternidade e para as mudanças que a 
 
 A orientação parental é um espaço para mães, pais e cuidadores refletirem sobre os desafios da criação dos filhos. Já a terapia familiar e a de casal olham para as relações e para as mudanças que afetam a dinâmica da família.
 
-A chegada de um filho, as diferenças na forma de educar, a divisão das tarefas e os conflitos do dia a dia podem gerar distanciamento e desgaste no casal e na família. Nesses momentos, conversar com a mediação de uma profissional pode ajudar a ampliar o diálogo e a compreender o que está acontecendo.
+A chegada de um filho, as diferenças na forma de educar, a divisão das tarefas e os conflitos do dia a dia podem gerar distanciamento e desgaste no casal e na família. Nesses momentos, conversar com a mediação de uma profissional pode ajudar a ampliar o diálogo e a compreender o que está acontecendo e fortalecer as relações.
 
 Minha atuação parte de uma visão sistêmica: o que acontece com uma pessoa reverbera nas relações à sua volta, e o contrário também. Por isso, o formato do acompanhamento, seja individual, de casal ou familiar, é pensado junto com você, a partir do que faz mais sentido para o momento.
 
 ### Como funciona o atendimento
 
-Tudo começa com uma breve conversa inicial, sem compromisso, para você me conhecer, tirar dúvidas e sentir se o meu modo de trabalho combina com o que você busca. Para agendar, é só me enviar uma mensagem pelo WhatsApp.
+Tudo começa com uma breve conversa inicial para entender a sua busca e necessidades, para você me conhecer, tirar dúvidas e combinarmos os detalhes do acompanhamento. Para agendar, é só me enviar uma mensagem pelo WhatsApp.
 
 As sessões podem ser online, para todo o Brasil e exterior, por chamada de vídeo através de um link seguro enviado previamente, o que costuma facilitar a rotina com um bebê em casa. Também atendo presencialmente em Florianópolis, no Shopping Oka Floripa, no Campeche (Sul da Ilha).
 
-O pagamento é feito via PIX ou transferência bancária, com recibos para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade. Sou psicóloga clínica, com registro CRP/SC 12/30269.
+O pagamento é feito via PIX ou transferência bancária, e emito nota fiscal para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade. Sou psicóloga clínica, com registro CRP/SC 12/30269.
 
 ### FAQ
 
 #### Posso fazer a sessão online com o bebê por perto?
 _id: maternidade-bebe_
 
-Isso pode ser conversado e combinado entre nós, a partir da sua rotina. Nem sempre é possível ter alguém para cuidar do bebê durante a sessão, e a presença do bebê faz parte da realidade de muitas mães nesse período. O importante é estar em um ambiente o mais tranquilo e privativo possível, para que você possa falar com liberdade.
+Isso pode ser conversado e combinado entre nós, a partir da sua rotina. Nem sempre é possível ter alguém para cuidar do bebê durante a sessão, e a presença dele faz parte da realidade de muitas mães nesse período. O importante é estar em um ambiente o mais tranquilo e privativo possível, para que você possa falar com liberdade.
 
-#### Você atende pais e casais também?
+#### Você atende pais, casais e famílias?
 _id: maternidade-pais_
 
-Sim. Atendo mães e pais em psicoterapia individual e também ofereço psicoterapia de casal, psicoterapia familiar e orientação parental. Os desafios da parentalidade atravessam todas as pessoas envolvidas no cuidado, e cada uma delas pode precisar de um espaço próprio de escuta.
+Sim. Além da psicoterapia individual para mães e gestantes, ofereço psicoterapia de casal, terapia familiar e orientação parental, presencialmente em Florianópolis ou online.
 
 #### Quando procurar ajuda no pós-parto?
 _id: maternidade-quando_
 
-Não é preciso esperar que algo fique grave para buscar apoio. Se a tristeza, a ansiedade ou o cansaço estão pesados demais, ou se você tem dificuldade de se reconhecer e de cuidar de si, vale conversar com uma profissional. Em situações de urgência, ou se surgirem pensamentos de se machucar, busque imediatamente um serviço de saúde.
+Não é preciso esperar que algo fique grave para buscar apoio. Se a tristeza, a ansiedade ou o cansaço estão pesados demais, ou se você tem dificuldade de se reconhecer e de olhar e cuidar de si, vale conversar com uma profissional. Em situações de urgência, ou se surgirem pensamentos de se machucar, busque imediatamente um serviço de saúde.
 
 ### CTA
 Agendar conversa inicial
@@ -531,7 +533,7 @@ Olá, Ana Julia. Vi sua página sobre maternidade e parentalidade e gostaria de 
 
 ## Página: Luto e perdas (/luto-e-perdas)
 
-**Status:** draft · **Revisado em:** 2026-10-07
+**Status:** publicada · **Revisado em:** 2026-10-13
 
 ### SEO_TITLE
 Psicoterapia para Luto e Perdas
@@ -553,7 +555,7 @@ Perder alguém ou algo importante muda a forma como a vida segue. A psicoterapia
 
 ### O que é o luto?
 
-O luto é uma resposta natural a uma perda significativa. Ele envolve emoções, pensamentos, sensações no corpo e mudanças na forma de se relacionar com o mundo.
+O luto é uma resposta natural a uma perda significativa. Ele não está restrito à morte física; manifesta-se também diante do término de um relacionamento, da perda de um emprego, de uma perda gestacional, de diagnósticos de saúde ou de grandes transições de vida. Ele envolve emoções, pensamentos, sensações no corpo e mudanças na forma de se relacionar com o mundo.
 
 Tristeza, saudade, raiva, culpa, alívio e confusão podem aparecer, às vezes ao mesmo tempo. Também é comum sentir cansaço, dificuldade para dormir ou se concentrar e a impressão de que os outros seguem a vida enquanto a sua parou.
 
@@ -565,43 +567,45 @@ Não. O luto não segue um calendário, e cada pessoa precisa do seu próprio te
 
 É comum que a dor mude de forma ao longo dos meses: há dias mais leves e outros em que tudo parece voltar com força, como em datas especiais e aniversários. Isso não significa que você esteja andando para trás; faz parte de um processo que não acontece em linha reta.
 
-Quando o sofrimento permanece muito intenso por um longo período e dificulta seguir com a rotina, o trabalho ou as relações, pode ser importante buscar apoio. Essa compreensão é construída com cuidado, em sessão, sem a exigência de deixar para trás o que você viveu.
+Quando o sofrimento permanece muito intenso e paralisante por um longo período e dificulta a retomada da rotina, do trabalho ou das relações, buscar acompanhamento profissional é fundamental. Essa compreensão é construída com cuidado em sessão, sem nenhuma exigência de "superar" ou deixar para trás o que você viveu.
 
 ### O que é luto antecipatório?
 
-O luto antecipatório é o luto que começa antes de a perda acontecer, por exemplo, diante de um diagnóstico grave ou do adoecimento progressivo de alguém que você ama.
+O luto antecipatório é o processo de dor e elaboração que começa antes mesmo de a perda concreta acontecer, por exemplo, diante do diagnóstico de uma doença grave, progressiva ou ameaçadora da vida, ou do adoecimento de alguém que você ama.
 
-Nesse período, convivem a esperança, o medo, o cansaço de cuidar e, por vezes, a culpa por já sentir a falta de quem ainda está presente. Esses sentimentos podem ser confusos e difíceis de compartilhar com outras pessoas da família. Também é comum sentir que não há permissão para viver essa dor, já que a pessoa querida ainda está aqui.
+Nesse período, convivem sentimentos complexos: a esperança, o medo da separação, a sobrecarga de cuidar e, por vezes, a culpa por já sentir a falta de quem ainda está presente. Esses sentimentos podem ser confusos e difíceis de compartilhar com a família. É comum sentir que "não há permissão" para sofrer, já que a pessoa querida ainda está viva.
 
-Ter um espaço para falar sobre isso pode ajudar a viver esse tempo com mais presença, a cuidar também de si e a pensar nas despedidas possíveis. Minha formação em Oncologia, por meio de Residência Multiprofissional em Saúde, e a experiência em cuidados paliativos me colocaram em contato próximo com essas vivências.
+Ter um espaço terapêutico para acolher essa vivência ajuda a atravessar esse tempo com mais presença, cuidar de si e favorecer despedidas possíveis e significativas. Minha formação em Oncologia, por meio de Residência Multiprofissional em Saúde, e a experiência em Cuidados Paliativos fortaleceram minha compreensão sobre a importância do acolhimento humano, do respeito à dignidade nas despedidas e da preservação do cuidado com a vida até o fim.
 
 ### Como a psicoterapia acompanha o luto
 
-A psicoterapia oferece um espaço seguro e sigiloso para falar da perda, das lembranças e de tudo o que ficou em aberto, sem a pressão de precisar estar bem.
+A psicoterapia oferece um espaço seguro e sigiloso para encontrar sustentação emocional diante da iminência da perda, falar abertamente sobre a dor e a morte, resgatar lembranças e dar vazão a tudo o que ficou em aberto, sem a pressão social de precisar estar bem.
 
-Ao longo do acompanhamento, há espaço para acolher a dor, compreender os sentimentos que surgem e, aos poucos, encontrar formas de seguir vivendo com a ausência. Não se trata de esquecer, mas de construir uma nova forma de se relacionar com quem ou com o que foi perdido. Em alguns momentos, o trabalho envolve também olhar para as mudanças práticas que a perda trouxe para a rotina, para a família e para os planos.
+Ao longo do acompanhamento, trabalhamos para acolher a dor, compreender os afetos que emergem e, aos poucos, construir caminhos para seguir vivendo com a ausência. Não se trata de esquecer, mas de construir uma nova forma de se relacionar com quem ou o que foi perdido.
 
-Ao longo da minha trajetória, acompanhei pessoas e famílias em momentos de adoecimento, perdas e reconstrução da própria vida, em hospitais e em cuidados paliativos. Cada processo respeita o seu ritmo, e o que será trabalhado é construído junto com você.
+Em muitos momentos, olhar para o luto envolve também reorganizar as mudanças práticas que a perda trouxe para a sua rotina, para a dinâmica familiar, para os seus planos e expectativas de futuro.
+
+Ao longo da minha trajetória profissional em hospitais e Cuidados Paliativos, acompanhei pessoas e famílias em momentos de adoecimento, perdas e reconstrução. Cada processo respeita o seu ritmo singular, e o caminho terapêutico é construído em conjunto com você.
 
 ### Como funciona o atendimento
 
-O primeiro contato é uma breve conversa inicial, sem compromisso, para você me conhecer, tirar dúvidas e sentir se o meu modo de trabalho faz sentido para este momento. Para agendar, basta me enviar uma mensagem pelo WhatsApp.
+O primeiro contato é uma breve conversa inicial para você me conhecer, tirar dúvidas e sentir se o meu modo de trabalho faz sentido para este momento. Para agendar, basta me enviar uma mensagem pelo WhatsApp.
 
 Os atendimentos acontecem online, para todo o Brasil e exterior, por chamada de vídeo através de um link seguro enviado previamente. Também atendo presencialmente em Florianópolis, no Shopping Oka Floripa, no Campeche (Sul da Ilha).
 
-O pagamento é feito via PIX ou transferência bancária, e entrego recibos para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade. Sou psicóloga clínica, com registro CRP/SC 12/30269.
+Pagamento via PIX ou transferência bancária. Emito nota fiscal referente aos atendimentos para que você possa solicitar o reembolso junto ao seu plano de saúde, caso ele ofereça essa opção.
 
 ### FAQ
 
 #### Quando procurar psicoterapia depois de uma perda?
 _id: luto-quando_
 
-Não existe um momento certo. Algumas pessoas buscam a psicoterapia logo após a perda, outras meses ou anos depois, quando percebem que a dor continua muito presente. Se você sente que está difícil carregar isso sozinha(o), esse já é um bom motivo para conversar.
+Não existe um momento certo. Algumas pessoas buscam a psicoterapia logo após a perda, outras meses ou anos depois, quando percebem que a dor continua muito presente e paralisante na rotina. Se você sente que está difícil carregar isso sozinha(o), esse já é um motivo legítimo e importante para iniciar a psicoterapia.
 
 #### O luto só acontece quando alguém morre?
 _id: luto-morte_
 
-Não. O luto pode acompanhar diferentes perdas: o fim de um relacionamento, uma mudança de cidade ou de país, a perda de um emprego, um diagnóstico, uma perda gestacional ou a mudança de um projeto de vida. Muitas vezes essas perdas são pouco reconhecidas pelas outras pessoas, o que pode tornar a experiência ainda mais solitária. Toda perda significativa pede espaço para ser reconhecida e elaborada.
+Não. O luto é uma resposta emocional a qualquer rompimento ou perda significativa. Ele pode acompanhar o fim de um relacionamento, a perda gestacional, um diagnóstico de doença grave, uma mudança de cidade ou país, a demissão/perda de emprego ou a ruptura de um projeto de vida. Muitas vezes, perdas simbólicas são pouco reconhecidas socialmente, o que torna a experiência ainda mais solitária. Toda perda que impacta a sua identidade e a sua rotina merece um espaço de acolhimento e elaboração.
 
 #### Posso fazer psicoterapia para o luto online?
 _id: luto-online_
@@ -621,7 +625,7 @@ Olá, Ana Julia. Vi sua página sobre luto e perdas e gostaria de agendar uma co
 
 ## Página: Psico-oncologia e cuidados paliativos (/psico-oncologia-cuidados-paliativos)
 
-**Status:** draft · **Revisado em:** 2026-10-07
+**Status:** publicada · **Revisado em:** 2026-10-13
 
 ### SEO_TITLE
 Psico-Oncologia e Cuidados Paliativos
@@ -639,13 +643,13 @@ Psico-oncologia
 Psico-oncologia e cuidados paliativos
 
 ### INTRO
-Um diagnóstico de câncer ou de uma doença grave transforma a vida de quem adoece e de quem cuida. A psicoterapia oferece um espaço de acolhimento para atravessar esse momento com escuta e presença.
+Um diagnóstico de câncer ou de uma doença grave transforma a vida de quem adoece e de quem cuida. A psicoterapia oferece um espaço de acolhimento para atravessar esse momento com escuta, empatia e presença.
 
 ### O que é psico-oncologia?
 
 A psico-oncologia é a área da psicologia que se dedica aos aspectos emocionais do câncer, do diagnóstico ao tratamento, à vida depois dele ou ao fim da vida. Ela acolhe a pessoa que adoece, seus familiares e cuidadores.
 
-O adoecimento costuma trazer medo, incerteza e mudanças no corpo, na rotina, no trabalho e nas relações. Também podem surgir dúvidas sobre o futuro, sobre a própria imagem e sobre como contar o que está acontecendo para as pessoas próximas. Olhar para esses impactos faz parte de um cuidado integral com a saúde.
+O adoecimento costuma trazer medo, incerteza e mudanças no corpo, na rotina, no trabalho e nas relações. Também podem surgir dúvidas sobre o futuro, sobre a própria imagem e sobre como contar o que está acontecendo para os filhos e para as demais pessoas próximas. Olhar para esses impactos faz parte de um cuidado integral com a saúde.
 
 Sou psicóloga clínica (CRP/SC 12/30269) e especialista em Oncologia por meio de Residência Multiprofissional em Saúde, com experiência em hospitais e em cuidados paliativos. A psicoterapia não substitui o acompanhamento da equipe de saúde: ela caminha ao lado dele.
 
@@ -667,31 +671,45 @@ O acompanhamento pode ser individual, para quem cuida, ou envolver a família, q
 
 ### O que são cuidados paliativos?
 
-Cuidados paliativos são uma abordagem voltada à qualidade de vida de pessoas com doenças graves ou que ameaçam a vida, e de suas famílias. Eles não se restringem ao fim da vida e podem acompanhar diferentes momentos do tratamento.
+Cuidados paliativos são uma abordagem voltada à qualidade de vida de pessoas com doenças graves ou que ameaçam a vida, além do amparo às suas famílias. Eles não se restringem ao fim da vida e podem acompanhar diferentes momentos do tratamento.
 
 O foco está no alívio do sofrimento físico, emocional, social e espiritual, com atenção ao que é importante para cada pessoa. Esse cuidado é realizado por uma equipe multiprofissional, e a psicologia faz parte dessa rede.
 
-No acompanhamento psicológico, há espaço para falar sobre as incertezas, os desejos, as despedidas e o luto antecipatório, tanto da pessoa que adoece quanto de seus familiares. Minha trajetória em cuidados paliativos me ensinou o valor de acolher esses momentos com delicadeza e respeito.
+Minha experiência em cuidados paliativos me ensinou que, mesmo diante das maiores incertezas e dores, ninguém precisa viver isso sozinha(o). Construo um espaço seguro para acolher os medos, ressignificar planos, cuidar do luto antecipatório e honrar a vida em toda a sua complexidade.
 
 ### Como funciona o atendimento
 
-O primeiro passo é uma breve conversa inicial, sem compromisso, para você me conhecer, tirar dúvidas e sentir se o meu modo de trabalho faz sentido para o que você está vivendo. Para agendar, basta me enviar uma mensagem pelo WhatsApp, seja você a pessoa em tratamento ou alguém da família.
+O primeiro passo é entrarmos em contato para alinharmos as suas necessidades, tirarmos dúvidas e agendarmos a primeira sessão, onde conversaremos sobre o seu momento e combinaremos a frequência dos encontros. Para agendar, basta me enviar uma mensagem pelo WhatsApp.
 
-Os atendimentos acontecem online, para todo o Brasil e exterior, por chamada de vídeo através de um link seguro enviado previamente. Também atendo presencialmente em Florianópolis, no Shopping Oka Floripa, no Campeche (Sul da Ilha).
+Os atendimentos acontecem de forma:
 
-O pagamento é feito via PIX ou transferência bancária, e entrego recibos para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade. As modalidades de atendimento, por sessão ou em pacotes, são combinadas na nossa primeira conversa.
+- **Online:** Para todo o Brasil e exterior, via chamada de vídeo em plataforma segura.
+- **Presencial:** Em Florianópolis, no Shopping Oka Floripa (Campeche, Sul da Ilha).
+- **Domiciliar ou Hospitalar:** Realizado mediante avaliação das necessidades de mobilidade e saúde do paciente na região de Florianópolis.
+
+O pagamento pode ser feito via PIX ou transferência bancária, e forneço nota fiscal para que você possa solicitar reembolso junto ao seu plano de saúde, caso tenha essa cobertura.
 
 ### FAQ
 
-#### Você atende pacientes durante o tratamento?
+#### Atende pacientes durante o tratamento?
 _id: onco-tratamento_
 
-Sim. Atendo pessoas em diferentes momentos do tratamento oncológico, assim como pessoas que convivem com doenças graves ou ameaçadoras da vida. O acompanhamento respeita a sua disposição em cada fase, e a frequência das sessões pode ser combinada de acordo com a sua rotina de tratamento.
+Sim. Atendo pessoas em todas as fases do diagnóstico e tratamento (cirurgias, quimioterapia, radioterapia ou terapias-alvo), assim como pessoas que convivem com doenças graves ou ameaçadoras da vida. O acompanhamento adapta-se ao ritmo e à disposição do paciente em cada momento, oferecendo suporte contínuo nos dias de maior fadiga ou mal-estar.
 
-#### Familiares também podem fazer acompanhamento?
+#### Familiares e cuidadores também podem fazer acompanhamento?
 _id: onco-familia_
 
-Sim. Familiares e cuidadores podem fazer psicoterapia individual, e também é possível pensar em encontros com a família, quando fizer sentido. Cada pessoa vive o adoecimento de alguém próximo de um jeito, e todas podem precisar de um espaço de escuta. Quando é a família que entra em contato, a conversa inicial também serve para pensarmos juntos no formato mais adequado.
+Sim. Quem cuida também necessita de cuidado. Familiares e cuidadores podem realizar psicoterapia individual para processar a sobrecarga, os medos e o desgaste emocional. Quando necessário e fizer sentido para o contexto, também é possível realizar encontros focados no fortalecimento da comunicação e da dinâmica familiar.
+
+#### Você atende pessoas que já terminaram o tratamento oncológico?
+_id: onco-pos-tratamento_
+
+Sim. O fim do tratamento traz alívio, mas também pode vir acompanhado de medos (como o receio da recidiva), ansiedade na rotina de exames de controle e o desafio de se redefinir após uma intensa travessia. A psicoterapia no pós-tratamento auxilia na elaboração de tudo o que foi vivido e no fortalecimento emocional para essa nova etapa da vida.
+
+#### É possível realizar atendimento domiciliar ou no hospital?
+_id: onco-domiciliar_
+
+Sim. Para pacientes com limitações de mobilidade, em recuperação cirúrgica, internados ou em acompanhamento de cuidados paliativos, realizo atendimentos presenciais em domicílio ou no ambiente hospitalar na região de Florianópolis. Para locais mais distantes ou para quem prefere permanecer no conforto de casa sem deslocamentos, o atendimento online também é uma alternativa segura e eficaz.
 
 #### É possível fazer as sessões online durante o tratamento?
 _id: onco-online_

@@ -92,7 +92,7 @@ export const meta = {
 };
 
 /** Data da última alteração de conteúdo (ISO). Atualizar manualmente — usada no sitemap. */
-export const contentUpdatedAt = "2026-10-07";
+export const contentUpdatedAt = "2026-10-13";
 
 // ────────────────────────────────────────────────────────────────
 // BRAND · identidade
