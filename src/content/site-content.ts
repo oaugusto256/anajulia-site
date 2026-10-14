@@ -660,7 +660,7 @@ export const floatingWhatsapp = {
     mobileColumns: 1,
     notes: [
       "Botão circular fixo, bottom-right (22px do canto)",
-      "Fundo oliva-light (#7B8F7F), hover escurece para oliva (#4A5D4E)",
+      "Fundo oliva-2 (#5C7060), hover escurece para oliva (#4A5D4E)",
       "Diâmetro 58px, ícone WhatsApp branco 28px",
       "Sombra suave (0 14px 40px rgba(74,93,78,.22))",
     ],

@@ -131,7 +131,7 @@ export function Services() {
                             fontSize: 15,
                             lineHeight: 1.7,
                             color: j === (Array.isArray(item.body) ? item.body.length - 1 : 0) && item.title === "Psicoterapia de Grupo" && j > 0
-                              ? "var(--color-oliva-light)"
+                              ? "var(--color-oliva-2)"
                               : "var(--color-cinza)",
                             margin: 0,
                             fontStyle: item.title === "Psicoterapia de Grupo" && j > 0 ? "italic" : "normal",

@@ -91,7 +91,7 @@ export function Approach() {
               display: "inline-flex",
               alignItems: "center",
               gap: 8,
-              background: "var(--color-oliva-light)",
+              background: "var(--color-oliva-2)",
               color: "var(--color-offwhite)",
               borderRadius: 999,
               padding: "12px 24px",

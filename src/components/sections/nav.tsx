@@ -121,7 +121,7 @@ export function Nav() {
               display: "none",
               fontFamily: "var(--font-inter)",
               fontSize: 14,
-              background: "var(--color-oliva-light)",
+              background: "var(--color-oliva-2)",
               color: "var(--color-offwhite)",
               borderRadius: 999,
               padding: "8px 20px",

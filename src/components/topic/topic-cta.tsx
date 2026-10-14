@@ -21,9 +21,9 @@ export function TopicCta({
           borderRadius: 999,
           padding: "14px 28px",
           textDecoration: "none",
-          background: "var(--color-oliva-light)",
+          background: "var(--color-oliva-2)",
           color: "var(--color-offwhite)",
-          border: "1px solid var(--color-oliva-light)",
+          border: "1px solid var(--color-oliva-2)",
         }}
       >
         {label}

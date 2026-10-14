@@ -30,7 +30,7 @@ export function Mission() {
             fontWeight: 500,
             textTransform: "uppercase",
             letterSpacing: "0.18em",
-            color: "rgba(253,251,247,0.5)",
+            color: "rgba(253,251,247,0.75)",
             margin: 0,
             display: "flex",
             alignItems: "center",
@@ -75,7 +75,7 @@ export function Mission() {
               fontFamily: "var(--font-inter)",
               fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)",
               lineHeight: 1.85,
-              color: "rgba(253,251,247,0.72)",
+              color: "rgba(253,251,247,0.8)",
               margin: 0,
             }}
           >
