@@ -16,6 +16,7 @@ const REFERRER_RULES: { channel: string; domains: string[] }[] = [
   { channel: "ai_copilot", domains: ["copilot.microsoft.com"] },
   { channel: "instagram", domains: ["instagram.com"] },
   { channel: "facebook", domains: ["facebook.com"] },
+  { channel: "doctoralia", domains: ["doctoralia.com.br"] },
   { channel: "organic_search", domains: ["bing.com", "duckduckgo.com", "search.yahoo.com", "ecosia.org"] },
 ]
 
