@@ -28,7 +28,9 @@ const cases: [string | null, string, string][] = [
   [null, "https://m.facebook.com/", "facebook"],
   [null, "https://l.facebook.com/", "facebook"],
   [null, "https://notgoogle.com/", "referral"],
-  [null, "https://doctoralia.com.br/x", "referral"],
+  [null, "https://doctoralia.com.br/x", "doctoralia"],
+  [null, "https://www.doctoralia.com.br/ana-julia-vognach/psicologo/estrela", "doctoralia"],
+  [null, "https://notdoctoralia.com.br/", "referral"],
   [null, "https://psicoanajulia.com.br/luto-e-perdas", "internal"],
   [null, "https://www.psicoanajulia.com.br/", "internal"],
 ]

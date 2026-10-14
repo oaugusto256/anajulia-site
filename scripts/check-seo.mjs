@@ -154,6 +154,14 @@ pageChecks.push((path, html, kind) => {
   }
 })
 
+// ── home: practice coordinates (local pack / "perto de mim" queries) ──
+pageChecks.push((path, html, kind) => {
+  if (kind !== "home") return
+  const geo = ldNodes(path, html).find((n) => n["@type"] === "MedicalBusiness")?.geo
+  if (!brand.location.geo) return fail(path, "brand.location.geo is undefined")
+  if (geo?.latitude !== brand.location.geo.lat || geo?.longitude !== brand.location.geo.lng) fail(path, `MedicalBusiness.geo ${JSON.stringify(geo)} != brand.location.geo`)
+})
+
 // ── home: insurance FAQ (Search Console: "psicólogo unimed" queries) ──
 const INSURANCE_FAQ_ID = "plano-de-saude"
 pageChecks.push((path, html, kind) => {

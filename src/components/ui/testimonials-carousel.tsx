@@ -80,33 +80,6 @@ export function TestimonialsCarousel({
             textAlign: "left",
           }}
         >
-          {/* Author */}
-          {/* <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <AuthorAvatar name={review.authorName} photoUrl={review.authorPhotoUrl} />
-            <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
-              <span
-                style={{
-                  fontFamily: "var(--font-inter)",
-                  fontSize: 14,
-                  fontWeight: 600,
-                  color: "var(--color-preto)",
-                  lineHeight: 1.2,
-                }}
-              >
-                {review.authorName}
-              </span>
-              <span
-                style={{
-                  fontFamily: "var(--font-inter)",
-                  fontSize: 12,
-                  color: "var(--color-cinza)",
-                  lineHeight: 1,
-                }}
-              >
-                {review.relativeTime}
-              </span>
-            </div>
-          </div> */}
           {/* Stars */}
           <div style={{ display: "flex", gap: 2, color: "var(--color-gold)", fontSize: 14 }}>
             {Array.from({ length: review.rating }).map((_, i) => (
@@ -236,41 +209,6 @@ export function TestimonialsCarousel({
           Ver todas avaliações
         </span>
       </a>
-    </div>
-  );
-}
-
-function AuthorAvatar({ name, photoUrl }: { name: string; photoUrl: string | null }) {
-  if (photoUrl) {
-    return (
-      // eslint-disable-next-line @next/next/no-img-element
-      <img
-        src={photoUrl}
-        alt={name}
-        width={40}
-        height={40}
-        style={{ borderRadius: "50%", objectFit: "cover", flexShrink: 0 }}
-      />
-    );
-  }
-  return (
-    <div
-      aria-hidden="true"
-      style={{
-        width: 40,
-        height: 40,
-        borderRadius: "50%",
-        background: "var(--color-oliva-soft)",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        fontFamily: "var(--font-playfair)",
-        fontSize: 16,
-        color: "var(--color-oliva)",
-        flexShrink: 0,
-      }}
-    >
-      {name.charAt(0).toUpperCase()}
     </div>
   );
 }
