@@ -39,8 +39,9 @@ export function Hero() {
               src="/fotos/IMG_8209.jpg"
               alt={hero.photo.alt}
               fill
-              priority
+              preload
               loading="eager"
+              fetchPriority="high"
               sizes="(max-width: 979px) min(380px, 100vw), min(560px, 48vw)"
               style={{ objectFit: "cover", objectPosition: hero.photo.objectPosition }}
             />
