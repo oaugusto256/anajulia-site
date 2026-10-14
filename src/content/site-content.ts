@@ -146,7 +146,10 @@ export const brand = {
       },
     ],
     hoursLabel: "Segunda a sexta, 8h às 20h",
-    gbpUrl: "https://maps.app.goo.gl/yx6VRRiSPBZc5SBH7?g_st=iw",
+    /** URL canônica do Google Business Profile (cid), não o link curto de compartilhamento. */
+    gbpUrl: "https://www.google.com/maps?cid=12723114800805178726",
+    /** Perfil no Doctoralia (URL final após redirecionamento). Atualizar se a cidade principal do perfil mudar. */
+    doctoraliaUrl: "https://www.doctoralia.com.br/ana-julia-vognach/psicologo/estrela",
     areaServed: {
       city: "Florianópolis",
       places: ["Sul da Ilha", "Campeche"],

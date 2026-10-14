@@ -48,7 +48,7 @@ function personNode(): JsonLdNode {
       ...services.items.map((item) => item.title),
       ...brand.knowsAboutExtra,
     ],
-    sameAs: [brand.contact.instagram.href, loc.gbpUrl],
+    sameAs: [brand.contact.instagram.href, loc.gbpUrl, loc.doctoraliaUrl],
     worksFor: { "@id": ids.practice },
   }
 }
@@ -106,7 +106,7 @@ function practiceNode(): JsonLdNode {
         },
       })),
     },
-    sameAs: [loc.gbpUrl, brand.contact.instagram.href],
+    sameAs: [loc.gbpUrl, loc.doctoraliaUrl, brand.contact.instagram.href],
   }
 }
 

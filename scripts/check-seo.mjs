@@ -103,8 +103,8 @@ pageChecks.push((path, html, kind) => {
 })
 
 // ── JSON-LD ──
-function ldTypes(path, html) {
-  const types = new Set()
+function ldNodes(path, html) {
+  const nodes = []
   for (const m of html.matchAll(/<script type="application\/ld\+json"[^>]*>([\s\S]*?)<\/script>/g)) {
     let data
     try {
@@ -113,9 +113,15 @@ function ldTypes(path, html) {
       fail(path, `JSON-LD does not parse: ${e.message}`)
       continue
     }
-    for (const node of data["@graph"] ?? [data]) {
-      for (const t of [node["@type"]].flat()) if (t) types.add(t)
-    }
+    nodes.push(...(data["@graph"] ?? [data]))
+  }
+  return nodes
+}
+
+function ldTypes(path, html) {
+  const types = new Set()
+  for (const node of ldNodes(path, html)) {
+    for (const t of [node["@type"]].flat()) if (t) types.add(t)
   }
   return types
 }
@@ -127,6 +133,24 @@ pageChecks.push((path, html, kind) => {
   const types = ldTypes(path, html)
   for (const t of EXPECTED_TYPES[kind] ?? GLOBAL_TYPES) {
     if (!types.has(t)) fail(path, `JSON-LD missing @type ${t}`)
+  }
+})
+
+// ── home: entity links (sameAs) ──
+const SAME_AS_REQUIRED = [brand.location.gbpUrl, brand.location.doctoraliaUrl, brand.contact.instagram.href]
+pageChecks.push((path, html, kind) => {
+  if (kind !== "home") return
+  for (const type of ["Person", "MedicalBusiness"]) {
+    const node = ldNodes(path, html).find((n) => [n["@type"]].flat().includes(type))
+    const sameAs = node?.sameAs ?? []
+    for (const url of SAME_AS_REQUIRED) {
+      if (!url) fail(path, `${type}.sameAs: required URL is undefined in site-content`)
+      else if (!sameAs.includes(url)) fail(path, `${type}.sameAs missing ${url}`)
+    }
+    if (new Set(sameAs).size !== sameAs.length) fail(path, `${type}.sameAs has duplicates`)
+    for (const url of sameAs) {
+      if (/maps\.app\.goo\.gl|share\.google/.test(url)) fail(path, `${type}.sameAs uses a share short link: ${url}`)
+    }
   }
 })
 
