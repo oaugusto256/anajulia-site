@@ -183,10 +183,12 @@ pageChecks.push((path, html, kind) => {
   if (kind !== "home") return
   const title = decode(html.match(/<title>([^<]*)<\/title>/)?.[1] ?? "")
   const description = attr(findTag(html, /<meta[^>]+name="description"[^>]*>/), "content") ?? ""
-  if (!title.includes("Campeche")) fail(path, "home <title> should mention Campeche")
+  // Case-insensitive: Ana Julia may edit casing; only a missing term should fail (then ask her, don't edit her copy).
+  const has = (text, term) => text.toLocaleLowerCase("pt-BR").includes(term.toLocaleLowerCase("pt-BR"))
+  if (!has(title, "Campeche")) fail(path, "home <title> should mention Campeche")
   if (title.length > HOME_TITLE_HARD_MAX) fail(path, `home title is ${title.length} chars (> ${HOME_TITLE_HARD_MAX})`)
   for (const term of ["Campeche", "Sul da Ilha", "Burnout"]) {
-    if (!description.includes(term)) fail(path, `home meta description should mention ${term}`)
+    if (!has(description, term)) fail(path, `home meta description should mention ${term}`)
   }
 })
 
