@@ -166,23 +166,36 @@ export function TestimonialsCarousel({
             </svg>
           </button>
 
-          <div style={{ display: "flex", gap: 6, alignItems: "center" }}>
+          <div style={{ display: "flex", alignItems: "center" }}>
             {reviews.map((_, i) => (
+              // 24×24 hit area (WCAG 2.5.8 target size) around the 6px visual dot.
               <button
                 key={i}
                 onClick={() => goTo(i)}
                 aria-label={`Ir para depoimento ${i + 1}`}
                 style={{
-                  width: i === current ? 22 : 6,
-                  height: 6,
-                  borderRadius: 999,
-                  background: i === current ? "var(--color-oliva)" : "var(--color-linhas)",
+                  width: 24,
+                  height: 24,
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "center",
+                  background: "transparent",
                   border: "none",
                   padding: 0,
                   cursor: "pointer",
-                  transition: "width 0.3s ease, background 0.3s ease",
                 }}
-              />
+              >
+                <span
+                  aria-hidden="true"
+                  style={{
+                    width: i === current ? 22 : 6,
+                    height: 6,
+                    borderRadius: 999,
+                    background: i === current ? "var(--color-oliva)" : "var(--color-linhas)",
+                    transition: "width 0.3s ease, background 0.3s ease",
+                  }}
+                />
+              </button>
             ))}
           </div>
 
