@@ -2,7 +2,7 @@
 // SEO smoke check against a running production build.
 // Usage: pnpm build && pnpm start   (in another terminal)  then  pnpm check:seo
 // BASE_URL defaults to http://localhost:3000. Exits non-zero on any failure.
-import { brand, contentUpdatedAt, faq, topicPages } from "../src/content/site-content.ts"
+import { areas, brand, contentUpdatedAt, faq, topicPages } from "../src/content/site-content.ts"
 
 const BASE_URL = (process.env.BASE_URL ?? "http://localhost:3000").replace(/\/$/, "")
 const SITE_URL = "https://psicoanajulia.com.br"
@@ -246,6 +246,18 @@ siteChecks.push(async (pages, bodies) => {
   }
   const missing = await get("/nao-existe")
   if (missing.res.status !== 404) fail("/nao-existe", `expected 404, got ${missing.res.status}`)
+})
+
+// ── adolescent topic page (Search Console: "psicóloga para adolescente" pos. 1) ──
+const ADOLESCENT_SLUG = "psicologa-para-adolescentes"
+siteChecks.push(async () => {
+  const where = `/${ADOLESCENT_SLUG}`
+  const page = topicBySlug.get(ADOLESCENT_SLUG)
+  if (!page) return fail(where, "missing from topicPages")
+  if (!areas.items.some((a) => a.id === page.areaId)) fail(where, `areaId "${page.areaId}" has no areas.items entry`)
+  if (!page.related.includes("maternidade-parentalidade")) fail(where, "should relate to maternidade-parentalidade")
+  if (!topicBySlug.get("maternidade-parentalidade")?.related.includes(ADOLESCENT_SLUG)) fail("/maternidade-parentalidade", `should relate back to ${ADOLESCENT_SLUG}`)
+  if (!/orientação parental/i.test(JSON.stringify(page.sections))) fail(where, "sections should cover orientação parental")
 })
 
 // ── privacy page ──

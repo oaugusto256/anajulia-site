@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Monitor, User, Briefcase, BatteryLow, Baby, Sunset, ClipboardList, Compass } from "lucide-react";
+import { Monitor, User, Briefcase, BatteryLow, Baby, Sunset, ClipboardList, Compass, Sprout } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 import { areas } from "@/content/site-content";
 import { AccordionItem } from "@/components/ui/accordion-item";
@@ -16,6 +16,7 @@ const iconMap: Record<string, LucideIcon> = {
   horizon: Sunset,
   clipboard: ClipboardList,
   compass: Compass,
+  sprout: Sprout,
 };
 
 export function Areas({ topicLinks = {} }: { topicLinks?: Record<string, string> }) {

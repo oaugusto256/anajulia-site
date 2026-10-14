@@ -479,6 +479,12 @@ export const areas = {
       body: "Gestação, puerpério, adaptação à maternidade e à paternidade, orientação parental, terapia de casal e familiar, conflitos familiares e desafios que acompanham a construção da vida em família.",
     },
     {
+      id: "adolescencia",
+      icon: "sprout",
+      title: "Adolescência",
+      body: "Psicoterapia para adolescentes de 13 a 18 anos e orientação parental para pais e responsáveis: ansiedade, mudanças de humor, conflitos familiares, desafios escolares e sociais e as transformações dessa fase.",
+    },
+    {
       id: "luto-transicoes",
       icon: "horizon",
       title: "Luto e Perdas",
@@ -885,7 +891,99 @@ export const topicPages: TopicPage[] = [
         "Olá, Ana Julia. Vi sua página sobre maternidade e parentalidade e gostaria de agendar uma conversa inicial.",
     },
     reviewedAt: "2026-10-13",
-    related: ["burnout-saude-mental-trabalho", "luto-e-perdas"],
+    related: ["psicologa-para-adolescentes", "burnout-saude-mental-trabalho", "luto-e-perdas"],
+  },
+  {
+    slug: "psicologa-para-adolescentes",
+    areaId: "adolescencia",
+    status: "draft",
+    seo: {
+      title: "Psicóloga para Adolescentes",
+      description:
+        "Psicoterapia para adolescentes de 13 a 18 anos e orientação parental para pais. Online para todo o Brasil e presencial em Florianópolis (Campeche).",
+    },
+    breadcrumbLabel: "Adolescência",
+    hero: {
+      eyebrow: "Áreas de atuação",
+      title: "Psicoterapia para adolescentes",
+      intro:
+        "A adolescência é um tempo de muitas transformações, para quem a vive e para a família ao redor. A psicoterapia oferece ao adolescente um espaço seguro de escuta e, aos pais, apoio para atravessar essa fase com mais compreensão.",
+    },
+    sections: [
+      {
+        heading: "Quando procurar uma psicóloga para o seu filho adolescente?",
+        paragraphs: [
+          "Mudanças de humor, a busca por mais privacidade e alguns conflitos em casa fazem parte da adolescência. Nem toda dificuldade precisa de psicoterapia, mas alguns sinais merecem atenção, principalmente quando se prolongam ou começam a afetar o dia a dia.",
+          "Entre eles estão o isolamento dos amigos e da família, tristeza ou irritabilidade persistentes, ansiedade intensa, mudanças importantes no sono ou na alimentação, queda no rendimento escolar, recusa em ir à escola e conflitos frequentes que parecem não ter saída. Situações como a separação dos pais, uma mudança de cidade, um luto ou o bullying também podem pedir um espaço de cuidado.",
+          "Se você perceber sinais de autolesão, ou se o seu filho falar em se machucar ou em não querer viver, procure imediatamente um serviço de saúde. Também é possível ligar para o CVV, no 188, que atende 24 horas, gratuitamente.",
+        ],
+      },
+      {
+        heading: "Como funciona a psicoterapia na adolescência?",
+        paragraphs: [
+          "O acompanhamento começa com uma conversa com os pais ou responsáveis, para entender o que motivou a busca, conhecer a história do adolescente e combinar como o processo vai funcionar.",
+          "Em seguida, as sessões acontecem com o adolescente, semanalmente e com duração de 50 minutos. É um espaço para que ele possa falar sobre o que sente, sobre a escola, as amizades, a família e as dúvidas que acompanham essa fase, no seu ritmo e sem julgamentos.",
+          "Ao longo do processo, podem acontecer encontros com os pais, sempre combinados previamente com o adolescente. Cada acompanhamento é construído a partir das necessidades daquela pessoa e daquela família.",
+        ],
+      },
+      {
+        heading: "Sigilo: o que os pais ficam sabendo?",
+        paragraphs: [
+          "A confiança é a base da psicoterapia, e isso vale especialmente na adolescência. Para que o adolescente se sinta à vontade para falar, o conteúdo das sessões é preservado pelo sigilo profissional.",
+          "Como prevê o Código de Ética Profissional do Psicólogo, o atendimento de adolescentes acontece com a autorização de pelo menos um dos responsáveis, e os pais recebem apenas as informações necessárias para promover o cuidado e o bem-estar do filho. Em situações de risco à saúde ou à vida, os responsáveis são comunicados.",
+          "Esses combinados são explicados a todos logo no início, para que pais e adolescente saibam com clareza como o processo funciona.",
+        ],
+      },
+      {
+        heading: "O papel da família e a orientação parental",
+        paragraphs: [
+          "Os pais têm um papel importante no cuidado com o adolescente, mesmo quando ele parece querer distância. Muitas vezes, também precisam de apoio para lidar com as mudanças, os conflitos e as preocupações dessa fase.",
+          "A orientação parental é um espaço dedicado aos pais e responsáveis, separado das sessões do adolescente, para refletir sobre limites, comunicação, autonomia e a forma de estar presente. Ela pode acontecer em paralelo à psicoterapia do filho ou de forma independente.",
+          "Minha atuação parte de uma visão sistêmica: o que acontece com o adolescente reverbera na família, e o contrário também. Por isso, o formato do acompanhamento é pensado junto com vocês.",
+        ],
+      },
+      {
+        heading: "Como funciona o atendimento",
+        paragraphs: [
+          "O primeiro passo é me enviar uma mensagem pelo WhatsApp para tirar dúvidas e agendar a conversa inicial com os pais ou responsáveis.",
+          "Atendo adolescentes de 13 a 18 anos. As sessões podem ser online, para todo o Brasil e exterior, por chamada de vídeo através de um link seguro enviado previamente, ou presenciais em Florianópolis, no Shopping Oka Floripa, no Campeche (Sul da Ilha).",
+          "O pagamento é feito via PIX ou transferência bancária, e emito nota fiscal para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade. Sou psicóloga clínica, com registro CRP/SC 12/30269.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        id: "adolescentes-idade",
+        question: "A partir de que idade você atende?",
+        answer:
+          "Atendo adolescentes de 13 a 18 anos, além de adultos e idosos. Para quem tem menos de 18 anos, o atendimento acontece com a autorização de pelo menos um dos responsáveis.",
+      },
+      {
+        id: "adolescentes-resistencia",
+        question: "Meu filho não quer fazer terapia. E agora?",
+        answer:
+          "É comum que o adolescente resista no início, especialmente quando a ideia parte dos pais. Vale conversar com ele sobre o motivo da preocupação, sem tom de castigo, e apresentar a psicoterapia como um espaço só dele. A conversa inicial também pode ajudar: nela, pensamos juntos em como fazer esse convite. Enquanto isso, a orientação parental pode ser um apoio para os pais.",
+      },
+      {
+        id: "adolescentes-pais",
+        question: "Os pais participam das sessões?",
+        answer:
+          "As sessões são do adolescente. Os pais participam da conversa inicial e de encontros pontuais ao longo do processo, combinados previamente com o adolescente. Quando os pais precisam de um espaço próprio, a orientação parental acontece em encontros separados.",
+      },
+      {
+        id: "adolescentes-online",
+        question: "A terapia online funciona para adolescentes?",
+        answer:
+          "Sim. Muitos adolescentes se sentem à vontade na sessão por vídeo, e o formato evita deslocamentos na rotina de escola e atividades. O importante é ter um lugar silencioso e privativo em casa, onde ele possa falar sem ser ouvido. Se preferirem o encontro presencial, ele também é possível em Florianópolis, no Campeche.",
+      },
+    ],
+    cta: {
+      label: "Agendar conversa inicial",
+      whatsappMessage:
+        "Olá, Ana Julia. Vi sua página sobre psicoterapia para adolescentes e gostaria de agendar uma conversa inicial.",
+    },
+    reviewedAt: "2026-10-14",
+    related: ["maternidade-parentalidade", "luto-e-perdas"],
   },
   {
     slug: "luto-e-perdas",
