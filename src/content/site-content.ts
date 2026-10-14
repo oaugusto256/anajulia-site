@@ -519,7 +519,13 @@ export const faq = {
       id: "pagamento",
       question: "Como é feito o pagamento?",
       answer:
-        "O pagamento é realizado via PIX ou transferência bancária. Trabalho com modalidades por sessão ou pacotes, combinados em nossa primeira conversa. Entrego recibos para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade.",
+        "O pagamento é realizado via PIX ou transferência bancária. Trabalho com modalidades por sessão ou pacotes, combinados em nossa primeira conversa. Emito nota fiscal para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade.",
+    },
+    {
+      id: "plano-de-saude",
+      question: "Você atende por plano de saúde, como a Unimed?",
+      answer:
+        "O atendimento é particular: não sou credenciada a convênios. Emito nota fiscal de cada sessão para que você possa solicitar reembolso ao seu plano de saúde, como a Unimed e outros, caso ele ofereça essa modalidade. O valor reembolsado depende do seu contrato; vale confirmar diretamente com a operadora.",
     },
     {
       id: "conversa-antes",

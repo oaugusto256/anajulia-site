@@ -2,7 +2,7 @@
 // SEO smoke check against a running production build.
 // Usage: pnpm build && pnpm start   (in another terminal)  then  pnpm check:seo
 // BASE_URL defaults to http://localhost:3000. Exits non-zero on any failure.
-import { brand, contentUpdatedAt, topicPages } from "../src/content/site-content.ts"
+import { brand, contentUpdatedAt, faq, topicPages } from "../src/content/site-content.ts"
 
 const BASE_URL = (process.env.BASE_URL ?? "http://localhost:3000").replace(/\/$/, "")
 const SITE_URL = "https://psicoanajulia.com.br"
@@ -92,7 +92,7 @@ pageChecks.push((path, html, kind) => {
 
 // ── home: heading outline ──
 // h2: approach, about, services, areas, mission, testimonials, faq.
-// h3: 4 services + 4 áreas + 6 FAQ questions.
+// h3: 4 services + 4 áreas + 7 FAQ questions.
 pageChecks.push((path, html, kind) => {
   if (kind !== "home") return
   const h2 = count(html, /<h2[\s>]/g)
@@ -152,6 +152,27 @@ pageChecks.push((path, html, kind) => {
       if (/maps\.app\.goo\.gl|share\.google/.test(url)) fail(path, `${type}.sameAs uses a share short link: ${url}`)
     }
   }
+})
+
+// ── home: insurance FAQ (Search Console: "psicólogo unimed" queries) ──
+const INSURANCE_FAQ_ID = "plano-de-saude"
+pageChecks.push((path, html, kind) => {
+  if (kind !== "home") return
+  const item = faq.items.find((i) => i.id === INSURANCE_FAQ_ID)
+  if (!item) return fail(path, `faq.items has no "${INSURANCE_FAQ_ID}"`)
+  const ids = faq.items.map((i) => i.id)
+  if (ids.indexOf(INSURANCE_FAQ_ID) !== ids.indexOf("pagamento") + 1) fail(path, `"${INSURANCE_FAQ_ID}" must come right after "pagamento"`)
+  if (!decode(html).includes(item.question)) fail(path, "insurance FAQ question not rendered")
+  const faqPage = ldNodes(path, html).find((n) => n["@type"] === "FAQPage")
+  const questions = (faqPage?.mainEntity ?? []).map((q) => q.name)
+  if (!questions.includes(item.question)) fail(path, "insurance FAQ missing from FAQPage JSON-LD")
+  if (/Entrego recibos/.test(faq.items.find((i) => i.id === "pagamento")?.answer ?? "")) fail(path, 'pagamento answer still says "Entrego recibos" (topic pages use nota fiscal)')
+})
+siteChecks.push(async () => {
+  const item = faq.items.find((i) => i.id === INSURANCE_FAQ_ID)
+  if (!item) return
+  const llms = await get("/llms.txt")
+  if (!llms.body.includes(`### ${item.question}`)) fail("/llms.txt", "insurance FAQ missing")
 })
 
 // ── robots, llms.txt, sitemap dates ──
