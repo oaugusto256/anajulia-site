@@ -764,7 +764,7 @@ Você pode solicitar informações, correção ou exclusão dos seus dados pesso
 
 # DRAFT — revisão Ana Julia (busca, 2026-10-14)
 
-> Textos redigidos por Claude a partir dos dados do Google Search Console (spec `docs/superpowers/specs/2026-10-14-search-performance-design.md`). Já aplicados em `src/content/site-content.ts` neste branch para revisão no preview da Vercel; o merge só acontece após a aprovação.
+> Textos redigidos por Claude a partir dos dados do Google Search Console (spec `docs/superpowers/specs/2026-10-14-search-performance-design.md`). **Já estão no ar** (PR #18, 2026-10-14) sem aprovação registrada; a revisão acontece junto com a página de adolescentes (PR #20). Após a aprovação, estes textos saem do DRAFT para FAQ_SECTION e uma nova seção SEO_HOME. Também no ar desde o PR #18: a cor dos botões ficou mais escura (verde oliva #5C7060) para melhorar o contraste.
 
 ## FAQ (home) — nova pergunta, após "Como é feito o pagamento?"
 
@@ -789,6 +789,20 @@ Atual:
 Proposta (Campeche é a busca mais frequente; "burnout" não aparecia):
 - Título: Psicóloga no Campeche, Florianópolis e Online | Ana Julia Vognach
 - Descrição: Psicóloga clínica no Campeche, Sul da Ilha de Florianópolis, e online para todo o Brasil e exterior. Burnout, maternidade, luto e psico-oncologia.
+
+---
+
+# DRAFT — revisão Ana Julia (privacidade, 2026-10-14)
+
+> Correção de fato: desde o redesign de maio, o carrossel mostra só a nota e o texto das avaliações, sem o nome. Aplicado neste branch para revisão no preview. Após a aprovação, atualizar "Atualizada em" da página.
+
+## Página de privacidade — "Avaliações do Google"
+
+Atual:
+As avaliações exibidas no site são públicas e vêm do perfil de Ana Julia Vognach no Google. Elas são mostradas como foram publicadas, com o nome que cada pessoa escolheu exibir no Google.
+
+Proposta:
+As avaliações exibidas no site são públicas e vêm do perfil de Ana Julia Vognach no Google. No site, mostramos apenas a nota e o texto de cada avaliação, sem o nome de quem a publicou.
 
 ---
 

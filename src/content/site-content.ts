@@ -92,7 +92,7 @@ export const meta = {
 };
 
 /** Data da última alteração de conteúdo (ISO). Atualizar manualmente — usada no sitemap. */
-export const contentUpdatedAt = "2026-10-13";
+export const contentUpdatedAt = "2026-10-14";
 
 // ────────────────────────────────────────────────────────────────
 // BRAND · identidade
@@ -1237,7 +1237,7 @@ export const privacy = {
     {
       heading: "Avaliações do Google",
       paragraphs: [
-        "As avaliações exibidas no site são públicas e vêm do perfil de Ana Julia Vognach no Google. Elas são mostradas como foram publicadas, com o nome que cada pessoa escolheu exibir no Google.",
+        "As avaliações exibidas no site são públicas e vêm do perfil de Ana Julia Vognach no Google. No site, mostramos apenas a nota e o texto de cada avaliação, sem o nome de quem a publicou.",
       ],
     },
     {
