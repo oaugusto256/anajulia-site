@@ -52,9 +52,9 @@ export type Layout = {
 
 export const meta = {
   language: "pt-BR",
-  title: "Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach",
+  title: "Psicóloga no Campeche, Florianópolis e Online | Ana Julia Vognach",
   description:
-    "Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.",
+    "Psicóloga clínica no Campeche, Sul da Ilha de Florianópolis, e online para todo o Brasil e exterior. Burnout, maternidade, luto e psico-oncologia.",
   keywords: [
     "psicóloga online",
     "psicoterapia",

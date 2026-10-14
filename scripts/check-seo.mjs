@@ -175,6 +175,19 @@ siteChecks.push(async () => {
   if (!llms.body.includes(`### ${item.question}`)) fail("/llms.txt", "insurance FAQ missing")
 })
 
+// ── home: local intent in metadata (Search Console: "psicologa campeche" is the top query) ──
+const HOME_TITLE_HARD_MAX = 70
+pageChecks.push((path, html, kind) => {
+  if (kind !== "home") return
+  const title = decode(html.match(/<title>([^<]*)<\/title>/)?.[1] ?? "")
+  const description = attr(findTag(html, /<meta[^>]+name="description"[^>]*>/), "content") ?? ""
+  if (!title.includes("Campeche")) fail(path, "home <title> should mention Campeche")
+  if (title.length > HOME_TITLE_HARD_MAX) fail(path, `home title is ${title.length} chars (> ${HOME_TITLE_HARD_MAX})`)
+  for (const term of ["Campeche", "Sul da Ilha", "Burnout"]) {
+    if (!description.includes(term)) fail(path, `home meta description should mention ${term}`)
+  }
+})
+
 // ── robots, llms.txt, sitemap dates ──
 const draftSlugs = () => topicPages.filter((p) => p.status === "draft").map((p) => p.slug)
 

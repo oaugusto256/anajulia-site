@@ -779,3 +779,13 @@ O atendimento é particular: não sou credenciada a convênios. Emito nota fisca
 ## FAQ (home) — ajuste em "Como é feito o pagamento?"
 
 Trocar "Entrego recibos para que você possa solicitar reembolso" por "Emito nota fiscal para que você possa solicitar reembolso", alinhando com as páginas de tema. Restante da resposta sem alteração.
+
+## SEO da home (`meta.title`, `meta.description`)
+
+Atual:
+- Título: Psicóloga Online e Presencial em Florianópolis | Ana Julia Vognach
+- Descrição: Psicoterapia online para o Brasil e exterior, e presencial em Florianópolis. Apoio especializado em transições de vida, saúde mental, luto e maternidade.
+
+Proposta (Campeche é a busca mais frequente; "burnout" não aparecia):
+- Título: Psicóloga no Campeche, Florianópolis e Online | Ana Julia Vognach
+- Descrição: Psicóloga clínica no Campeche, Sul da Ilha de Florianópolis, e online para todo o Brasil e exterior. Burnout, maternidade, luto e psico-oncologia.
