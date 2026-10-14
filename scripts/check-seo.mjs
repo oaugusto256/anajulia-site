@@ -162,7 +162,9 @@ pageChecks.push((path, html, kind) => {
   if (!item) return fail(path, `faq.items has no "${INSURANCE_FAQ_ID}"`)
   const ids = faq.items.map((i) => i.id)
   if (ids.indexOf(INSURANCE_FAQ_ID) !== ids.indexOf("pagamento") + 1) fail(path, `"${INSURANCE_FAQ_ID}" must come right after "pagamento"`)
-  if (!decode(html).includes(item.question)) fail(path, "insurance FAQ question not rendered")
+  // Strip <script> blocks: the FAQPage JSON-LD repeats the question, which would mask a missing accordion item.
+  const visibleHtml = decode(html.replace(/<script[\s\S]*?<\/script>/g, ""))
+  if (!visibleHtml.includes(item.question)) fail(path, "insurance FAQ question not rendered")
   const faqPage = ldNodes(path, html).find((n) => n["@type"] === "FAQPage")
   const questions = (faqPage?.mainEntity ?? []).map((q) => q.name)
   if (!questions.includes(item.question)) fail(path, "insurance FAQ missing from FAQPage JSON-LD")
