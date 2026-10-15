@@ -764,7 +764,7 @@ Você pode solicitar informações, correção ou exclusão dos seus dados pesso
 
 # DRAFT — revisão Ana Julia (busca, 2026-10-14)
 
-> Textos redigidos por Claude a partir dos dados do Google Search Console (spec `docs/superpowers/specs/2026-10-14-search-performance-design.md`). Já aplicados em `src/content/site-content.ts` neste branch para revisão no preview da Vercel; o merge só acontece após a aprovação.
+> Textos redigidos por Claude a partir dos dados do Google Search Console (spec `docs/superpowers/specs/2026-10-14-search-performance-design.md`). **Já estão no ar** (PR #18, 2026-10-14) sem aprovação registrada; a revisão acontece junto com a página de adolescentes (PR #20). Após a aprovação, estes textos saem do DRAFT para FAQ_SECTION e uma nova seção SEO_HOME. Também no ar desde o PR #18: a cor dos botões ficou mais escura (verde oliva #5C7060) para melhorar o contraste.
 
 ## FAQ (home) — nova pergunta, após "Como é feito o pagamento?"
 
@@ -789,3 +789,125 @@ Atual:
 Proposta (Campeche é a busca mais frequente; "burnout" não aparecia):
 - Título: Psicóloga no Campeche, Florianópolis e Online | Ana Julia Vognach
 - Descrição: Psicóloga clínica no Campeche, Sul da Ilha de Florianópolis, e online para todo o Brasil e exterior. Burnout, maternidade, luto e psico-oncologia.
+
+---
+
+# DRAFT — revisão Ana Julia (privacidade, 2026-10-14)
+
+> Correção de fato: desde o redesign de maio, o carrossel mostra só a nota e o texto das avaliações, sem o nome. Aplicado neste branch para revisão no preview. Após a aprovação, atualizar "Atualizada em" da página.
+
+## Página de privacidade — "Avaliações do Google"
+
+Atual:
+As avaliações exibidas no site são públicas e vêm do perfil de Ana Julia Vognach no Google. Elas são mostradas como foram publicadas, com o nome que cada pessoa escolheu exibir no Google.
+
+Proposta:
+As avaliações exibidas no site são públicas e vêm do perfil de Ana Julia Vognach no Google. No site, mostramos apenas a nota e o texto de cada avaliação, sem o nome de quem a publicou.
+
+---
+
+# DRAFT — revisão Ana Julia (adolescentes, 2026-10-14)
+
+> Página nova redigida por Claude a partir do pedido de 2026-10-14 (público principal: pais; adolescentes de 13 a 18 anos; inclui orientação parental). Fica como `status: "draft"` (fora do ar em produção, noindex, sem links) até a aprovação no preview da Vercel.
+
+## Áreas de atuação (home) — novo item, após "Maternidade, Parentalidade e Família"
+
+- Título: Adolescência
+- Texto: Psicoterapia para adolescentes de 13 a 18 anos e orientação parental para pais e responsáveis: ansiedade, mudanças de humor, conflitos familiares, desafios escolares e sociais e as transformações dessa fase.
+
+## Página de maternidade — novo link relacionado
+
+`related` passa a incluir /psicologa-para-adolescentes (aparece só depois da publicação).
+
+## Página: Psicoterapia para adolescentes (/psicologa-para-adolescentes)
+
+**Status:** draft · **Revisado em:** 2026-10-14
+
+### SEO_TITLE
+Psicóloga para Adolescentes
+
+### SEO_DESCRIPTION
+Psicoterapia para adolescentes de 13 a 18 anos e orientação parental para pais. Online para todo o Brasil e presencial em Florianópolis (Campeche).
+
+### BREADCRUMB
+Adolescência
+
+### EYEBROW
+Áreas de atuação
+
+### TITLE
+Psicoterapia para adolescentes
+
+### INTRO
+A adolescência é um tempo de muitas transformações, para quem a vive e para a família ao redor. A psicoterapia oferece ao adolescente um espaço seguro de escuta e, aos pais, apoio para atravessar essa fase com mais compreensão.
+
+### Quando procurar uma psicóloga para o seu filho adolescente?
+
+Mudanças de humor, a busca por mais privacidade e alguns conflitos em casa fazem parte da adolescência. Nem toda dificuldade precisa de psicoterapia, mas alguns sinais merecem atenção, principalmente quando se prolongam ou começam a afetar o dia a dia.
+
+Entre eles estão o isolamento dos amigos e da família, tristeza ou irritabilidade persistentes, ansiedade intensa, mudanças importantes no sono ou na alimentação, queda no rendimento escolar, recusa em ir à escola e conflitos frequentes que parecem não ter saída. Situações como a separação dos pais, uma mudança de cidade, um luto ou o bullying também podem pedir um espaço de cuidado.
+
+Se você perceber sinais de autolesão, ou se o seu filho falar em se machucar ou em não querer viver, procure imediatamente um serviço de saúde. Também é possível ligar para o CVV, no 188, que atende 24 horas, gratuitamente.
+
+### Como funciona a psicoterapia na adolescência?
+
+O acompanhamento começa com uma conversa com os pais ou responsáveis, para entender o que motivou a busca, conhecer a história do adolescente e combinar como o processo vai funcionar.
+
+Em seguida, as sessões acontecem com o adolescente, semanalmente e com duração de 50 minutos. É um espaço para que ele possa falar sobre o que sente, sobre a escola, as amizades, a família e as dúvidas que acompanham essa fase, no seu ritmo e sem julgamentos.
+
+Ao longo do processo, podem acontecer encontros com os pais, sempre combinados previamente com o adolescente. Cada acompanhamento é construído a partir das necessidades daquela pessoa e daquela família.
+
+### Sigilo: o que os pais ficam sabendo?
+
+A confiança é a base da psicoterapia, e isso vale especialmente na adolescência. Para que o adolescente se sinta à vontade para falar, o conteúdo das sessões é preservado pelo sigilo profissional.
+
+Como prevê o Código de Ética Profissional do Psicólogo, o atendimento de adolescentes acontece com a autorização de pelo menos um dos responsáveis, e os pais recebem apenas as informações necessárias para promover o cuidado e o bem-estar do filho. Em situações de risco à saúde ou à vida, os responsáveis são comunicados.
+
+Esses combinados são explicados a todos logo no início, para que pais e adolescente saibam com clareza como o processo funciona.
+
+### O papel da família e a orientação parental
+
+Os pais têm um papel importante no cuidado com o adolescente, mesmo quando ele parece querer distância. Muitas vezes, também precisam de apoio para lidar com as mudanças, os conflitos e as preocupações dessa fase.
+
+A orientação parental é um espaço dedicado aos pais e responsáveis, separado das sessões do adolescente, para refletir sobre limites, comunicação, autonomia e a forma de estar presente. Ela pode acontecer em paralelo à psicoterapia do filho ou de forma independente.
+
+Minha atuação parte de uma visão sistêmica: o que acontece com o adolescente reverbera na família, e o contrário também. Por isso, o formato do acompanhamento é pensado junto com vocês.
+
+### Como funciona o atendimento
+
+O primeiro passo é me enviar uma mensagem pelo WhatsApp para tirar dúvidas e agendar a conversa inicial com os pais ou responsáveis.
+
+Atendo adolescentes de 13 a 18 anos. As sessões podem ser online, para todo o Brasil e exterior, por chamada de vídeo através de um link seguro enviado previamente, ou presenciais em Florianópolis, no Shopping Oka Floripa, no Campeche (Sul da Ilha).
+
+O pagamento é feito via PIX ou transferência bancária, e emito nota fiscal para que você possa solicitar reembolso no seu plano de saúde, caso ele ofereça essa modalidade. Sou psicóloga clínica, com registro CRP/SC 12/30269.
+
+### FAQ
+
+#### A partir de que idade você atende?
+_id: adolescentes-idade_
+
+Atendo adolescentes de 13 a 18 anos, além de adultos e idosos. Para quem tem menos de 18 anos, o atendimento acontece com a autorização de pelo menos um dos responsáveis.
+
+#### Meu filho não quer fazer terapia. E agora?
+_id: adolescentes-resistencia_
+
+É comum que o adolescente resista no início, especialmente quando a ideia parte dos pais. Vale conversar com ele sobre o motivo da preocupação, sem tom de castigo, e apresentar a psicoterapia como um espaço só dele. A conversa inicial também pode ajudar: nela, pensamos juntos em como fazer esse convite. Enquanto isso, a orientação parental pode ser um apoio para os pais.
+
+#### Os pais participam das sessões?
+_id: adolescentes-pais_
+
+As sessões são do adolescente. Os pais participam da conversa inicial e de encontros pontuais ao longo do processo, combinados previamente com o adolescente. Quando os pais precisam de um espaço próprio, a orientação parental acontece em encontros separados.
+
+#### A terapia online funciona para adolescentes?
+_id: adolescentes-online_
+
+Sim. Muitos adolescentes se sentem à vontade na sessão por vídeo, e o formato evita deslocamentos na rotina de escola e atividades. O importante é ter um lugar silencioso e privativo em casa, onde ele possa falar sem ser ouvido. Se preferirem o encontro presencial, ele também é possível em Florianópolis, no Campeche.
+
+### CTA
+Agendar conversa inicial
+
+### WHATSAPP_MESSAGE
+Olá, Ana Julia. Vi sua página sobre psicoterapia para adolescentes e gostaria de agendar uma conversa inicial.
+
+### RELATED
+/maternidade-parentalidade, /luto-e-perdas
