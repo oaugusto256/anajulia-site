@@ -912,7 +912,7 @@ export const topicPages: TopicPage[] = [
       eyebrow: "Áreas de atuação",
       title: "Psicoterapia para adolescentes",
       intro:
-        "A adolescência é um tempo de muitas transformações, para quem a vive e para a família ao redor. A psicoterapia oferece ao adolescente um espaço seguro de escuta e, aos pais, apoio para atravessar essa fase com mais compreensão.",
+        "A adolescência é um tempo de muitas transformações, para quem a vive e para a família ao redor. A psicoterapia oferece ao adolescente um espaço seguro de escuta e, aos pais, apoio para atravessar essa fase com mais compreensão. Atendo presencialmente no Campeche, Sul da Ilha em Florianópolis, e online para todo o Brasil.",
     },
     sections: [
       {
