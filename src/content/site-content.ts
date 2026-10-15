@@ -901,7 +901,7 @@ export const topicPages: TopicPage[] = [
   {
     slug: "psicologa-para-adolescentes",
     areaId: "adolescencia",
-    status: "draft",
+    status: "published",
     seo: {
       title: "Psicóloga para Adolescentes",
       description:
@@ -1004,7 +1004,7 @@ export const topicPages: TopicPage[] = [
       whatsappMessage:
         "Olá, Ana Julia. Vi sua página sobre psicoterapia para adolescentes e gostaria de agendar uma conversa inicial.",
     },
-    reviewedAt: "2026-10-14",
+    reviewedAt: "2026-10-15",
     related: ["maternidade-parentalidade", "luto-e-perdas"],
   },
   {
