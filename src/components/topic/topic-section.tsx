@@ -1,8 +1,10 @@
-import type { TopicList } from "@/content/site-content"
+import type { TopicPage } from "@/content/site-content"
+import { TopicCta } from "@/components/topic/topic-cta"
+import { whatsappHref } from "@/lib/whatsapp"
 
 const textStyle = { fontFamily: "var(--font-inter)", fontSize: 16, lineHeight: 1.75, color: "var(--color-cinza)", margin: 0 }
 
-export function TopicSection({ heading, paragraphs }: { heading: string; paragraphs: (string | TopicList)[] }) {
+export function TopicSection({ heading, paragraphs, cta }: TopicPage["sections"][number]) {
   return (
     <section style={{ marginBottom: 48, display: "flex", flexDirection: "column", gap: 14 }}>
       <h2
@@ -32,6 +34,9 @@ export function TopicSection({ heading, paragraphs }: { heading: string; paragra
             ))}
           </ul>
         ),
+      )}
+      {cta && (
+        <TopicCta label={cta.label} href={whatsappHref(cta.whatsappMessage)} location="topic-section" variant="outline" />
       )}
     </section>
   )

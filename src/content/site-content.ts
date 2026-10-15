@@ -710,7 +710,12 @@ export type TopicPage = {
   seo: { title: string; description: string };
   breadcrumbLabel: string;
   hero: { eyebrow: string; title: string; intro: string };
-  sections: { heading: string; paragraphs: (string | TopicList)[] }[];
+  sections: {
+    heading: string;
+    paragraphs: (string | TopicList)[];
+    /** Chamada opcional ao final da seção (WhatsApp, estilo secundário). */
+    cta?: { label: string; whatsappMessage: string };
+  }[];
   faq: { id: string; question: string; answer: string }[];
   cta: { label: string; whatsappMessage: string };
   /** Data ISO (AAAA-MM-DD) da última revisão por Ana Julia. */
@@ -915,7 +920,7 @@ export const topicPages: TopicPage[] = [
         paragraphs: [
           "Mudanças de humor, a busca por mais privacidade e alguns conflitos em casa fazem parte da adolescência. Nem toda dificuldade precisa de psicoterapia, mas alguns sinais merecem atenção, principalmente quando se prolongam ou começam a afetar o dia a dia.",
           "Entre eles estão o isolamento dos amigos e da família, tristeza ou irritabilidade persistentes, ansiedade intensa, mudanças importantes no sono ou na alimentação, queda no rendimento escolar, recusa em ir à escola e conflitos frequentes que parecem não ter saída. Situações como a separação dos pais, uma mudança de cidade, um luto ou o bullying também podem pedir um espaço de cuidado.",
-          "Se você perceber sinais de autolesão, ou se o seu filho falar em se machucar ou em não querer viver, procure imediatamente um serviço de saúde. Também é possível ligar para o CVV, no 188, que atende 24 horas, gratuitamente.",
+          "Se você perceber sinais de autolesão (como ferimentos frequentes ou marcas pelo corpo sem explicação clara), ou se o seu filho falar em se machucar ou em não querer viver, procure imediatamente um serviço de saúde. Também é possível ligar para o CVV, no 188, que atende 24 horas, gratuitamente.",
         ],
       },
       {
@@ -941,6 +946,11 @@ export const topicPages: TopicPage[] = [
           "A orientação parental é um espaço dedicado aos pais e responsáveis, separado das sessões do adolescente, para refletir sobre limites, comunicação, autonomia e a forma de estar presente. Ela pode acontecer em paralelo à psicoterapia do filho ou de forma independente.",
           "Minha atuação parte de uma visão sistêmica: o que acontece com o adolescente reverbera na família, e o contrário também. Por isso, o formato do acompanhamento é pensado junto com vocês.",
         ],
+        cta: {
+          label: "Agendar Orientação para Pais",
+          whatsappMessage:
+            "Olá, Ana Julia. Vi sua página sobre psicoterapia para adolescentes e gostaria de agendar uma orientação para pais.",
+        },
       },
       {
         heading: "Como funciona o atendimento",
@@ -962,7 +972,7 @@ export const topicPages: TopicPage[] = [
         id: "adolescentes-resistencia",
         question: "Meu filho não quer fazer terapia. E agora?",
         answer:
-          "É comum que o adolescente resista no início, especialmente quando a ideia parte dos pais. Vale conversar com ele sobre o motivo da preocupação, sem tom de castigo, e apresentar a psicoterapia como um espaço só dele. A conversa inicial também pode ajudar: nela, pensamos juntos em como fazer esse convite. Enquanto isso, a orientação parental pode ser um apoio para os pais.",
+          "É comum que o adolescente resista no início, especialmente quando a ideia parte dos pais ou de um encaminhamento médico. Vale conversar com ele sobre o motivo da preocupação, sem tom de castigo, e apresentar a psicoterapia como um espaço só dele. A conversa inicial também pode ajudar: nela, pensamos juntos em como fazer esse convite. Enquanto isso, a orientação parental pode ser um apoio para os pais.",
       },
       {
         id: "adolescentes-pais",
@@ -974,7 +984,19 @@ export const topicPages: TopicPage[] = [
         id: "adolescentes-online",
         question: "A terapia online funciona para adolescentes?",
         answer:
-          "Sim. Muitos adolescentes se sentem à vontade na sessão por vídeo, e o formato evita deslocamentos na rotina de escola e atividades. O importante é ter um lugar silencioso e privativo em casa, onde ele possa falar sem ser ouvido. Se preferirem o encontro presencial, ele também é possível em Florianópolis, no Campeche.",
+          "Sim. Muitos adolescentes se sentem à vontade na sessão por vídeo, e o formato evita deslocamentos na rotina de escola e atividades. O importante é ter um lugar silencioso e privativo em casa, onde ele possa falar sem ser ouvido, e, nesse ponto, o apoio e a colaboração da família são fundamentais. Se preferirem o encontro presencial, ele também é possível em Florianópolis, no Campeche.",
+      },
+      {
+        id: "adolescentes-substancias",
+        question: "E se o meu filho falar sobre uso de álcool, vaping ou outras substâncias?",
+        answer:
+          "A regra do sigilo profissional continua valendo para garantir o vínculo e a confiança entre o adolescente e a terapeuta. Caso seja identificado um uso abusivo ou situação de risco grave à saúde e à integridade física do jovem, a família será comunicada e orientada sobre os caminhos de cuidado.",
+      },
+      {
+        id: "adolescentes-primeira-conversa",
+        question: "Na primeira conversa inicial, preciso levar meu filho junto ou vou sozinho(a)?",
+        answer:
+          "A primeira sessão é um momento exclusivo com os pais (ou responsáveis) para conversarmos abertamente sobre as queixas e o histórico do adolescente, sem que ele precise estar presente.",
       },
     ],
     cta: {
