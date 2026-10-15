@@ -149,7 +149,7 @@ export const brand = {
     /** URL canônica do Google Business Profile (cid), não o link curto de compartilhamento. */
     gbpUrl: "https://www.google.com/maps?cid=12723114800805178726",
     /** Perfil no Doctoralia (URL final após redirecionamento). Atualizar se a cidade principal do perfil mudar. */
-    doctoraliaUrl: "https://www.doctoralia.com.br/ana-julia-vognach/psicologo/estrela",
+    doctoraliaUrl: "https://www.doctoralia.com.br/ana-julia-vognach/psicologo/florianopolis",
     areaServed: {
       city: "Florianópolis",
       places: ["Sul da Ilha", "Campeche"],
